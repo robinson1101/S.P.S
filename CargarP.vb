@@ -3,6 +3,29 @@
 Public Class Cargar_pago
     Private Sub ButtonSubirP_Click(sender As Object, e As EventArgs) Handles ButtonSubirP.Click
         Try
+            'Codigo para validar si el sub esta excediendo el cupo asignado
+            Dim cupo As Integer = 0
+            Dim saldoPConsignar As Integer = 0
+
+            Dim conexion7 As New conexion
+            Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
+            conexion7.AbrirConexion()
+            Dim leer6 As MySqlDataReader = cmd6.ExecuteReader()
+            If leer6.Read Then
+                cupo = leer6(0)
+            End If
+            conexion7.CerrarConexion()
+
+            Dim conexion10 As New conexion
+            Dim cmd9 As New MySqlCommand("CALL CargarSaldoPConsignar('" & Principal.LabelUsuarioU.Text & "');", conexion10.conexion)
+            conexion10.AbrirConexion()
+            Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
+            If leer9.Read Then
+                saldoPConsignar = leer9(0)
+            End If
+            conexion10.CerrarConexion()
+
+
             'codigo para validar que el datagrid no guarde campos vacios
             Dim numLineas As Integer = DataGridViewPagos.RowCount - 1
 
@@ -69,31 +92,39 @@ Public Class Cargar_pago
 
             If validador = "verdadero" And numeroOletra = 1 And (DataGridViewPagos.Rows.Count > 0) Then
 
-                Dim Result As DialogResult = MessageBox.Show("¿DESEA SUBIR LOS DATOS INGRESADOS EN LA TABLA?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If Result = DialogResult.Yes Then
+                saldoPConsignar += Convert.ToInt32(fila.Cells("Column8").Value)
+                If saldoPConsignar <= cupo Then
+                    Dim Result As DialogResult = MessageBox.Show("¿DESEA SUBIR LOS DATOS INGRESADOS EN LA TABLA?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                    If Result = DialogResult.Yes Then
 
-                    For Each fila In DataGridViewPagos.Rows
-
-
-                        cmd1.Parameters.Clear()
-                        cmd1.Parameters.Add("?IdR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column1").Value)
-                        cmd1.Parameters.Add("?NoDoc", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column2").Value)
-                        cmd1.Parameters.Add("?FechaR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column3").Value)
-                        cmd1.Parameters.Add("?Vendedor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column4").Value)
-                        cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
-                        cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
-                        cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
-                        cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column8").Value)
-                        cmd1.Parameters.Add("?EstadoActual", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column9").Value)
-
-                        cmd1.ExecuteNonQuery()
+                        For Each fila In DataGridViewPagos.Rows
 
 
-                    Next
+                            cmd1.Parameters.Clear()
+                            cmd1.Parameters.Add("?IdR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column1").Value)
+                            cmd1.Parameters.Add("?NoDoc", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column2").Value)
+                            cmd1.Parameters.Add("?FechaR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column3").Value)
+                            cmd1.Parameters.Add("?Vendedor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column4").Value)
+                            cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
+                            cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
+                            cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
+                            cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column8").Value)
+                            cmd1.Parameters.Add("?EstadoActual", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column9").Value)
 
-                    DataGridViewPagos.Rows.Clear()
-                    MsgBox("DATOS CARGADOS CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+                            cmd1.ExecuteNonQuery()
+
+
+                        Next
+
+                        DataGridViewPagos.Rows.Clear()
+                        MsgBox("DATOS CARGADOS CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+                    End If
+
+                Else
+
                 End If
+
+
             ElseIf validador = "falso" Then
                 MsgBox("POR FAVOR DILIGENCIE TODOS LOS CAMPOS", MsgBoxStyle.Exclamation, "AVISO")
 
@@ -111,6 +142,7 @@ Public Class Cargar_pago
     End Sub
 
     Private Sub ButtonIngresarR_Click(sender As Object, e As EventArgs) Handles ButtonIngresarR.Click
+
 
         Dim ID As String = ""
 
