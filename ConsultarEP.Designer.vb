@@ -23,7 +23,7 @@ Partial Class ConsultarEP
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -123,14 +123,14 @@ Partial Class ConsultarEP
         Me.DataGridViewConsultar.AllowUserToResizeRows = False
         Me.DataGridViewConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsultar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsultar.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsultar.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewConsultar.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsultar.Location = New System.Drawing.Point(0, 135)
         Me.DataGridViewConsultar.Name = "DataGridViewConsultar"
@@ -161,7 +161,7 @@ Partial Class ConsultarEP
         Me.ButtonActualizar.FlatAppearance.BorderSize = 0
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
-        Me.ButtonActualizar.Location = New System.Drawing.Point(775, 43)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(98, 35)
         Me.ButtonActualizar.Name = "ButtonActualizar"
         Me.ButtonActualizar.Size = New System.Drawing.Size(90, 46)
         Me.ButtonActualizar.TabIndex = 10
@@ -267,7 +267,8 @@ Partial Class ConsultarEP
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.ButtonExportar)
-        Me.Panel1.Location = New System.Drawing.Point(1008, 32)
+        Me.Panel1.Controls.Add(Me.ButtonActualizar)
+        Me.Panel1.Location = New System.Drawing.Point(993, 29)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(200, 100)
         Me.Panel1.TabIndex = 19
@@ -278,7 +279,6 @@ Partial Class ConsultarEP
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 686)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.ButtonActualizar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
