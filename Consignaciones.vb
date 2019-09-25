@@ -1,13 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Consignaciones
-    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
-        If TrackBar1.Value = 0 Then
-            LabelConsignar.ForeColor = Color.Black
-            LabelConsultar.ForeColor = Color.Red
-        End If
 
-    End Sub
     Sub cargarDatagridConsignaciones()
         Try
             Dim conexion6 As New conexion
@@ -37,8 +31,27 @@ Public Class Consignaciones
 
 
     End Sub
+    Sub CargarComboSub2()
+        Try
+            Dim contador As Integer = 0
+            Dim conexion5 As New conexion
+            Dim cmd5 As New MySqlCommand("CALL LlenarComboboxSub();", conexion5.conexion)
+            conexion5.AbrirConexion()
+            Dim leer4 As MySqlDataReader = cmd5.ExecuteReader()
+            ComboBoxSub2.Items.Clear()
+            ComboBoxSub2.Items.Add("TODOS")
+            If leer4.Read Then
+                ComboBoxSub2.Items.Add(leer4(contador))
+            End If
+            conexion5.CerrarConexion()
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message)
+        End Try
+
+    End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatagridConsignaciones()
+
 
         Dim conexion7 As New conexion
         Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
@@ -75,6 +88,80 @@ Public Class Consignaciones
             TextBoxSaldoPConsignar.Text = leer9(0)
         End If
         conexion10.CerrarConexion()
+
+
+        CargarComboSub2()
+    End Sub
+
+    Private Sub TextBoxValorAingresar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxValorAingresar.KeyPress
+        If (Char.IsDigit(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+        End If
+
+        If (e.KeyChar = ChrW(Keys.Space) And TextBoxValorAingresar.Text = "") Then
+            e.Handled = True
+        End If
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+
+        End If
+    End Sub
+
+    Private Sub TextBoxNumReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNumReferencia.KeyPress
+        If (Char.IsDigit(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+        End If
+
+        If (e.KeyChar = ChrW(Keys.Space) And TextBoxValorAingresar.Text = "") Then
+            e.Handled = True
+        End If
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+
+        End If
+    End Sub
+
+    Private Sub RadioButtonCargarD_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonCargarD.CheckedChanged
+        If RadioButtonCargarD.Checked = True Then
+            PanelIngresarDatos.Enabled = False
+        Else
+            PanelIngresarDatos.Enabled = True
+        End If
+
+    End Sub
+
+    Private Sub TextBoxCA_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCupo.TextChanged
+        TextBoxCupo.Text = FormatCurrency(TextBoxCupo.Text)
+    End Sub
+
+    Private Sub TextBoxCupoDisponible_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCupoDisponible.TextChanged
+        TextBoxCupoDisponible.Text = FormatCurrency(TextBoxCupoDisponible.Text)
+    End Sub
+
+    Private Sub TextBoxSaldoInicial_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSaldoInicial.TextChanged
+        TextBoxSaldoInicial.Text = FormatCurrency(TextBoxSaldoInicial.Text)
+    End Sub
+
+    Private Sub TextBoxSaldoPConsignar_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSaldoPConsignar.TextChanged
+        TextBoxSaldoPConsignar.Text = FormatCurrency(TextBoxSaldoPConsignar.Text)
 
     End Sub
 End Class

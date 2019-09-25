@@ -126,6 +126,16 @@ Friend Class Resources
     '''<summary>
     '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
     '''</summary>
+    Friend Shared ReadOnly Property icons8_agregar_propiedad_50() As System.Drawing.Bitmap
+        Get
+            Dim obj As Object = ResourceManager.GetObject("icons8-agregar-propiedad-50", resourceCulture)
+            Return CType(obj,System.Drawing.Bitmap)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+    '''</summary>
     Friend Shared ReadOnly Property icons8_grupos_de_usuarios_50() As System.Drawing.Bitmap
         Get
             Dim obj As Object = ResourceManager.GetObject("icons8_grupos_de_usuarios_50", resourceCulture)

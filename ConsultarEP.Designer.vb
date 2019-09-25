@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class ConsultarEP
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,10 @@ Partial Class ConsultarEP
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,16 +39,14 @@ Partial Class ConsultarEP
         Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxSub = New System.Windows.Forms.ComboBox()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.ButtonExportar = New System.Windows.Forms.Button()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -63,10 +61,13 @@ Partial Class ConsultarEP
         '
         'TextBoxNumReferencia
         '
+        Me.TextBoxNumReferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxNumReferencia.Location = New System.Drawing.Point(12, 41)
+        Me.TextBoxNumReferencia.MaxLength = 10
         Me.TextBoxNumReferencia.Name = "TextBoxNumReferencia"
-        Me.TextBoxNumReferencia.Size = New System.Drawing.Size(187, 20)
+        Me.TextBoxNumReferencia.Size = New System.Drawing.Size(187, 22)
         Me.TextBoxNumReferencia.TabIndex = 1
+        Me.TextBoxNumReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.ToolTipConsultar.SetToolTip(Me.TextBoxNumReferencia, "Busqueda por: No.Cedula, Usuario, Min y Referencia")
         '
         'Label2
@@ -123,14 +124,14 @@ Partial Class ConsultarEP
         Me.DataGridViewConsultar.AllowUserToResizeRows = False
         Me.DataGridViewConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsultar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsultar.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsultar.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewConsultar.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsultar.Location = New System.Drawing.Point(0, 135)
         Me.DataGridViewConsultar.Name = "DataGridViewConsultar"
@@ -158,11 +159,10 @@ Partial Class ConsultarEP
         '
         'ButtonActualizar
         '
-        Me.ButtonActualizar.Dock = System.Windows.Forms.DockStyle.Right
         Me.ButtonActualizar.FlatAppearance.BorderSize = 0
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
-        Me.ButtonActualizar.Location = New System.Drawing.Point(152, 0)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(1124, 65)
         Me.ButtonActualizar.Name = "ButtonActualizar"
         Me.ButtonActualizar.Size = New System.Drawing.Size(48, 44)
         Me.ButtonActualizar.TabIndex = 10
@@ -192,34 +192,13 @@ Partial Class ConsultarEP
         '
         'ComboBoxSub
         '
-        Me.ComboBoxSub.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ComboBoxSub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBoxSub.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBoxSub.FormattingEnabled = True
         Me.ComboBoxSub.Location = New System.Drawing.Point(12, 82)
         Me.ComboBoxSub.Name = "ComboBoxSub"
         Me.ComboBoxSub.Size = New System.Drawing.Size(187, 21)
         Me.ComboBoxSub.TabIndex = 12
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.Legar.Resources.Actualizar50
-        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.ToolTipText = "Actualizar estado"
-        '
-        'ButtonExportar
-        '
-        Me.ButtonExportar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.ButtonExportar.FlatAppearance.BorderSize = 0
-        Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
-        Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(0, 0)
-        Me.ButtonExportar.Name = "ButtonExportar"
-        Me.ButtonExportar.Size = New System.Drawing.Size(52, 44)
-        Me.ButtonExportar.TabIndex = 13
-        Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonExportar.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -235,7 +214,7 @@ Partial Class ConsultarEP
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.Blue
-        Me.Label7.Location = New System.Drawing.Point(907, 60)
+        Me.Label7.Location = New System.Drawing.Point(1038, 118)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(66, 13)
         Me.Label7.TabIndex = 15
@@ -245,7 +224,7 @@ Partial Class ConsultarEP
         '
         Me.Label8.AutoSize = True
         Me.Label8.ForeColor = System.Drawing.Color.Blue
-        Me.Label8.Location = New System.Drawing.Point(845, 85)
+        Me.Label8.Location = New System.Drawing.Point(1111, 118)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 13)
         Me.Label8.TabIndex = 16
@@ -266,22 +245,34 @@ Partial Class ConsultarEP
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Formato: Año/Mes/Dia"
         '
-        'Panel1
+        'ButtonExportar
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.ButtonExportar)
-        Me.Panel1.Controls.Add(Me.ButtonActualizar)
-        Me.Panel1.Location = New System.Drawing.Point(993, 60)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 44)
-        Me.Panel1.TabIndex = 19
+        Me.ButtonExportar.FlatAppearance.BorderSize = 0
+        Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
+        Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonExportar.Location = New System.Drawing.Point(1041, 65)
+        Me.ButtonExportar.Name = "ButtonExportar"
+        Me.ButtonExportar.Size = New System.Drawing.Size(52, 44)
+        Me.ButtonExportar.TabIndex = 13
+        Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonExportar.UseVisualStyleBackColor = False
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.Legar.Resources.Actualizar50
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.ToolTipText = "Actualizar estado"
         '
         'ConsultarEP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 686)
-        Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.ButtonActualizar)
+        Me.Controls.Add(Me.ButtonExportar)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label8)
@@ -300,7 +291,6 @@ Partial Class ConsultarEP
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -327,5 +317,4 @@ Partial Class ConsultarEP
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Panel1 As Panel
 End Class

@@ -192,4 +192,27 @@ Public Class ConsultarEP
             MessageBox.Show(ex.Message, "S.P.S", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private Sub TextBoxNumReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNumReferencia.KeyPress
+        If (Char.IsDigit(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+        End If
+
+        If (e.KeyChar = ChrW(Keys.Space) And TextBoxNumReferencia.Text = "") Then
+            e.Handled = True
+        End If
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+
+        End If
+    End Sub
 End Class
