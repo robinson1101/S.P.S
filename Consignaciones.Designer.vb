@@ -43,7 +43,7 @@ Partial Class Consignaciones
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonActualizar = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxBusquedaPorFecha = New System.Windows.Forms.GroupBox()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -65,7 +65,7 @@ Partial Class Consignaciones
         Me.Label15 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GroupBoxBusquedaPorFecha.SuspendLayout()
         Me.PanelIngresarDatos.SuspendLayout()
         CType(Me.PictureBoxIngresar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -286,20 +286,20 @@ Partial Class Consignaciones
         Me.ButtonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonActualizar.UseVisualStyleBackColor = False
         '
-        'GroupBox1
+        'GroupBoxBusquedaPorFecha
         '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label13)
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox2)
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Red
-        Me.GroupBox1.Location = New System.Drawing.Point(336, 79)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(157, 114)
-        Me.GroupBox1.TabIndex = 23
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Formato: Año/Mes/Dia"
+        Me.GroupBoxBusquedaPorFecha.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label3)
+        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label13)
+        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBox2)
+        Me.GroupBoxBusquedaPorFecha.ForeColor = System.Drawing.Color.Red
+        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(336, 79)
+        Me.GroupBoxBusquedaPorFecha.Name = "GroupBoxBusquedaPorFecha"
+        Me.GroupBoxBusquedaPorFecha.Size = New System.Drawing.Size(157, 114)
+        Me.GroupBoxBusquedaPorFecha.TabIndex = 23
+        Me.GroupBoxBusquedaPorFecha.TabStop = False
+        Me.GroupBoxBusquedaPorFecha.Text = "Formato: Año/Mes/Dia"
         '
         'MaskedTextBox1
         '
@@ -502,7 +502,7 @@ Partial Class Consignaciones
         Me.Controls.Add(Me.ButtonActualizar)
         Me.Controls.Add(Me.ButtonExportar)
         Me.Controls.Add(Me.PanelIngresarDatos)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBoxBusquedaPorFecha)
         Me.Controls.Add(Me.ButtonBuscar)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.TextBoxNumReferencia)
@@ -518,8 +518,8 @@ Partial Class Consignaciones
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GroupBoxBusquedaPorFecha.ResumeLayout(False)
+        Me.GroupBoxBusquedaPorFecha.PerformLayout()
         Me.PanelIngresarDatos.ResumeLayout(False)
         Me.PanelIngresarDatos.PerformLayout()
         CType(Me.PictureBoxIngresar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -548,7 +548,7 @@ Partial Class Consignaciones
     Friend WithEvents Label2 As Label
     Friend WithEvents ButtonExportar As Button
     Friend WithEvents ButtonActualizar As Button
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBoxBusquedaPorFecha As GroupBox
     Friend WithEvents MaskedTextBox1 As MaskedTextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label13 As Label
