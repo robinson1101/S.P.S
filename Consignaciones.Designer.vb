@@ -35,10 +35,10 @@ Partial Class Consignaciones
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBoxCD = New System.Windows.Forms.TextBox()
-        Me.TextBoxSI = New System.Windows.Forms.TextBox()
-        Me.TextBoxCA = New System.Windows.Forms.TextBox()
-        Me.TextBoxSXC = New System.Windows.Forms.TextBox()
+        Me.TextBoxCupoDisponible = New System.Windows.Forms.TextBox()
+        Me.TextBoxSaldoInicial = New System.Windows.Forms.TextBox()
+        Me.TextBoxCupo = New System.Windows.Forms.TextBox()
+        Me.TextBoxSaldoPConsignar = New System.Windows.Forms.TextBox()
         Me.ComboBoxSub2 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ButtonExportar = New System.Windows.Forms.Button()
@@ -134,13 +134,13 @@ Partial Class Consignaciones
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.TextBoxCD)
+        Me.Panel1.Controls.Add(Me.TextBoxCupoDisponible)
         Me.Panel1.Controls.Add(Me.Label4)
-        Me.Panel1.Controls.Add(Me.TextBoxSI)
-        Me.Panel1.Controls.Add(Me.TextBoxCA)
+        Me.Panel1.Controls.Add(Me.TextBoxSaldoInicial)
+        Me.Panel1.Controls.Add(Me.TextBoxCupo)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.TextBoxSXC)
+        Me.Panel1.Controls.Add(Me.TextBoxSaldoPConsignar)
         Me.Panel1.Location = New System.Drawing.Point(3, 38)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(327, 153)
@@ -201,37 +201,37 @@ Partial Class Consignaciones
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "VALORES"
         '
-        'TextBoxCD
+        'TextBoxCupoDisponible
         '
-        Me.TextBoxCD.Enabled = False
-        Me.TextBoxCD.Location = New System.Drawing.Point(155, 64)
-        Me.TextBoxCD.Name = "TextBoxCD"
-        Me.TextBoxCD.Size = New System.Drawing.Size(149, 20)
-        Me.TextBoxCD.TabIndex = 10
+        Me.TextBoxCupoDisponible.Enabled = False
+        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(155, 64)
+        Me.TextBoxCupoDisponible.Name = "TextBoxCupoDisponible"
+        Me.TextBoxCupoDisponible.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxCupoDisponible.TabIndex = 10
         '
-        'TextBoxSI
+        'TextBoxSaldoInicial
         '
-        Me.TextBoxSI.Enabled = False
-        Me.TextBoxSI.Location = New System.Drawing.Point(155, 93)
-        Me.TextBoxSI.Name = "TextBoxSI"
-        Me.TextBoxSI.Size = New System.Drawing.Size(149, 20)
-        Me.TextBoxSI.TabIndex = 5
+        Me.TextBoxSaldoInicial.Enabled = False
+        Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(155, 93)
+        Me.TextBoxSaldoInicial.Name = "TextBoxSaldoInicial"
+        Me.TextBoxSaldoInicial.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxSaldoInicial.TabIndex = 5
         '
-        'TextBoxCA
+        'TextBoxCupo
         '
-        Me.TextBoxCA.Enabled = False
-        Me.TextBoxCA.Location = New System.Drawing.Point(155, 33)
-        Me.TextBoxCA.Name = "TextBoxCA"
-        Me.TextBoxCA.Size = New System.Drawing.Size(149, 20)
-        Me.TextBoxCA.TabIndex = 9
+        Me.TextBoxCupo.Enabled = False
+        Me.TextBoxCupo.Location = New System.Drawing.Point(155, 33)
+        Me.TextBoxCupo.Name = "TextBoxCupo"
+        Me.TextBoxCupo.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxCupo.TabIndex = 9
         '
-        'TextBoxSXC
+        'TextBoxSaldoPConsignar
         '
-        Me.TextBoxSXC.Enabled = False
-        Me.TextBoxSXC.Location = New System.Drawing.Point(155, 122)
-        Me.TextBoxSXC.Name = "TextBoxSXC"
-        Me.TextBoxSXC.Size = New System.Drawing.Size(149, 20)
-        Me.TextBoxSXC.TabIndex = 6
+        Me.TextBoxSaldoPConsignar.Enabled = False
+        Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(155, 122)
+        Me.TextBoxSaldoPConsignar.Name = "TextBoxSaldoPConsignar"
+        Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxSaldoPConsignar.TabIndex = 6
         '
         'ComboBoxSub2
         '
@@ -540,10 +540,10 @@ Partial Class Consignaciones
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents TextBoxCD As TextBox
-    Friend WithEvents TextBoxSI As TextBox
-    Friend WithEvents TextBoxCA As TextBox
-    Friend WithEvents TextBoxSXC As TextBox
+    Friend WithEvents TextBoxCupoDisponible As TextBox
+    Friend WithEvents TextBoxSaldoInicial As TextBox
+    Friend WithEvents TextBoxCupo As TextBox
+    Friend WithEvents TextBoxSaldoPConsignar As TextBox
     Friend WithEvents ComboBoxSub2 As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents ButtonExportar As Button

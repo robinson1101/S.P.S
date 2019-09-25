@@ -108,4 +108,20 @@ Public Class Consignaciones
         End If
 
     End Sub
+
+    Private Sub TextBoxCA_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCupo.TextChanged
+        TextBoxCupo.Text = FormatCurrency(TextBoxCupo.Text)
+    End Sub
+
+    Private Sub TextBoxCupoDisponible_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCupoDisponible.TextChanged
+        TextBoxCupoDisponible.Text = FormatCurrency(TextBoxCupoDisponible.Text)
+    End Sub
+
+    Private Sub TextBoxSaldoInicial_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSaldoInicial.TextChanged
+        TextBoxSaldoInicial.Text = FormatCurrency(TextBoxSaldoInicial.Text)
+    End Sub
+
+    Private Sub TextBoxSaldoPConsignar_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSaldoPConsignar.TextChanged
+        TextBoxSaldoPConsignar.Text = FormatCurrency(TextBoxSaldoPConsignar.Text)
+    End Sub
 End Class
