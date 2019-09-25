@@ -30,6 +30,8 @@ Partial Class Principal
         Me.ButtonCargarP = New System.Windows.Forms.Button()
         Me.ButtonConsultarEstP = New System.Windows.Forms.Button()
         Me.ButtonGestionarConsig = New System.Windows.Forms.Button()
+        Me.LabelUsuarioU = New System.Windows.Forms.Label()
+        Me.Usuar = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -56,7 +58,7 @@ Partial Class Principal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(13, 83)
+        Me.Label3.Location = New System.Drawing.Point(13, 101)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(99, 20)
         Me.Label3.TabIndex = 2
@@ -76,7 +78,7 @@ Partial Class Principal
         '
         Me.LabelTipoU.AutoSize = True
         Me.LabelTipoU.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTipoU.Location = New System.Drawing.Point(112, 83)
+        Me.LabelTipoU.Location = New System.Drawing.Point(112, 101)
         Me.LabelTipoU.Name = "LabelTipoU"
         Me.LabelTipoU.Size = New System.Drawing.Size(61, 20)
         Me.LabelTipoU.TabIndex = 4
@@ -115,11 +117,33 @@ Partial Class Principal
         Me.ButtonGestionarConsig.Text = "GESTIONAR CONSIGNACIONES"
         Me.ButtonGestionarConsig.UseVisualStyleBackColor = False
         '
+        'LabelUsuarioU
+        '
+        Me.LabelUsuarioU.AutoSize = True
+        Me.LabelUsuarioU.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelUsuarioU.Location = New System.Drawing.Point(112, 77)
+        Me.LabelUsuarioU.Name = "LabelUsuarioU"
+        Me.LabelUsuarioU.Size = New System.Drawing.Size(70, 20)
+        Me.LabelUsuarioU.TabIndex = 9
+        Me.LabelUsuarioU.Text = "usuariou"
+        '
+        'Usuar
+        '
+        Me.Usuar.AutoSize = True
+        Me.Usuar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Usuar.Location = New System.Drawing.Point(13, 77)
+        Me.Usuar.Name = "Usuar"
+        Me.Usuar.Size = New System.Drawing.Size(68, 20)
+        Me.Usuar.TabIndex = 8
+        Me.Usuar.Text = "Usuario:"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(413, 281)
+        Me.Controls.Add(Me.LabelUsuarioU)
+        Me.Controls.Add(Me.Usuar)
         Me.Controls.Add(Me.ButtonGestionarConsig)
         Me.Controls.Add(Me.ButtonConsultarEstP)
         Me.Controls.Add(Me.ButtonCargarP)
@@ -145,4 +169,6 @@ Partial Class Principal
     Friend WithEvents ButtonCargarP As Button
     Friend WithEvents ButtonConsultarEstP As Button
     Friend WithEvents ButtonGestionarConsig As Button
+    Friend WithEvents LabelUsuarioU As Label
+    Friend WithEvents Usuar As Label
 End Class
