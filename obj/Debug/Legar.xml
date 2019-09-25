@@ -52,6 +52,11 @@ Legar
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Legar.Resources.icons8_agregar_propiedad_50">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Legar.Resources.icons8_grupos_de_usuarios_50">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

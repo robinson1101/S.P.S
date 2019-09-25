@@ -37,7 +37,54 @@ Public Class Consignaciones
 
 
     End Sub
+    Sub CargarComboSub2()
+        Try
+            Dim contador As Integer = 0
+            Dim conexion5 As New conexion
+            Dim cmd5 As New MySqlCommand("CALL LlenarComboboxSub();", conexion5.conexion)
+            conexion5.AbrirConexion()
+            Dim leer4 As MySqlDataReader = cmd5.ExecuteReader()
+            ComboBoxSub2.Items.Clear()
+            ComboBoxSub2.Items.Add("TODOS")
+            If leer4.Read Then
+                ComboBoxSub2.Items.Add(leer4(contador))
+            End If
+            conexion5.CerrarConexion()
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message)
+        End Try
+
+    End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatagridConsignaciones()
+        CargarComboSub2()
+    End Sub
+
+    Private Sub TextBoxValorAingresar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxValorAingresar.KeyPress
+        If (Char.IsDigit(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+        End If
+
+        If (e.KeyChar = ChrW(Keys.Space) And TextBoxValorAingresar.Text = "") Then
+            e.Handled = True
+        End If
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+
+        End If
+    End Sub
+
+    Private Sub PictureBoxIngresar_Click(sender As Object, e As EventArgs) Handles PictureBoxIngresar.Click
+
+        PictureBoxIngresar.BackColor = Color.AliceBlue
     End Sub
 End Class
