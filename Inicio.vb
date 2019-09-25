@@ -8,7 +8,8 @@ Public Class Login
 
     Private Sub ButtonIngresar_Click(sender As Object, e As EventArgs) Handles ButtonIngresar.Click
         Dim conexion0 As New conexion
-        Dim cmd0 As New MySqlCommand("CALL Ingresar('" & TextBoxUser.Text & "','" & TextBoxPassword.Text & "')", conexion0.conexion)
+        Dim cmd0 As New MySqlCommand("Select Usuario, Contraseña, TipoUsuario from usuarios WHERE Usuario='" & TextBoxUser.Text & "' And Contraseña='" & TextBoxPassword.Text & "'", conexion0.conexion)
+        ' Dim cmd0 As New MySqlCommand("CALL Ingresar('" & TextBoxUser.Text & "','" & TextBoxPassword.Text & "')", conexion0.conexion)
         conexion0.AbrirConexion()
         cmd0.ExecuteNonQuery()
 
