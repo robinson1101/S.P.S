@@ -39,6 +39,8 @@ Partial Class Consignaciones
         Me.TextBoxSaldoInicial = New System.Windows.Forms.TextBox()
         Me.TextBoxCupo = New System.Windows.Forms.TextBox()
         Me.TextBoxSaldoPConsignar = New System.Windows.Forms.TextBox()
+
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ComboBoxSub2 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.ButtonExportar = New System.Windows.Forms.Button()
@@ -63,6 +65,7 @@ Partial Class Consignaciones
         Me.RadioButtonCargarD = New System.Windows.Forms.RadioButton()
         Me.RadioButtonIngresarD = New System.Windows.Forms.RadioButton()
         Me.Label15 = New System.Windows.Forms.Label()
+
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxBusquedaPorFecha.SuspendLayout()
@@ -141,7 +144,11 @@ Partial Class Consignaciones
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.TextBoxSaldoPConsignar)
+
+        Me.Panel1.Location = New System.Drawing.Point(3, 5)
+
         Me.Panel1.Location = New System.Drawing.Point(3, 38)
+
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(327, 153)
         Me.Panel1.TabIndex = 13
@@ -199,7 +206,11 @@ Partial Class Consignaciones
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(77, 18)
         Me.Label8.TabIndex = 13
+
+        Me.Label8.Text = "SALDOS"
+
         Me.Label8.Text = "VALORES"
+
         '
         'TextBoxCupoDisponible
         '
@@ -233,6 +244,9 @@ Partial Class Consignaciones
         Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(149, 20)
         Me.TextBoxSaldoPConsignar.TabIndex = 6
         '
+
+
+
         'ComboBoxSub2
         '
         Me.ComboBoxSub2.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -490,6 +504,7 @@ Partial Class Consignaciones
         Me.Label15.Size = New System.Drawing.Size(84, 15)
         Me.Label15.TabIndex = 21
         Me.Label15.Text = "MOVIMIENTO"
+
         '
         'Consignaciones
         '
@@ -544,6 +559,9 @@ Partial Class Consignaciones
     Friend WithEvents TextBoxSaldoInicial As TextBox
     Friend WithEvents TextBoxCupo As TextBox
     Friend WithEvents TextBoxSaldoPConsignar As TextBox
+
+    Friend WithEvents Panel2 As Panel
+
     Friend WithEvents ComboBoxSub2 As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents ButtonExportar As Button
@@ -568,4 +586,5 @@ Partial Class Consignaciones
     Friend WithEvents RadioButtonIngresarD As RadioButton
     Protected WithEvents ComboBoxBanco As ComboBox
     Friend WithEvents Label15 As Label
+
 End Class

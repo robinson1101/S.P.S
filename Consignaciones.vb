@@ -51,6 +51,45 @@ Public Class Consignaciones
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatagridConsignaciones()
+
+
+        Dim conexion7 As New conexion
+        Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
+        conexion7.AbrirConexion()
+        Dim leer6 As MySqlDataReader = cmd6.ExecuteReader()
+        If leer6.Read Then
+            TextBoxCupo.Text = leer6(0)
+        End If
+        conexion7.CerrarConexion()
+
+        Dim conexion8 As New conexion
+        Dim cmd7 As New MySqlCommand("CALL CargarCupoDisponible('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion8.conexion)
+        conexion8.AbrirConexion()
+        Dim leer7 As MySqlDataReader = cmd7.ExecuteReader()
+        If leer7.Read Then
+            TextBoxCupoDisponible.Text = leer7(0)
+        End If
+        conexion8.CerrarConexion()
+
+        Dim conexion9 As New conexion
+        Dim cmd8 As New MySqlCommand("CALL CargarSaldoInicial('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion9.conexion)
+        conexion9.AbrirConexion()
+        Dim leer8 As MySqlDataReader = cmd8.ExecuteReader()
+        If leer8.Read Then
+            TextBoxSaldoInicial.Text = leer8(0)
+        End If
+        conexion9.CerrarConexion()
+
+        Dim conexion10 As New conexion
+        Dim cmd9 As New MySqlCommand("CALL CargarSaldoPConsignar('" & Principal.LabelUsuarioU.Text & "');", conexion10.conexion)
+        conexion10.AbrirConexion()
+        Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
+        If leer9.Read Then
+            TextBoxSaldoPConsignar.Text = leer9(0)
+        End If
+        conexion10.CerrarConexion()
+
+
         CargarComboSub2()
     End Sub
 
@@ -123,5 +162,6 @@ Public Class Consignaciones
 
     Private Sub TextBoxSaldoPConsignar_TextChanged(sender As Object, e As EventArgs) Handles TextBoxSaldoPConsignar.TextChanged
         TextBoxSaldoPConsignar.Text = FormatCurrency(TextBoxSaldoPConsignar.Text)
+
     End Sub
 End Class
