@@ -1,13 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Consignaciones
-    Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
-        If TrackBar1.Value = 0 Then
-            LabelConsignar.ForeColor = Color.Black
-            LabelConsultar.ForeColor = Color.Red
-        End If
 
-    End Sub
     Sub cargarDatagridConsignaciones()
         Try
             Dim conexion6 As New conexion
@@ -83,8 +77,35 @@ Public Class Consignaciones
         End If
     End Sub
 
-    Private Sub PictureBoxIngresar_Click(sender As Object, e As EventArgs) Handles PictureBoxIngresar.Click
+    Private Sub TextBoxNumReferencia_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxNumReferencia.KeyPress
+        If (Char.IsDigit(e.KeyChar)) Then
 
-        PictureBoxIngresar.BackColor = Color.AliceBlue
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+        End If
+
+        If (e.KeyChar = ChrW(Keys.Space) And TextBoxValorAingresar.Text = "") Then
+            e.Handled = True
+        End If
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            SendKeys.Send("{TAB}")
+
+        End If
+    End Sub
+
+    Private Sub RadioButtonCargarD_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonCargarD.CheckedChanged
+        If RadioButtonCargarD.Checked = True Then
+            PanelIngresarDatos.Enabled = False
+        Else
+            PanelIngresarDatos.Enabled = True
+        End If
+
     End Sub
 End Class
