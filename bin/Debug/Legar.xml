@@ -42,6 +42,16 @@ Legar
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Legar.Resources.giphy">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Legar.Resources.gracias_imagen_animada_0091">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Legar.Resources.ico">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

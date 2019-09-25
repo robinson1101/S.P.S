@@ -115,6 +115,12 @@
     <Compile Include="ConsultarEP.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormGif.Designer.vb">
+      <DependentUpon>FormGif.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGif.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ConsultarEP.resx">
       <DependentUpon>ConsultarEP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGif.resx">
+      <DependentUpon>FormGif.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
@@ -259,6 +268,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-agregar-propiedad-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gracias-imagen-animada-0091.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

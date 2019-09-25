@@ -30,21 +30,14 @@ Partial Class Consignaciones
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TextBoxCupoDisponible = New System.Windows.Forms.TextBox()
         Me.TextBoxSaldoInicial = New System.Windows.Forms.TextBox()
         Me.TextBoxCupo = New System.Windows.Forms.TextBox()
         Me.TextBoxSaldoPConsignar = New System.Windows.Forms.TextBox()
-
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ComboBoxSub2 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ButtonExportar = New System.Windows.Forms.Button()
-        Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.GroupBoxBusquedaPorFecha = New System.Windows.Forms.GroupBox()
         Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -53,24 +46,24 @@ Partial Class Consignaciones
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.PanelIngresarDatos = New System.Windows.Forms.Panel()
-        Me.PictureBoxIngresar = New System.Windows.Forms.PictureBox()
+        Me.ButtonIngrearDatos = New System.Windows.Forms.Button()
         Me.ComboBoxBanco = New System.Windows.Forms.ComboBox()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TextBoxValorAingresar = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.ToolTipConsignaciones = New System.Windows.Forms.ToolTip(Me.components)
         Me.RadioButtonCargarD = New System.Windows.Forms.RadioButton()
         Me.RadioButtonIngresarD = New System.Windows.Forms.RadioButton()
         Me.Label15 = New System.Windows.Forms.Label()
-
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ButtonActualizar = New System.Windows.Forms.Button()
+        Me.ButtonExportar = New System.Windows.Forms.Button()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxBusquedaPorFecha.SuspendLayout()
         Me.PanelIngresarDatos.SuspendLayout()
-        CType(Me.PictureBoxIngresar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -131,10 +124,6 @@ Partial Class Consignaciones
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Controls.Add(Me.Label10)
-        Me.Panel1.Controls.Add(Me.Label12)
-        Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.Label6)
         Me.Panel1.Controls.Add(Me.TextBoxCupoDisponible)
@@ -144,58 +133,10 @@ Partial Class Consignaciones
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.TextBoxSaldoPConsignar)
-
-        Me.Panel1.Location = New System.Drawing.Point(3, 5)
-
         Me.Panel1.Location = New System.Drawing.Point(3, 38)
-
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(327, 153)
         Me.Panel1.TabIndex = 13
-        '
-        'Label10
-        '
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(142, 123)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(14, 21)
-        Me.Label10.TabIndex = 18
-        Me.Label10.Text = "$"
-        '
-        'Label12
-        '
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(141, 93)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(12, 17)
-        Me.Label12.TabIndex = 17
-        Me.Label12.Text = "$"
-        '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.Color.Green
-        Me.Label11.Location = New System.Drawing.Point(141, 63)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(14, 21)
-        Me.Label11.TabIndex = 16
-        Me.Label11.Text = "$"
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Green
-        Me.Label9.Location = New System.Drawing.Point(141, 34)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(12, 17)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "$"
         '
         'Label8
         '
@@ -206,11 +147,7 @@ Partial Class Consignaciones
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(77, 18)
         Me.Label8.TabIndex = 13
-
-        Me.Label8.Text = "SALDOS"
-
         Me.Label8.Text = "VALORES"
-
         '
         'TextBoxCupoDisponible
         '
@@ -244,9 +181,13 @@ Partial Class Consignaciones
         Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(149, 20)
         Me.TextBoxSaldoPConsignar.TabIndex = 6
         '
-
-
-
+        'Panel2
+        '
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(200, 100)
+        Me.Panel2.TabIndex = 0
+        '
         'ComboBoxSub2
         '
         Me.ComboBoxSub2.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -269,36 +210,6 @@ Partial Class Consignaciones
         Me.Label2.Size = New System.Drawing.Size(107, 13)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "SELECCIONAR SUB"
-        '
-        'ButtonExportar
-        '
-        Me.ButtonExportar.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ButtonExportar.FlatAppearance.BorderSize = 0
-        Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
-        Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(502, 147)
-        Me.ButtonExportar.Name = "ButtonExportar"
-        Me.ButtonExportar.Size = New System.Drawing.Size(154, 44)
-        Me.ButtonExportar.TabIndex = 13
-        Me.ButtonExportar.Text = "EXPORTAR"
-        Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonExportar.UseVisualStyleBackColor = False
-        '
-        'ButtonActualizar
-        '
-        Me.ButtonActualizar.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ButtonActualizar.FlatAppearance.BorderSize = 0
-        Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
-        Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonActualizar.Location = New System.Drawing.Point(678, 147)
-        Me.ButtonActualizar.Name = "ButtonActualizar"
-        Me.ButtonActualizar.Size = New System.Drawing.Size(157, 44)
-        Me.ButtonActualizar.TabIndex = 10
-        Me.ButtonActualizar.Text = "REFRESCAR"
-        Me.ButtonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonActualizar.UseVisualStyleBackColor = False
         '
         'GroupBoxBusquedaPorFecha
         '
@@ -373,9 +284,9 @@ Partial Class Consignaciones
         'PanelIngresarDatos
         '
         Me.PanelIngresarDatos.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.PanelIngresarDatos.Controls.Add(Me.PictureBoxIngresar)
+        Me.PanelIngresarDatos.Controls.Add(Me.Label9)
+        Me.PanelIngresarDatos.Controls.Add(Me.ButtonIngrearDatos)
         Me.PanelIngresarDatos.Controls.Add(Me.ComboBoxBanco)
-        Me.PanelIngresarDatos.Controls.Add(Me.Label17)
         Me.PanelIngresarDatos.Controls.Add(Me.Label19)
         Me.PanelIngresarDatos.Controls.Add(Me.Label20)
         Me.PanelIngresarDatos.Controls.Add(Me.TextBoxValorAingresar)
@@ -385,18 +296,19 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.Size = New System.Drawing.Size(327, 153)
         Me.PanelIngresarDatos.TabIndex = 19
         '
-        'PictureBoxIngresar
+        'ButtonIngrearDatos
         '
-        Me.PictureBoxIngresar.BackColor = System.Drawing.Color.White
-        Me.PictureBoxIngresar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBoxIngresar.Image = Global.Legar.Resources.icons8_agregar_propiedad_50
-        Me.PictureBoxIngresar.Location = New System.Drawing.Point(268, 96)
-        Me.PictureBoxIngresar.Name = "PictureBoxIngresar"
-        Me.PictureBoxIngresar.Size = New System.Drawing.Size(47, 39)
-        Me.PictureBoxIngresar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxIngresar.TabIndex = 20
-        Me.PictureBoxIngresar.TabStop = False
-        Me.ToolTipConsignaciones.SetToolTip(Me.PictureBoxIngresar, "Ingresar registro")
+        Me.ButtonIngrearDatos.BackColor = System.Drawing.Color.Black
+        Me.ButtonIngrearDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
+        Me.ButtonIngrearDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonIngrearDatos.ForeColor = System.Drawing.Color.White
+        Me.ButtonIngrearDatos.Location = New System.Drawing.Point(203, 97)
+        Me.ButtonIngrearDatos.Name = "ButtonIngrearDatos"
+        Me.ButtonIngrearDatos.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonIngrearDatos.TabIndex = 20
+        Me.ButtonIngrearDatos.Text = "INGRESAR DATOS"
+        Me.ToolTipConsignaciones.SetToolTip(Me.ButtonIngrearDatos, "Ingresar datos")
+        Me.ButtonIngrearDatos.UseVisualStyleBackColor = False
         '
         'ComboBoxBanco
         '
@@ -407,17 +319,6 @@ Partial Class Consignaciones
         Me.ComboBoxBanco.Name = "ComboBoxBanco"
         Me.ComboBoxBanco.Size = New System.Drawing.Size(293, 21)
         Me.ComboBoxBanco.TabIndex = 19
-        '
-        'Label17
-        '
-        Me.Label17.BackColor = System.Drawing.Color.White
-        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label17.Location = New System.Drawing.Point(23, 113)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(14, 20)
-        Me.Label17.TabIndex = 16
-        Me.Label17.Text = "$"
         '
         'Label19
         '
@@ -442,10 +343,10 @@ Partial Class Consignaciones
         'TextBoxValorAingresar
         '
         Me.TextBoxValorAingresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxValorAingresar.Location = New System.Drawing.Point(36, 112)
+        Me.TextBoxValorAingresar.Location = New System.Drawing.Point(35, 110)
         Me.TextBoxValorAingresar.MaxLength = 20
         Me.TextBoxValorAingresar.Name = "TextBoxValorAingresar"
-        Me.TextBoxValorAingresar.Size = New System.Drawing.Size(163, 21)
+        Me.TextBoxValorAingresar.Size = New System.Drawing.Size(150, 21)
         Me.TextBoxValorAingresar.TabIndex = 10
         '
         'Label23
@@ -456,21 +357,6 @@ Partial Class Consignaciones
         Me.Label23.Size = New System.Drawing.Size(129, 13)
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "SELECCCIONAR BANCO"
-        '
-        'ButtonBuscar
-        '
-        Me.ButtonBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ButtonBuscar.FlatAppearance.BorderSize = 0
-        Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
-        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.Location = New System.Drawing.Point(502, 87)
-        Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(154, 39)
-        Me.ButtonBuscar.TabIndex = 22
-        Me.ButtonBuscar.Text = "BUSCAR"
-        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonBuscar.UseVisualStyleBackColor = False
         '
         'RadioButtonCargarD
         '
@@ -504,7 +390,62 @@ Partial Class Consignaciones
         Me.Label15.Size = New System.Drawing.Size(84, 15)
         Me.Label15.TabIndex = 21
         Me.Label15.Text = "MOVIMIENTO"
-
+        '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.White
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(23, 111)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(13, 20)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "$"
+        '
+        'ButtonActualizar
+        '
+        Me.ButtonActualizar.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonActualizar.FlatAppearance.BorderSize = 0
+        Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
+        Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonActualizar.Location = New System.Drawing.Point(678, 147)
+        Me.ButtonActualizar.Name = "ButtonActualizar"
+        Me.ButtonActualizar.Size = New System.Drawing.Size(157, 44)
+        Me.ButtonActualizar.TabIndex = 10
+        Me.ButtonActualizar.Text = "REFRESCAR"
+        Me.ButtonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonActualizar.UseVisualStyleBackColor = False
+        '
+        'ButtonExportar
+        '
+        Me.ButtonExportar.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonExportar.FlatAppearance.BorderSize = 0
+        Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
+        Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonExportar.Location = New System.Drawing.Point(502, 147)
+        Me.ButtonExportar.Name = "ButtonExportar"
+        Me.ButtonExportar.Size = New System.Drawing.Size(154, 44)
+        Me.ButtonExportar.TabIndex = 13
+        Me.ButtonExportar.Text = "EXPORTAR"
+        Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonExportar.UseVisualStyleBackColor = False
+        '
+        'ButtonBuscar
+        '
+        Me.ButtonBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonBuscar.FlatAppearance.BorderSize = 0
+        Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
+        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonBuscar.Location = New System.Drawing.Point(502, 87)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(154, 39)
+        Me.ButtonBuscar.TabIndex = 22
+        Me.ButtonBuscar.Text = "BUSCAR"
+        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonBuscar.UseVisualStyleBackColor = False
         '
         'Consignaciones
         '
@@ -537,7 +478,6 @@ Partial Class Consignaciones
         Me.GroupBoxBusquedaPorFecha.PerformLayout()
         Me.PanelIngresarDatos.ResumeLayout(False)
         Me.PanelIngresarDatos.PerformLayout()
-        CType(Me.PictureBoxIngresar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -551,10 +491,6 @@ Partial Class Consignaciones
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label8 As Label
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Label12 As Label
-    Friend WithEvents Label11 As Label
-    Friend WithEvents Label9 As Label
     Friend WithEvents TextBoxCupoDisponible As TextBox
     Friend WithEvents TextBoxSaldoInicial As TextBox
     Friend WithEvents TextBoxCupo As TextBox
@@ -575,16 +511,15 @@ Partial Class Consignaciones
     Friend WithEvents Label14 As Label
     Friend WithEvents TextBoxNumReferencia As TextBox
     Friend WithEvents PanelIngresarDatos As Panel
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents TextBoxValorAingresar As TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents ToolTipConsignaciones As ToolTip
-    Friend WithEvents PictureBoxIngresar As PictureBox
     Friend WithEvents RadioButtonCargarD As RadioButton
     Friend WithEvents RadioButtonIngresarD As RadioButton
     Protected WithEvents ComboBoxBanco As ComboBox
     Friend WithEvents Label15 As Label
-
+    Friend WithEvents ButtonIngrearDatos As Button
+    Friend WithEvents Label9 As Label
 End Class

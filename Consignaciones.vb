@@ -51,7 +51,7 @@ Public Class Consignaciones
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatagridConsignaciones()
-
+        CargarComboSub2()
 
         Dim conexion7 As New conexion
         Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
@@ -90,7 +90,7 @@ Public Class Consignaciones
         conexion10.CerrarConexion()
 
 
-        CargarComboSub2()
+
     End Sub
 
     Private Sub TextBoxValorAingresar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxValorAingresar.KeyPress
@@ -164,4 +164,6 @@ Public Class Consignaciones
         TextBoxSaldoPConsignar.Text = FormatCurrency(TextBoxSaldoPConsignar.Text)
 
     End Sub
+
+
 End Class
