@@ -158,12 +158,13 @@ Partial Class ConsultarEP
         '
         'ButtonActualizar
         '
+        Me.ButtonActualizar.Dock = System.Windows.Forms.DockStyle.Right
         Me.ButtonActualizar.FlatAppearance.BorderSize = 0
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
-        Me.ButtonActualizar.Location = New System.Drawing.Point(98, 35)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(152, 0)
         Me.ButtonActualizar.Name = "ButtonActualizar"
-        Me.ButtonActualizar.Size = New System.Drawing.Size(90, 46)
+        Me.ButtonActualizar.Size = New System.Drawing.Size(48, 44)
         Me.ButtonActualizar.TabIndex = 10
         Me.ToolTipConsultar.SetToolTip(Me.ButtonActualizar, "Refrescar datos")
         Me.ButtonActualizar.UseVisualStyleBackColor = True
@@ -208,13 +209,14 @@ Partial Class ConsultarEP
         '
         'ButtonExportar
         '
+        Me.ButtonExportar.Dock = System.Windows.Forms.DockStyle.Left
         Me.ButtonExportar.FlatAppearance.BorderSize = 0
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(52, 32)
+        Me.ButtonExportar.Location = New System.Drawing.Point(0, 0)
         Me.ButtonExportar.Name = "ButtonExportar"
-        Me.ButtonExportar.Size = New System.Drawing.Size(50, 46)
+        Me.ButtonExportar.Size = New System.Drawing.Size(52, 44)
         Me.ButtonExportar.TabIndex = 13
         Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonExportar.UseVisualStyleBackColor = False
@@ -233,7 +235,7 @@ Partial Class ConsultarEP
         '
         Me.Label7.AutoSize = True
         Me.Label7.ForeColor = System.Drawing.Color.Blue
-        Me.Label7.Location = New System.Drawing.Point(886, 41)
+        Me.Label7.Location = New System.Drawing.Point(907, 60)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(66, 13)
         Me.Label7.TabIndex = 15
@@ -266,11 +268,12 @@ Partial Class ConsultarEP
         '
         'Panel1
         '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Panel1.Controls.Add(Me.ButtonExportar)
         Me.Panel1.Controls.Add(Me.ButtonActualizar)
-        Me.Panel1.Location = New System.Drawing.Point(993, 29)
+        Me.Panel1.Location = New System.Drawing.Point(993, 60)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(200, 100)
+        Me.Panel1.Size = New System.Drawing.Size(200, 44)
         Me.Panel1.TabIndex = 19
         '
         'ConsultarEP
@@ -280,8 +283,8 @@ Partial Class ConsultarEP
         Me.ClientSize = New System.Drawing.Size(1205, 686)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ComboBoxSub)
         Me.Controls.Add(Me.Label5)

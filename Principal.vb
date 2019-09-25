@@ -14,7 +14,7 @@
     End Sub
 
     Private Sub ButtonGestionarConsig_Click(sender As Object, e As EventArgs) Handles ButtonGestionarConsig.Click
-
+        Consignaciones.ShowDialog()
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
