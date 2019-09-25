@@ -83,19 +83,26 @@ Public Class Cargar_pago
                 contador = contador + 1
             Next
 
+
+
+
             Dim conexion1 As New conexion
-            Dim cmd1 As New MySqlCommand("CALL IngresarPago(?IdR,?NoDoc,?FechaR,?Vendedor,?NoMin,?Referencia,?Tipo,?Valor,?EstadoActual)", conexion1.conexion)
-            conexion1.AbrirConexion()
-
-            Dim fila As New DataGridViewRow()
-
-
             If validador = "verdadero" And numeroOletra = 1 And (DataGridViewPagos.Rows.Count > 0) Then
+                Dim fila As New DataGridViewRow()
 
-                saldoPConsignar += Convert.ToInt32(fila.Cells("Column8").Value)
+                Dim CONT As Integer = 0
+                For Each row As DataGridViewRow In Me.DataGridViewPagos.Rows
+                    saldoPConsignar += Val(row.Cells(8).Value)
+                Next
+
+
                 If saldoPConsignar <= cupo Then
                     Dim Result As DialogResult = MessageBox.Show("¿DESEA SUBIR LOS DATOS INGRESADOS EN LA TABLA?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                     If Result = DialogResult.Yes Then
+
+                        Dim cmd1 As New MySqlCommand("CALL IngresarPago(?IdR,?NoDoc,?FechaR,?Vendedor,?NoMin,?Referencia,?Tipo,?Valor,?EstadoActual)", conexion1.conexion)
+                        conexion1.AbrirConexion()
+
 
                         For Each fila In DataGridViewPagos.Rows
 
@@ -108,7 +115,7 @@ Public Class Cargar_pago
                             cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
                             cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
                             cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
-                            cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column8").Value)
+                            cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToInt16(fila.Cells("Column8").Value)
                             cmd1.Parameters.Add("?EstadoActual", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column9").Value)
 
                             cmd1.ExecuteNonQuery()
@@ -118,9 +125,12 @@ Public Class Cargar_pago
 
                         DataGridViewPagos.Rows.Clear()
                         MsgBox("DATOS CARGADOS CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+
                     End If
 
                 Else
+                    DataGridViewPagos.Rows.Clear()
+                    FormGif.ShowDialog()
 
                 End If
 
