@@ -7,8 +7,7 @@ Public Class conexion
     Public Sub AbrirConexion()
         Try
 
-            '  conexion.ConnectionString = "server=167.114.216.134;database=BDRecaudos;user id=BDRecaudos;password=recaudosMovilco;"
-            conexion.ConnectionString = "server=127.0.0.1;database=bd_recaudos;user id=root;password=;"
+            conexion.ConnectionString = "server=167.114.216.134;database=bd_recaudos;user id=BDRecaudos;password=Movilco123456789;"
             conexion.Open()
 
         Catch ex As Exception

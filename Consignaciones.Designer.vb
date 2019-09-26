@@ -23,6 +23,8 @@ Partial Class Consignaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -46,6 +48,7 @@ Partial Class Consignaciones
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.PanelIngresarDatos = New System.Windows.Forms.Panel()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.ButtonIngrearDatos = New System.Windows.Forms.Button()
         Me.ComboBoxBanco = New System.Windows.Forms.ComboBox()
         Me.Label19 = New System.Windows.Forms.Label()
@@ -56,7 +59,6 @@ Partial Class Consignaciones
         Me.RadioButtonCargarD = New System.Windows.Forms.RadioButton()
         Me.RadioButtonIngresarD = New System.Windows.Forms.RadioButton()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
@@ -78,10 +80,27 @@ Partial Class Consignaciones
         '
         'DataGridViewConsignaciones
         '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewConsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
+        Me.DataGridViewConsignaciones.RowHeadersVisible = False
         Me.DataGridViewConsignaciones.Size = New System.Drawing.Size(1205, 486)
         Me.DataGridViewConsignaciones.TabIndex = 1
         '
@@ -296,6 +315,17 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.Size = New System.Drawing.Size(327, 153)
         Me.PanelIngresarDatos.TabIndex = 19
         '
+        'Label9
+        '
+        Me.Label9.BackColor = System.Drawing.Color.White
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(23, 111)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(13, 20)
+        Me.Label9.TabIndex = 2
+        Me.Label9.Text = "$"
+        '
         'ButtonIngrearDatos
         '
         Me.ButtonIngrearDatos.BackColor = System.Drawing.Color.Black
@@ -390,17 +420,6 @@ Partial Class Consignaciones
         Me.Label15.Size = New System.Drawing.Size(84, 15)
         Me.Label15.TabIndex = 21
         Me.Label15.Text = "MOVIMIENTO"
-        '
-        'Label9
-        '
-        Me.Label9.BackColor = System.Drawing.Color.White
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(23, 111)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 20)
-        Me.Label9.TabIndex = 2
-        Me.Label9.Text = "$"
         '
         'ButtonActualizar
         '
