@@ -5,24 +5,21 @@ Public Class Consignaciones
     Sub cargarDatagridConsignaciones()
         Try
             Dim conexion6 As New conexion
-            Dim cmd5 As New MySqlCommand("CALL IngresarConsignacion();", conexion6.conexion)
+            Dim cmd5 As New MySqlCommand("CALL CargarDataConsignaciones();", conexion6.conexion)
             conexion6.AbrirConexion()
             Dim datas6 As New DataSet
             Dim adaptador6 As New MySqlDataAdapter(cmd5)
-            adaptador6.Fill(datas6, "pagos")
+            adaptador6.Fill(datas6, "consignaciones")
 
-            DataGridViewConsignaciones.DataSource = datas6.Tables("pagos")
-            '  DataGridViewConsultar.Columns(9)
+            DataGridViewConsignaciones.DataSource = datas6.Tables("consignaciones")
 
-            'DataGridViewConsignaciones.Columns(6).Width = 250
-            'DataGridViewConsignaciones.Columns(4).Width = 70
-            'DataGridViewConsignaciones.Columns(2).Width = 30
-            'DataGridViewConsignaciones.Columns(5).Width = 120
-            'DataGridViewConsignaciones.Columns(9).Width = 80
-            'DataGridViewConsignaciones.Columns(10).Width = 100
-            'DataGridViewConsignaciones.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            'DataGridViewConsignaciones.Columns(0).Width = 35
-            'DataGridViewConsignaciones.Columns(1).DisplayIndex = 10
+            DataGridViewConsignaciones.Columns(0).Width = 35
+            DataGridViewConsignaciones.Columns(1).Width = 100
+            DataGridViewConsignaciones.Columns(2).Width = 150
+            DataGridViewConsignaciones.Columns(3).Width = 250
+            DataGridViewConsignaciones.Columns(4).Width = 360
+            DataGridViewConsignaciones.Columns(5).Width = 100
+            DataGridViewConsignaciones.Columns(6).Width = 207
 
             conexion6.CerrarConexion()
         Catch ex As Exception

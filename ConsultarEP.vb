@@ -71,48 +71,51 @@ Public Class ConsultarEP
                 Dim cupo As Integer = 0
                 Dim saldoPConsignar As Integer = 0
 
-                Dim conexion7 As New conexion
-                Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
-                conexion7.AbrirConexion()
-                Dim leer6 As MySqlDataReader = cmd6.ExecuteReader()
-                If leer6.Read Then
-                    cupo = leer6(0)
+                If DataGridViewConsultar.Rows(e.RowIndex).Cells(1).Value = "PAGO" Then
+                    Dim conexion7 As New conexion
+                    Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
+                    conexion7.AbrirConexion()
+                    Dim leer6 As MySqlDataReader = cmd6.ExecuteReader()
+                    If leer6.Read Then
+                        cupo = leer6(0)
+                    End If
+
+                    conexion7.CerrarConexion()
+
+                    Dim conexion10 As New conexion
+                    Dim cmd9 As New MySqlCommand("CALL CargarSaldoPConsignar('" & Principal.LabelUsuarioU.Text & "');", conexion10.conexion)
+                    conexion10.AbrirConexion()
+                    Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
+                    If leer9.Read Then
+                        saldoPConsignar = leer9(0)
+                    End If
+
+                    conexion10.CerrarConexion()
+
+                    Dim valorCelda As String = DataGridViewConsultar.Rows(e.RowIndex).Cells(10).Value.ToString()
+                    saldoPConsignar += valorCelda
                 End If
-                conexion7.CerrarConexion()
-
-
-
-                Dim conexion10 As New conexion
-                Dim cmd9 As New MySqlCommand("CALL CargarSaldoPConsignar('" & Principal.LabelUsuarioU.Text & "');", conexion10.conexion)
-                conexion10.AbrirConexion()
-                Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
-                If leer9.Read Then
-                    saldoPConsignar = leer9(0)
-                End If
-                conexion10.CerrarConexion()
-
-                Dim valorCelda As String = DataGridViewConsultar.Rows(e.RowIndex).Cells(10).Value.ToString()
-                saldoPConsignar += valorCelda
 
                 MsgBox(saldoPConsignar & "<=" & cupo)
-                If saldoPConsignar <= cupo Then
-                    Dim Result As DialogResult = MessageBox.Show("¿DESEA ACTUALIZAR EL ESTADO?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                    If Result = DialogResult.Yes Then
 
-                        cmd4.ExecuteNonQuery()
-                        MsgBox("ESTADO ACTUALIZADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+                If saldoPConsignar <= cupo Then
+                        Dim Result As DialogResult = MessageBox.Show("¿DESEA ACTUALIZAR EL ESTADO?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        If Result = DialogResult.Yes Then
+
+                            cmd4.ExecuteNonQuery()
+                            MsgBox("ESTADO ACTUALIZADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+
+                        End If
+                        conexion4.CerrarConexion()
+                        cargarDatagridConsultar()
+
+                    Else
+                        cargarDatagridConsultar()
+                        FormGif.ShowDialog()
 
                     End If
-                    conexion4.CerrarConexion()
-                    cargarDatagridConsultar()
-
-                Else
-                    cargarDatagridConsultar()
-                    FormGif.ShowDialog()
 
                 End If
-
-            End If
 
 
         Catch ex As Exception
