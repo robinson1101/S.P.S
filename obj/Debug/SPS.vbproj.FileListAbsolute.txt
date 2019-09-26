@@ -136,3 +136,4 @@ C:\Users\Movilco\Documents\GitHub\S.P.S\obj\Debug\Legar.exe
 C:\Users\Movilco\Documents\GitHub\S.P.S\obj\Debug\Legar.xml
 C:\Users\Movilco\Documents\GitHub\S.P.S\obj\Debug\Legar.pdb
 C:\Users\CVR\Documents\GitHub\S.P.S\obj\Debug\Legar.FormGif.resources
+C:\Users\Movilco\Documents\GitHub\S.P.S\obj\Debug\Legar.FormGif.resources
