@@ -15,9 +15,10 @@ Public Class ConsultarEP
             '  DataGridViewConsultar.Columns(9)
 
             DataGridViewConsultar.Columns(6).Width = 250
+            DataGridViewConsultar.Columns(3).Width = 100
             DataGridViewConsultar.Columns(4).Width = 70
             DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 120
+            DataGridViewConsultar.Columns(5).Width = 137
             DataGridViewConsultar.Columns(9).Width = 80
             DataGridViewConsultar.Columns(10).Width = 100
             DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
