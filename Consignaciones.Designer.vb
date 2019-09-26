@@ -23,8 +23,8 @@ Partial Class Consignaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -62,6 +62,9 @@ Partial Class Consignaciones
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxBusquedaPorFecha.SuspendLayout()
@@ -80,27 +83,30 @@ Partial Class Consignaciones
         '
         'DataGridViewConsignaciones
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        Me.DataGridViewConsignaciones.AllowUserToAddRows = False
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewConsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataGridViewConsignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column2})
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
         Me.DataGridViewConsignaciones.RowHeadersVisible = False
+        Me.DataGridViewConsignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewConsignaciones.Size = New System.Drawing.Size(1205, 486)
         Me.DataGridViewConsignaciones.TabIndex = 1
         '
@@ -342,6 +348,7 @@ Partial Class Consignaciones
         '
         'ComboBoxBanco
         '
+        Me.ComboBoxBanco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ComboBoxBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxBanco.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBoxBanco.FormattingEnabled = True
@@ -466,6 +473,30 @@ Partial Class Consignaciones
         Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonBuscar.UseVisualStyleBackColor = False
         '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Column3"
+        Me.Column3.LinkColor = System.Drawing.Color.DarkViolet
+        Me.Column3.Name = "Column3"
+        Me.Column3.Text = "DOWNLOAD"
+        Me.Column3.UseColumnTextForLinkValue = True
+        Me.Column3.VisitedLinkColor = System.Drawing.Color.Red
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column1.HeaderText = ""
+        Me.Column1.Image = Global.Legar.Resources.Actualizar50
+        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 35
+        '
+        'Column2
+        '
+        Me.Column2.HeaderText = "CAMBIAR A:"
+        Me.Column2.Items.AddRange(New Object() {"PAGO", "NO PAGO", "R. ANULADO"})
+        Me.Column2.Name = "Column2"
+        '
         'Consignaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -541,4 +572,7 @@ Partial Class Consignaciones
     Friend WithEvents Label15 As Label
     Friend WithEvents ButtonIngrearDatos As Button
     Friend WithEvents Label9 As Label
+    Friend WithEvents Column3 As DataGridViewLinkColumn
+    Friend WithEvents Column1 As DataGridViewImageColumn
+    Friend WithEvents Column2 As DataGridViewComboBoxColumn
 End Class
