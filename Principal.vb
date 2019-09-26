@@ -1,4 +1,6 @@
-﻿Public Class Principal
+﻿Imports MySql.Data.MySqlClient
+
+Public Class Principal
     Private Sub ButtonSolicitarEQ_Click(sender As Object, e As EventArgs)
 
     End Sub
