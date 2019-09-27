@@ -189,7 +189,7 @@ Public Class Consignaciones
     Private Sub DataGridViewConsignaciones_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewConsignaciones.CellClick
         ''BLOQUE UTILIZADO PARA actualizar FILA AL DAR CLICK EN EL BOTON actualizar ALOJADO EN EL DATAGRIDVIEWIG.
         Dim cell As DataGridViewCell = DataGridViewConsignaciones.CurrentCell
-        If Not ((TypeOf cell Is DataGridViewImageCell) And (DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "Column1")) Then Return
+        If Not ((TypeOf cell Is DataGridViewImageCell) And (DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "Column1") And Principal.LabelTipoU.Text = "ADMINISTRADOR") Then Return
         Try
             Dim conexion4 As New conexion
 
@@ -265,5 +265,18 @@ Public Class Consignaciones
             TextBoxSaldoInicial.Text = leer8(0)
         End If
         conexion9.CerrarConexion()
+    End Sub
+
+    Private Sub DataGridViewConsignaciones_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DataGridViewConsignaciones.CellBeginEdit
+
+
+        If (DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "ID" Or DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "ID REGISTRO" Or
+            DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "FECHA CONSIGNACION" Or DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "VENDEDOR" Or
+            DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "BANCO" Or DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "VALOR" Or
+            DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "ESTADO PAGO") And Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+
+            e.Cancel = True
+
+        End If
     End Sub
 End Class
