@@ -34,6 +34,7 @@ Public Class ConsultarEP
     End Sub
     Private Sub ConsultarEP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
 
             ComboBoxSub.Text = Principal.LabelUsuarioU.Text
@@ -64,6 +65,10 @@ Public Class ConsultarEP
             CargarComboSub()
 
         End If
+
+        cargarDatagridConsultar()
+        CargarComboSub()
+
 
     End Sub
 

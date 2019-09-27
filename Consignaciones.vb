@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.IO
+Imports MySql.Data.MySqlClient
 
 Public Class Consignaciones
 
@@ -42,8 +43,8 @@ Public Class Consignaciones
             ComboBoxBanco.Items.Clear()
 
             While leer4.Read
-                    ComboBoxBanco.Items.Add(leer4(0))
-                End While
+                ComboBoxBanco.Items.Add(leer4(0))
+            End While
 
             conexion5.CerrarConexion()
         Catch ex As Exception
@@ -193,7 +194,7 @@ Public Class Consignaciones
         Try
             Dim conexion4 As New conexion
 
-            Dim cmd4 As New MySqlCommand("CALL ActualizarEstadoConsig('" & DataGridViewConsignaciones.SelectedCells(4).Value & "','" & DataGridViewConsignaciones.SelectedCells(2).Value & "');", conexion4.conexion)
+            Dim cmd4 As New MySqlCommand("CALL ActualizarEstadoConsig('" & DataGridViewConsignaciones.SelectedCells(0).Value & "','" & DataGridViewConsignaciones.SelectedCells(2).Value & "');", conexion4.conexion)
 
             conexion4.AbrirConexion()
             If Convert.ToString(DataGridViewConsignaciones.CurrentRow.Cells("Column2").Value).Equals("") Then
@@ -255,15 +256,32 @@ Public Class Consignaciones
 
     Private Sub ButtonIngrearDatos_Click(sender As Object, e As EventArgs) Handles ButtonIngrearDatos.Click
 
+        Dim conexion10 As New conexion
+        Dim cmd9 As New MySqlCommand("CALL IngresarConsignacion('" & Principal.LabelUsuarioU.Text & "','" & ComboBoxBanco.SelectedItem.ToString & "','" & TextBoxValorAingresar.Text & "'?Fot);", conexion10.conexion)
+        conexion10.AbrirConexion()
+
+
+
+
+        Dim m_MemoryStream As MemoryStream = New MemoryStream()
+        PictureBoxParaGuardar.Image.Save(m_MemoryStream, System.Drawing.Imaging.ImageFormat.Bmp)
+        Dim m_imagen As Byte() = m_MemoryStream.ToArray()
+        'Como ven lo que realmente enviamos a la tabla es un arreglo de byte y podemos decir que estas tres lineas anteriores son lo complicado de la tarea.
+
+        cmd9.Parameters.AddWithValue("?Fot", m_imagen)
+        conexion10.CerrarConexion()
 
 
         Dim conexion9 As New conexion
         Dim cmd8 As New MySqlCommand("CALL CargarSaldoInicial('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion9.conexion)
         conexion9.AbrirConexion()
+
         Dim leer8 As MySqlDataReader = cmd8.ExecuteReader()
         If leer8.Read Then
             TextBoxSaldoInicial.Text = leer8(0)
         End If
+
+
         conexion9.CerrarConexion()
     End Sub
 
@@ -276,6 +294,28 @@ Public Class Consignaciones
             DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "ESTADO PAGO") And Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
 
             e.Cancel = True
+
+        Else
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) 
+
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelSeleccionar.LinkClicked
+        Dim openFileDialog1 As New OpenFileDialog()
+
+        openFileDialog1.InitialDirectory = "C:\"
+        openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+
+            PictureBoxParaGuardar.ImageLocation = openFileDialog1.FileName
+            PictureBoxParaGuardar.Tag = openFileDialog1.FileName
+            LabelRuta.Text = Path.GetFileName(PictureBoxParaGuardar.Tag.ToString)
+
 
         End If
     End Sub
