@@ -35,6 +35,7 @@ Public Class ConsultarEP
     Private Sub ConsultarEP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDatagridConsultar()
         CargarComboSub()
+
     End Sub
 
     Private Sub DataGridViewConsultar_CellBeginEdit(sender As Object, e As DataGridViewCellCancelEventArgs) Handles DataGridViewConsultar.CellBeginEdit

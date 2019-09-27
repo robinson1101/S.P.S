@@ -23,8 +23,8 @@ Partial Class Consignaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
@@ -65,10 +65,15 @@ Partial Class Consignaciones
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
+        Me.LinkLabelSeleccionar = New System.Windows.Forms.LinkLabel()
+        Me.LabelRuta = New System.Windows.Forms.Label()
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxBusquedaPorFecha.SuspendLayout()
         Me.PanelIngresarDatos.SuspendLayout()
+        CType(Me.PictureBoxParaGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -84,24 +89,24 @@ Partial Class Consignaciones
         'DataGridViewConsignaciones
         '
         Me.DataGridViewConsignaciones.AllowUserToAddRows = False
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridViewConsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column2})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle10
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
@@ -333,6 +338,9 @@ Partial Class Consignaciones
         'PanelIngresarDatos
         '
         Me.PanelIngresarDatos.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.PanelIngresarDatos.Controls.Add(Me.LabelRuta)
+        Me.PanelIngresarDatos.Controls.Add(Me.LinkLabelSeleccionar)
+        Me.PanelIngresarDatos.Controls.Add(Me.PictureBoxParaGuardar)
         Me.PanelIngresarDatos.Controls.Add(Me.Label9)
         Me.PanelIngresarDatos.Controls.Add(Me.ButtonIngrearDatos)
         Me.PanelIngresarDatos.Controls.Add(Me.ComboBoxBanco)
@@ -350,9 +358,9 @@ Partial Class Consignaciones
         Me.Label9.BackColor = System.Drawing.Color.White
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(23, 111)
+        Me.Label9.Location = New System.Drawing.Point(7, 97)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(13, 20)
+        Me.Label9.Size = New System.Drawing.Size(16, 19)
         Me.Label9.TabIndex = 2
         Me.Label9.Text = "$"
         '
@@ -362,9 +370,9 @@ Partial Class Consignaciones
         Me.ButtonIngrearDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.ButtonIngrearDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonIngrearDatos.ForeColor = System.Drawing.Color.White
-        Me.ButtonIngrearDatos.Location = New System.Drawing.Point(203, 97)
+        Me.ButtonIngrearDatos.Location = New System.Drawing.Point(187, 80)
         Me.ButtonIngrearDatos.Name = "ButtonIngrearDatos"
-        Me.ButtonIngrearDatos.Size = New System.Drawing.Size(112, 34)
+        Me.ButtonIngrearDatos.Size = New System.Drawing.Size(112, 37)
         Me.ButtonIngrearDatos.TabIndex = 20
         Me.ButtonIngrearDatos.Text = "INGRESAR DATOS"
         Me.ToolTipConsignaciones.SetToolTip(Me.ButtonIngrearDatos, "Ingresar datos")
@@ -376,7 +384,7 @@ Partial Class Consignaciones
         Me.ComboBoxBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxBanco.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBoxBanco.FormattingEnabled = True
-        Me.ComboBoxBanco.Location = New System.Drawing.Point(22, 60)
+        Me.ComboBoxBanco.Location = New System.Drawing.Point(6, 49)
         Me.ComboBoxBanco.Name = "ComboBoxBanco"
         Me.ComboBoxBanco.Size = New System.Drawing.Size(293, 21)
         Me.ComboBoxBanco.TabIndex = 19
@@ -395,7 +403,7 @@ Partial Class Consignaciones
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(19, 94)
+        Me.Label20.Location = New System.Drawing.Point(3, 80)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(102, 13)
         Me.Label20.TabIndex = 12
@@ -404,7 +412,7 @@ Partial Class Consignaciones
         'TextBoxValorAingresar
         '
         Me.TextBoxValorAingresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxValorAingresar.Location = New System.Drawing.Point(35, 110)
+        Me.TextBoxValorAingresar.Location = New System.Drawing.Point(19, 96)
         Me.TextBoxValorAingresar.MaxLength = 20
         Me.TextBoxValorAingresar.Name = "TextBoxValorAingresar"
         Me.TextBoxValorAingresar.Size = New System.Drawing.Size(150, 21)
@@ -413,7 +421,7 @@ Partial Class Consignaciones
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(19, 39)
+        Me.Label23.Location = New System.Drawing.Point(3, 28)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(129, 13)
         Me.Label23.TabIndex = 11
@@ -497,6 +505,41 @@ Partial Class Consignaciones
         Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ButtonBuscar.UseVisualStyleBackColor = False
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PictureBoxParaGuardar
+        '
+        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(277, 3)
+        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
+        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(47, 34)
+        Me.PictureBoxParaGuardar.TabIndex = 22
+        Me.PictureBoxParaGuardar.TabStop = False
+        Me.PictureBoxParaGuardar.Visible = False
+        '
+        'LinkLabelSeleccionar
+        '
+        Me.LinkLabelSeleccionar.ActiveLinkColor = System.Drawing.Color.White
+        Me.LinkLabelSeleccionar.AutoSize = True
+        Me.LinkLabelSeleccionar.DisabledLinkColor = System.Drawing.Color.Blue
+        Me.LinkLabelSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabelSeleccionar.LinkColor = System.Drawing.Color.Red
+        Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(4, 131)
+        Me.LinkLabelSeleccionar.Name = "LinkLabelSeleccionar"
+        Me.LinkLabelSeleccionar.Size = New System.Drawing.Size(119, 12)
+        Me.LinkLabelSeleccionar.TabIndex = 23
+        Me.LinkLabelSeleccionar.TabStop = True
+        Me.LinkLabelSeleccionar.Text = "SELECCIONAR SOPORTE"
+        '
+        'LabelRuta
+        '
+        Me.LabelRuta.AutoEllipsis = True
+        Me.LabelRuta.Location = New System.Drawing.Point(131, 130)
+        Me.LabelRuta.Name = "LabelRuta"
+        Me.LabelRuta.Size = New System.Drawing.Size(192, 19)
+        Me.LabelRuta.TabIndex = 24
+        '
         'Consignaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -528,6 +571,7 @@ Partial Class Consignaciones
         Me.GroupBoxBusquedaPorFecha.PerformLayout()
         Me.PanelIngresarDatos.ResumeLayout(False)
         Me.PanelIngresarDatos.PerformLayout()
+        CType(Me.PictureBoxParaGuardar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -575,4 +619,8 @@ Partial Class Consignaciones
     Friend WithEvents Column3 As DataGridViewLinkColumn
     Friend WithEvents Column1 As DataGridViewImageColumn
     Friend WithEvents Column2 As DataGridViewComboBoxColumn
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents PictureBoxParaGuardar As PictureBox
+    Friend WithEvents LinkLabelSeleccionar As LinkLabel
+    Friend WithEvents LabelRuta As Label
 End Class
