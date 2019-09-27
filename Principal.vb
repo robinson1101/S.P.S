@@ -20,10 +20,15 @@ Public Class Principal
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If LabelTipoU.Text <> "ADMINISTRADOR" Then
+            LinkLabelUsuarios.Visible = False
 
+        Else
+            ButtonCargarP.Enabled = False
+        End If
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub LinkLabelUsuarios_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelUsuarios.LinkClicked
         Usuarios.ShowDialog()
     End Sub
 End Class

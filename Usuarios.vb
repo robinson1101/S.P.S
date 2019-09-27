@@ -32,30 +32,36 @@ Public Class Usuarios
     End Sub
     Private Sub Usuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarDataUsuarios()
+        ComboBoxTipoUsuario.Items.Add("ADMINISTRADOR")
+        ComboBoxTipoUsuario.Items.Add("SUBDISTRIBUIDOR")
     End Sub
 
     Private Sub DataGridViewUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewUsuarios.CellClick
+        If Not (RadioButtonIngresar.Checked = True) Then
 
-        Dim va1, va2, va3, va4, va5, va6, va7, va8, va9 As String
-        va1 = DataGridViewUsuarios.Item(4, DataGridViewUsuarios.CurrentRow.Index).Value
-        va2 = DataGridViewUsuarios.Item(5, DataGridViewUsuarios.CurrentRow.Index).Value
-        va3 = DataGridViewUsuarios.Item(6, DataGridViewUsuarios.CurrentRow.Index).Value
-        va4 = DataGridViewUsuarios.Item(7, DataGridViewUsuarios.CurrentRow.Index).Value
-        va5 = DataGridViewUsuarios.Item(1, DataGridViewUsuarios.CurrentRow.Index).Value
-        va6 = DataGridViewUsuarios.Item(2, DataGridViewUsuarios.CurrentRow.Index).Value
-        va7 = DataGridViewUsuarios.Item(3, DataGridViewUsuarios.CurrentRow.Index).Value
-        va8 = DataGridViewUsuarios.Item(8, DataGridViewUsuarios.CurrentRow.Index).Value
-        va9 = DataGridViewUsuarios.Item(0, DataGridViewUsuarios.CurrentRow.Index).Value
 
-        TextBoxNombre.Text = va1
-        TextBoxApellido.Text = va2
-        TextBoxCedula.Text = va3
-        TextBoxTelefono.Text = va4
-        TextBoxTipoU.Text = va5
-        TextBoxUsuario.Text = va6
-        TextBoxContraseña.Text = va7
-        TextBoxCupo.Text = va8
-        LabelIdUsuario.Text = va9
+            Dim va1, va2, va3, va4, va5, va6, va7, va8, va9 As String
+            va1 = DataGridViewUsuarios.Item(4, DataGridViewUsuarios.CurrentRow.Index).Value
+            va2 = DataGridViewUsuarios.Item(5, DataGridViewUsuarios.CurrentRow.Index).Value
+            va3 = DataGridViewUsuarios.Item(6, DataGridViewUsuarios.CurrentRow.Index).Value
+            va4 = DataGridViewUsuarios.Item(7, DataGridViewUsuarios.CurrentRow.Index).Value
+            va5 = DataGridViewUsuarios.Item(1, DataGridViewUsuarios.CurrentRow.Index).Value
+            va6 = DataGridViewUsuarios.Item(2, DataGridViewUsuarios.CurrentRow.Index).Value
+            va7 = DataGridViewUsuarios.Item(3, DataGridViewUsuarios.CurrentRow.Index).Value
+            va8 = DataGridViewUsuarios.Item(8, DataGridViewUsuarios.CurrentRow.Index).Value
+            va9 = DataGridViewUsuarios.Item(0, DataGridViewUsuarios.CurrentRow.Index).Value
+
+            TextBoxNombre.Text = va1
+            TextBoxApellido.Text = va2
+            TextBoxCedula.Text = va3
+            TextBoxTelefono.Text = va4
+
+            ComboBoxTipoUsuario.Text = va5
+            TextBoxUsuario.Text = va6
+            TextBoxContraseña.Text = va7
+            TextBoxCupo.Text = va8
+            LabelIdUsuario.Text = va9
+        End If
 
     End Sub
 
@@ -63,13 +69,15 @@ Public Class Usuarios
         ButtonModificar.Enabled = False
         ButtonEliminar.Enabled = False
         ButtonIngresar.Enabled = True
+
+
         If RadioButtonIngresar.Checked = True Then
 
             TextBoxNombre.Text = ""
             TextBoxApellido.Text = ""
             TextBoxCedula.Text = ""
             TextBoxTelefono.Text = ""
-            TextBoxTipoU.Text = ""
+            ComboBoxTipoUsuario.Text = ""
             TextBoxUsuario.Text = ""
             TextBoxContraseña.Text = ""
             TextBoxCupo.Text = ""
@@ -78,7 +86,7 @@ Public Class Usuarios
             TextBoxApellido.Enabled = True
             TextBoxCedula.Enabled = True
             TextBoxTelefono.Enabled = True
-            TextBoxTipoU.Enabled = True
+            ComboBoxTipoUsuario.Enabled = True
             TextBoxUsuario.Enabled = True
             TextBoxContraseña.Enabled = True
             TextBoxCupo.Enabled = True
@@ -94,7 +102,7 @@ Public Class Usuarios
         TextBoxApellido.Enabled = True
         TextBoxCedula.Enabled = True
         TextBoxTelefono.Enabled = True
-        TextBoxTipoU.Enabled = True
+        ComboBoxTipoUsuario.Enabled = True
         TextBoxUsuario.Enabled = True
         TextBoxContraseña.Enabled = True
         TextBoxCupo.Enabled = True
@@ -109,7 +117,7 @@ Public Class Usuarios
         TextBoxApellido.Enabled = False
         TextBoxCedula.Enabled = False
         TextBoxTelefono.Enabled = False
-        TextBoxTipoU.Enabled = False
+        ComboBoxTipoUsuario.Enabled = False
         TextBoxUsuario.Enabled = False
         TextBoxContraseña.Enabled = False
         TextBoxCupo.Enabled = False
@@ -120,7 +128,7 @@ Public Class Usuarios
 
         Try
             Dim conexion6 As New conexion
-            Dim cmd5 As New MySqlCommand("CALL GuardarNuevoUsuario('" & TextBoxTipoU.Text & "','" & TextBoxUsuario.Text & "','" & TextBoxContraseña.Text & "',
+            Dim cmd5 As New MySqlCommand("CALL GuardarNuevoUsuario('" & ComboBoxTipoUsuario.SelectedItem & "','" & TextBoxUsuario.Text & "','" & TextBoxContraseña.Text & "',
 '" & TextBoxNombre.Text & "','" & TextBoxApellido.Text & "','" & TextBoxCedula.Text & "','" & TextBoxTelefono.Text & "','" & TextBoxCupo.Text & "');", conexion6.conexion)
             conexion6.AbrirConexion()
 
@@ -142,7 +150,7 @@ Public Class Usuarios
                 TextBoxApellido.Text = ""
                 TextBoxCedula.Text = ""
                 TextBoxTelefono.Text = ""
-                TextBoxTipoU.Text = ""
+                ComboBoxTipoUsuario.Text = ""
                 TextBoxUsuario.Text = ""
                 TextBoxContraseña.Text = ""
                 TextBoxCupo.Text = ""
@@ -160,7 +168,7 @@ Public Class Usuarios
 
         Try
             Dim conexion6 As New conexion
-            Dim cmd5 As New MySqlCommand("CALL ActualizarUsuario('" & TextBoxTipoU.Text & "','" & TextBoxUsuario.Text & "','" & TextBoxContraseña.Text & "',
+            Dim cmd5 As New MySqlCommand("CALL ActualizarUsuario('" & ComboBoxTipoUsuario.SelectedItem & "','" & TextBoxUsuario.Text & "','" & TextBoxContraseña.Text & "',
 '" & TextBoxNombre.Text & "','" & TextBoxApellido.Text & "','" & TextBoxCedula.Text & "','" & TextBoxTelefono.Text & "','" & TextBoxCupo.Text & "','" & LabelIdUsuario.Text & "');", conexion6.conexion)
             conexion6.AbrirConexion()
             cmd5.ExecuteNonQuery()
@@ -170,7 +178,7 @@ Public Class Usuarios
             TextBoxApellido.Text = ""
             TextBoxCedula.Text = ""
             TextBoxTelefono.Text = ""
-            TextBoxTipoU.Text = ""
+            ComboBoxTipoUsuario.Text = ""
             TextBoxUsuario.Text = ""
             TextBoxContraseña.Text = ""
             TextBoxCupo.Text = ""
@@ -182,21 +190,31 @@ Public Class Usuarios
     End Sub
 
     Private Sub ButtonEliminar_Click(sender As Object, e As EventArgs) Handles ButtonEliminar.Click
+        Dim Result As DialogResult = MessageBox.Show("REALMENTE DESEA ELIMINAR EL USUARIO SELECCIONADO?.", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
         Try
-            Dim conexion6 As New conexion
-            Dim cmd5 As New MySqlCommand("CALL EliminarUsuario('" & LabelIdUsuario.Text & "');", conexion6.conexion)
-            conexion6.AbrirConexion()
-            cmd5.ExecuteNonQuery()
-            conexion6.CerrarConexion()
-            MsgBox("USUARIO ELIMINADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
-            TextBoxNombre.Text = ""
-            TextBoxApellido.Text = ""
-            TextBoxCedula.Text = ""
-            TextBoxTelefono.Text = ""
-            TextBoxTipoU.Text = ""
-            TextBoxUsuario.Text = ""
-            TextBoxContraseña.Text = ""
-            TextBoxCupo.Text = ""
+            If Result = DialogResult.Yes Then
+                If DataGridViewUsuarios.SelectedRows(0).Index = 0 Then
+                    MsgBox("EL ADMINISTRADOR NO SE PUEDE ELIMINAR", MsgBoxStyle.Critical)
+                Else
+                    Dim conexion6 As New conexion
+                    Dim cmd5 As New MySqlCommand("CALL EliminarUsuario('" & LabelIdUsuario.Text & "');", conexion6.conexion)
+                    conexion6.AbrirConexion()
+                    cmd5.ExecuteNonQuery()
+                    conexion6.CerrarConexion()
+                    MsgBox("USUARIO ELIMINADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+                    TextBoxNombre.Text = ""
+                    TextBoxApellido.Text = ""
+                    TextBoxCedula.Text = ""
+                    TextBoxTelefono.Text = ""
+                    ComboBoxTipoUsuario.Text = ""
+                    TextBoxUsuario.Text = ""
+                    TextBoxContraseña.Text = ""
+                    TextBoxCupo.Text = ""
+                End If
+
+
+            End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

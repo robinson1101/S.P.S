@@ -32,7 +32,7 @@ Partial Class Principal
         Me.ButtonGestionarConsig = New System.Windows.Forms.Button()
         Me.LabelUsuarioU = New System.Windows.Forms.Label()
         Me.Usuar = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.LinkLabelUsuarios = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
         'Label1
@@ -138,23 +138,23 @@ Partial Class Principal
         Me.Usuar.TabIndex = 8
         Me.Usuar.Text = "Usuario:"
         '
-        'LinkLabel1
+        'LinkLabelUsuarios
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.Blue
-        Me.LinkLabel1.Location = New System.Drawing.Point(127, 272)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(129, 13)
-        Me.LinkLabel1.TabIndex = 10
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "GESTIONAR USUARIOS"
+        Me.LinkLabelUsuarios.AutoSize = True
+        Me.LinkLabelUsuarios.LinkColor = System.Drawing.Color.Blue
+        Me.LinkLabelUsuarios.Location = New System.Drawing.Point(127, 272)
+        Me.LinkLabelUsuarios.Name = "LinkLabelUsuarios"
+        Me.LinkLabelUsuarios.Size = New System.Drawing.Size(129, 13)
+        Me.LinkLabelUsuarios.TabIndex = 10
+        Me.LinkLabelUsuarios.TabStop = True
+        Me.LinkLabelUsuarios.Text = "GESTIONAR USUARIOS"
         '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(413, 294)
-        Me.Controls.Add(Me.LinkLabel1)
+        Me.Controls.Add(Me.LinkLabelUsuarios)
         Me.Controls.Add(Me.LabelUsuarioU)
         Me.Controls.Add(Me.Usuar)
         Me.Controls.Add(Me.ButtonGestionarConsig)
@@ -184,5 +184,5 @@ Partial Class Principal
     Friend WithEvents ButtonGestionarConsig As Button
     Friend WithEvents LabelUsuarioU As Label
     Friend WithEvents Usuar As Label
-    Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents LinkLabelUsuarios As LinkLabel
 End Class

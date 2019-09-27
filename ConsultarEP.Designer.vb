@@ -23,14 +23,14 @@ Partial Class ConsultarEP
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxDesde = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxHasta = New System.Windows.Forms.MaskedTextBox()
         Me.DataGridViewConsultar = New System.Windows.Forms.DataGridView()
         Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
@@ -97,25 +97,27 @@ Partial Class ConsultarEP
         Me.Label4.TabIndex = 4
         Me.Label4.Text = "HASTA:"
         '
-        'MaskedTextBox1
+        'MaskedTextBoxDesde
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(24, 35)
-        Me.MaskedTextBox1.Mask = "0000/00/00"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(84, 20)
-        Me.MaskedTextBox1.TabIndex = 5
-        Me.ToolTipConsultar.SetToolTip(Me.MaskedTextBox1, "Fecha inicial")
-        Me.MaskedTextBox1.ValidatingType = GetType(Date)
+        Me.MaskedTextBoxDesde.Location = New System.Drawing.Point(24, 35)
+        Me.MaskedTextBoxDesde.Mask = "0000/00/00"
+        Me.MaskedTextBoxDesde.Name = "MaskedTextBoxDesde"
+        Me.MaskedTextBoxDesde.Size = New System.Drawing.Size(84, 20)
+        Me.MaskedTextBoxDesde.TabIndex = 5
+        Me.MaskedTextBoxDesde.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.ToolTipConsultar.SetToolTip(Me.MaskedTextBoxDesde, "Fecha inicial")
+        Me.MaskedTextBoxDesde.ValidatingType = GetType(Date)
         '
-        'MaskedTextBox2
+        'MaskedTextBoxHasta
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(26, 75)
-        Me.MaskedTextBox2.Mask = "0000/00/00"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(83, 20)
-        Me.MaskedTextBox2.TabIndex = 6
-        Me.ToolTipConsultar.SetToolTip(Me.MaskedTextBox2, "Fecha final")
-        Me.MaskedTextBox2.ValidatingType = GetType(Date)
+        Me.MaskedTextBoxHasta.Location = New System.Drawing.Point(26, 75)
+        Me.MaskedTextBoxHasta.Mask = "0000/00/00"
+        Me.MaskedTextBoxHasta.Name = "MaskedTextBoxHasta"
+        Me.MaskedTextBoxHasta.Size = New System.Drawing.Size(83, 20)
+        Me.MaskedTextBoxHasta.TabIndex = 6
+        Me.MaskedTextBoxHasta.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.ToolTipConsultar.SetToolTip(Me.MaskedTextBoxHasta, "Fecha final")
+        Me.MaskedTextBoxHasta.ValidatingType = GetType(Date)
         '
         'DataGridViewConsultar
         '
@@ -124,14 +126,14 @@ Partial Class ConsultarEP
         Me.DataGridViewConsultar.AllowUserToResizeRows = False
         Me.DataGridViewConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsultar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsultar.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsultar.DefaultCellStyle = DataGridViewCellStyle9
         Me.DataGridViewConsultar.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsultar.Location = New System.Drawing.Point(0, 135)
         Me.DataGridViewConsultar.Name = "DataGridViewConsultar"
@@ -192,7 +194,6 @@ Partial Class ConsultarEP
         '
         'ComboBoxSub
         '
-        Me.ComboBoxSub.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxSub.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBoxSub.FormattingEnabled = True
         Me.ComboBoxSub.Location = New System.Drawing.Point(12, 82)
@@ -233,10 +234,10 @@ Partial Class ConsultarEP
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBox1.Controls.Add(Me.MaskedTextBoxDesde)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.MaskedTextBox2)
+        Me.GroupBox1.Controls.Add(Me.MaskedTextBoxHasta)
         Me.GroupBox1.ForeColor = System.Drawing.Color.Red
         Me.GroupBox1.Location = New System.Drawing.Point(218, 22)
         Me.GroupBox1.Name = "GroupBox1"
@@ -301,8 +302,8 @@ Partial Class ConsultarEP
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
-    Friend WithEvents MaskedTextBox2 As MaskedTextBox
+    Friend WithEvents MaskedTextBoxDesde As MaskedTextBox
+    Friend WithEvents MaskedTextBoxHasta As MaskedTextBox
     Friend WithEvents DataGridViewConsultar As DataGridView
     Friend WithEvents ButtonBuscar As Button
     Friend WithEvents ButtonActualizar As Button
