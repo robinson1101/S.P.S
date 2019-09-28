@@ -23,13 +23,8 @@ Partial Class Consignaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-
         Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
@@ -94,7 +89,6 @@ Partial Class Consignaciones
         'DataGridViewConsignaciones
         '
         Me.DataGridViewConsignaciones.AllowUserToAddRows = False
-
         DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -113,26 +107,6 @@ Partial Class Consignaciones
         DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle24
-
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewConsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewConsignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column2})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
-
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
@@ -381,15 +355,9 @@ Partial Class Consignaciones
         'LabelRuta
         '
         Me.LabelRuta.AutoEllipsis = True
-
         Me.LabelRuta.Location = New System.Drawing.Point(140, 128)
         Me.LabelRuta.Name = "LabelRuta"
         Me.LabelRuta.Size = New System.Drawing.Size(179, 19)
-
-        Me.LabelRuta.Location = New System.Drawing.Point(131, 130)
-        Me.LabelRuta.Name = "LabelRuta"
-        Me.LabelRuta.Size = New System.Drawing.Size(192, 19)
-
         Me.LabelRuta.TabIndex = 24
         '
         'LinkLabelSeleccionar
@@ -399,10 +367,7 @@ Partial Class Consignaciones
         Me.LinkLabelSeleccionar.DisabledLinkColor = System.Drawing.Color.Blue
         Me.LinkLabelSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabelSeleccionar.LinkColor = System.Drawing.Color.Red
-
         Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(15, 131)
-        Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(4, 131)
-
         Me.LinkLabelSeleccionar.Name = "LinkLabelSeleccionar"
         Me.LinkLabelSeleccionar.Size = New System.Drawing.Size(119, 12)
         Me.LinkLabelSeleccionar.TabIndex = 23
@@ -411,16 +376,10 @@ Partial Class Consignaciones
         '
         'PictureBoxParaGuardar
         '
-
         Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(731, 201)
         Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
         Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(462, 473)
         Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-
-        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(277, 3)
-        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
-        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(47, 34)
-
         Me.PictureBoxParaGuardar.TabIndex = 22
         Me.PictureBoxParaGuardar.TabStop = False
         Me.PictureBoxParaGuardar.Visible = False
