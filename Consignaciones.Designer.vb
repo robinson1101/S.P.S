@@ -23,8 +23,8 @@ Partial Class Consignaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
@@ -51,6 +51,9 @@ Partial Class Consignaciones
         Me.Label14 = New System.Windows.Forms.Label()
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.PanelIngresarDatos = New System.Windows.Forms.Panel()
+        Me.LabelRuta = New System.Windows.Forms.Label()
+        Me.LinkLabelSeleccionar = New System.Windows.Forms.LinkLabel()
+        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ButtonIngrearDatos = New System.Windows.Forms.Button()
         Me.ComboBoxBanco = New System.Windows.Forms.ComboBox()
@@ -66,9 +69,6 @@ Partial Class Consignaciones
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
-        Me.LinkLabelSeleccionar = New System.Windows.Forms.LinkLabel()
-        Me.LabelRuta = New System.Windows.Forms.Label()
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxBusquedaPorFecha.SuspendLayout()
@@ -89,24 +89,24 @@ Partial Class Consignaciones
         'DataGridViewConsignaciones
         '
         Me.DataGridViewConsignaciones.AllowUserToAddRows = False
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewConsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column2})
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
@@ -353,6 +353,37 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.Size = New System.Drawing.Size(327, 153)
         Me.PanelIngresarDatos.TabIndex = 19
         '
+        'LabelRuta
+        '
+        Me.LabelRuta.AutoEllipsis = True
+        Me.LabelRuta.Location = New System.Drawing.Point(131, 130)
+        Me.LabelRuta.Name = "LabelRuta"
+        Me.LabelRuta.Size = New System.Drawing.Size(192, 19)
+        Me.LabelRuta.TabIndex = 24
+        '
+        'LinkLabelSeleccionar
+        '
+        Me.LinkLabelSeleccionar.ActiveLinkColor = System.Drawing.Color.White
+        Me.LinkLabelSeleccionar.AutoSize = True
+        Me.LinkLabelSeleccionar.DisabledLinkColor = System.Drawing.Color.Blue
+        Me.LinkLabelSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabelSeleccionar.LinkColor = System.Drawing.Color.Red
+        Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(4, 131)
+        Me.LinkLabelSeleccionar.Name = "LinkLabelSeleccionar"
+        Me.LinkLabelSeleccionar.Size = New System.Drawing.Size(119, 12)
+        Me.LinkLabelSeleccionar.TabIndex = 23
+        Me.LinkLabelSeleccionar.TabStop = True
+        Me.LinkLabelSeleccionar.Text = "SELECCIONAR SOPORTE"
+        '
+        'PictureBoxParaGuardar
+        '
+        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(277, 3)
+        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
+        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(47, 34)
+        Me.PictureBoxParaGuardar.TabIndex = 22
+        Me.PictureBoxParaGuardar.TabStop = False
+        Me.PictureBoxParaGuardar.Visible = False
+        '
         'Label9
         '
         Me.Label9.BackColor = System.Drawing.Color.White
@@ -508,37 +539,6 @@ Partial Class Consignaciones
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'PictureBoxParaGuardar
-        '
-        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(277, 3)
-        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
-        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(47, 34)
-        Me.PictureBoxParaGuardar.TabIndex = 22
-        Me.PictureBoxParaGuardar.TabStop = False
-        Me.PictureBoxParaGuardar.Visible = False
-        '
-        'LinkLabelSeleccionar
-        '
-        Me.LinkLabelSeleccionar.ActiveLinkColor = System.Drawing.Color.White
-        Me.LinkLabelSeleccionar.AutoSize = True
-        Me.LinkLabelSeleccionar.DisabledLinkColor = System.Drawing.Color.Blue
-        Me.LinkLabelSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabelSeleccionar.LinkColor = System.Drawing.Color.Red
-        Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(4, 131)
-        Me.LinkLabelSeleccionar.Name = "LinkLabelSeleccionar"
-        Me.LinkLabelSeleccionar.Size = New System.Drawing.Size(119, 12)
-        Me.LinkLabelSeleccionar.TabIndex = 23
-        Me.LinkLabelSeleccionar.TabStop = True
-        Me.LinkLabelSeleccionar.Text = "SELECCIONAR SOPORTE"
-        '
-        'LabelRuta
-        '
-        Me.LabelRuta.AutoEllipsis = True
-        Me.LabelRuta.Location = New System.Drawing.Point(131, 130)
-        Me.LabelRuta.Name = "LabelRuta"
-        Me.LabelRuta.Size = New System.Drawing.Size(192, 19)
-        Me.LabelRuta.TabIndex = 24
         '
         'Consignaciones
         '
