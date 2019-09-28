@@ -253,7 +253,7 @@ Public Class Consignaciones
 
 
 
-        Dim fs As New FileStream(ruta, FileMode.Open, FileAccess.Read)
+        Dim fs As New FileStream(ruta1, FileMode.Open, FileAccess.Read)
 
         Dim imag = Image.FromStream(fs)
 
@@ -283,7 +283,7 @@ Public Class Consignaciones
         End If
     End Sub
 
-    Dim ruta As String = ""
+    Public ruta1 As String = ""
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelSeleccionar.LinkClicked
         Dim openFileDialog1 As New OpenFileDialog()
 
@@ -295,7 +295,7 @@ Public Class Consignaciones
 
             PictureBoxParaGuardar.Tag = openFileDialog1.FileName
             LabelRuta.Text = Path.GetFileName(PictureBoxParaGuardar.Tag.ToString)
-            ruta = openFileDialog1.FileName
+            ruta1 = openFileDialog1.FileName
 
 
 
