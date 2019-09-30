@@ -72,6 +72,7 @@ Public Class Consignaciones
 
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
             PanelIngresarDatos.Visible = False
         End If

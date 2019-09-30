@@ -25,7 +25,6 @@ Partial Class Consignaciones
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
@@ -70,16 +69,6 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.SuspendLayout()
         CType(Me.PictureBoxParaGuardar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(391, 1)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(403, 29)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "GESTIONAR CONSIGNACIONES"
         '
         'DataGridViewConsignaciones
         '
@@ -140,36 +129,40 @@ Partial Class Consignaciones
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(8, 126)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(3, 144)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(136, 13)
+        Me.Label5.Size = New System.Drawing.Size(168, 16)
         Me.Label5.TabIndex = 8
         Me.Label5.Text = "SALDO POR CONSIGNAR"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(61, 96)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(71, 107)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(83, 13)
+        Me.Label4.Size = New System.Drawing.Size(100, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "SALDO INICIAL"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(38, 67)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(43, 74)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(104, 13)
+        Me.Label6.Size = New System.Drawing.Size(128, 16)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "CUPO DISPONIBLE"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(61, 37)
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(69, 39)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(82, 13)
+        Me.Label7.Size = New System.Drawing.Size(102, 16)
         Me.Label7.TabIndex = 11
         Me.Label7.Text = "CUPO ACTUAL"
         '
@@ -185,56 +178,68 @@ Partial Class Consignaciones
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.Label7)
         Me.Panel1.Controls.Add(Me.TextBoxSaldoPConsignar)
-        Me.Panel1.Location = New System.Drawing.Point(3, 38)
+        Me.Panel1.Location = New System.Drawing.Point(3, 8)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(327, 153)
+        Me.Panel1.Size = New System.Drawing.Size(423, 179)
         Me.Panel1.TabIndex = 13
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(138, 3)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label8.Location = New System.Drawing.Point(165, 4)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(77, 18)
+        Me.Label8.Size = New System.Drawing.Size(93, 20)
         Me.Label8.TabIndex = 13
         Me.Label8.Text = "VALORES"
         '
         'TextBoxCupoDisponible
         '
+        Me.TextBoxCupoDisponible.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCupoDisponible.Enabled = False
-        Me.TextBoxCupoDisponible.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(155, 63)
+        Me.TextBoxCupoDisponible.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCupoDisponible.ForeColor = System.Drawing.Color.Black
+        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(177, 63)
+        Me.TextBoxCupoDisponible.Multiline = True
         Me.TextBoxCupoDisponible.Name = "TextBoxCupoDisponible"
-        Me.TextBoxCupoDisponible.Size = New System.Drawing.Size(149, 23)
+        Me.TextBoxCupoDisponible.Size = New System.Drawing.Size(231, 31)
         Me.TextBoxCupoDisponible.TabIndex = 10
         '
         'TextBoxSaldoInicial
         '
+        Me.TextBoxSaldoInicial.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxSaldoInicial.Enabled = False
-        Me.TextBoxSaldoInicial.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(155, 93)
+        Me.TextBoxSaldoInicial.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSaldoInicial.ForeColor = System.Drawing.Color.Black
+        Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(177, 98)
+        Me.TextBoxSaldoInicial.Multiline = True
         Me.TextBoxSaldoInicial.Name = "TextBoxSaldoInicial"
-        Me.TextBoxSaldoInicial.Size = New System.Drawing.Size(149, 23)
+        Me.TextBoxSaldoInicial.Size = New System.Drawing.Size(231, 31)
         Me.TextBoxSaldoInicial.TabIndex = 5
         '
         'TextBoxCupo
         '
+        Me.TextBoxCupo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCupo.Enabled = False
-        Me.TextBoxCupo.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxCupo.Location = New System.Drawing.Point(155, 33)
+        Me.TextBoxCupo.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCupo.ForeColor = System.Drawing.Color.Black
+        Me.TextBoxCupo.Location = New System.Drawing.Point(177, 28)
+        Me.TextBoxCupo.Multiline = True
         Me.TextBoxCupo.Name = "TextBoxCupo"
-        Me.TextBoxCupo.Size = New System.Drawing.Size(149, 23)
+        Me.TextBoxCupo.Size = New System.Drawing.Size(231, 31)
         Me.TextBoxCupo.TabIndex = 9
         '
         'TextBoxSaldoPConsignar
         '
+        Me.TextBoxSaldoPConsignar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxSaldoPConsignar.Enabled = False
-        Me.TextBoxSaldoPConsignar.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(155, 122)
+        Me.TextBoxSaldoPConsignar.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSaldoPConsignar.ForeColor = System.Drawing.Color.Black
+        Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(177, 133)
+        Me.TextBoxSaldoPConsignar.Multiline = True
         Me.TextBoxSaldoPConsignar.Name = "TextBoxSaldoPConsignar"
-        Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(149, 23)
+        Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(231, 30)
         Me.TextBoxSaldoPConsignar.TabIndex = 6
         '
         'Panel2
@@ -250,7 +255,7 @@ Partial Class Consignaciones
         Me.ComboBoxSub2.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ComboBoxSub2.FormattingEnabled = True
         Me.ComboBoxSub2.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.ComboBoxSub2.Location = New System.Drawing.Point(411, 55)
+        Me.ComboBoxSub2.Location = New System.Drawing.Point(462, 55)
         Me.ComboBoxSub2.Name = "ComboBoxSub2"
         Me.ComboBoxSub2.Size = New System.Drawing.Size(157, 21)
         Me.ComboBoxSub2.TabIndex = 15
@@ -260,7 +265,7 @@ Partial Class Consignaciones
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(408, 40)
+        Me.Label2.Location = New System.Drawing.Point(459, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(107, 13)
         Me.Label2.TabIndex = 5
@@ -274,7 +279,7 @@ Partial Class Consignaciones
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label13)
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBoxHastaC)
         Me.GroupBoxBusquedaPorFecha.ForeColor = System.Drawing.Color.Red
-        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(411, 84)
+        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(462, 84)
         Me.GroupBoxBusquedaPorFecha.Name = "GroupBoxBusquedaPorFecha"
         Me.GroupBoxBusquedaPorFecha.Size = New System.Drawing.Size(157, 114)
         Me.GroupBoxBusquedaPorFecha.TabIndex = 23
@@ -333,15 +338,15 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.Controls.Add(Me.Label20)
         Me.PanelIngresarDatos.Controls.Add(Me.TextBoxValorAingresar)
         Me.PanelIngresarDatos.Controls.Add(Me.Label23)
-        Me.PanelIngresarDatos.Location = New System.Drawing.Point(864, 42)
+        Me.PanelIngresarDatos.Location = New System.Drawing.Point(855, 12)
         Me.PanelIngresarDatos.Name = "PanelIngresarDatos"
-        Me.PanelIngresarDatos.Size = New System.Drawing.Size(336, 153)
+        Me.PanelIngresarDatos.Size = New System.Drawing.Size(345, 175)
         Me.PanelIngresarDatos.TabIndex = 19
         '
         'LabelRuta
         '
         Me.LabelRuta.AutoEllipsis = True
-        Me.LabelRuta.Location = New System.Drawing.Point(140, 130)
+        Me.LabelRuta.Location = New System.Drawing.Point(147, 138)
         Me.LabelRuta.Name = "LabelRuta"
         Me.LabelRuta.Size = New System.Drawing.Size(179, 19)
         Me.LabelRuta.TabIndex = 24
@@ -351,11 +356,11 @@ Partial Class Consignaciones
         Me.LinkLabelSeleccionar.ActiveLinkColor = System.Drawing.Color.White
         Me.LinkLabelSeleccionar.AutoSize = True
         Me.LinkLabelSeleccionar.DisabledLinkColor = System.Drawing.Color.Blue
-        Me.LinkLabelSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabelSeleccionar.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabelSeleccionar.LinkColor = System.Drawing.Color.Red
-        Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(15, 131)
+        Me.LinkLabelSeleccionar.Location = New System.Drawing.Point(14, 140)
         Me.LinkLabelSeleccionar.Name = "LinkLabelSeleccionar"
-        Me.LinkLabelSeleccionar.Size = New System.Drawing.Size(119, 12)
+        Me.LinkLabelSeleccionar.Size = New System.Drawing.Size(127, 13)
         Me.LinkLabelSeleccionar.TabIndex = 23
         Me.LinkLabelSeleccionar.TabStop = True
         Me.LinkLabelSeleccionar.Text = "SELECCIONAR SOPORTE"
@@ -368,7 +373,7 @@ Partial Class Consignaciones
         Me.Label9.ForeColor = System.Drawing.Color.Red
         Me.Label9.Location = New System.Drawing.Point(15, 96)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(16, 21)
+        Me.Label9.Size = New System.Drawing.Size(16, 22)
         Me.Label9.TabIndex = 2
         Me.Label9.Text = "$"
         '
@@ -377,10 +382,11 @@ Partial Class Consignaciones
         Me.ButtonIngrearDatos.BackColor = System.Drawing.Color.Teal
         Me.ButtonIngrearDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.ButtonIngrearDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonIngrearDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonIngrearDatos.ForeColor = System.Drawing.Color.White
-        Me.ButtonIngrearDatos.Location = New System.Drawing.Point(198, 80)
+        Me.ButtonIngrearDatos.Location = New System.Drawing.Point(198, 88)
         Me.ButtonIngrearDatos.Name = "ButtonIngrearDatos"
-        Me.ButtonIngrearDatos.Size = New System.Drawing.Size(112, 37)
+        Me.ButtonIngrearDatos.Size = New System.Drawing.Size(112, 45)
         Me.ButtonIngrearDatos.TabIndex = 20
         Me.ButtonIngrearDatos.Text = "INGRESAR DATOS"
         Me.ToolTipConsignaciones.SetToolTip(Me.ButtonIngrearDatos, "Ingresar datos")
@@ -390,47 +396,50 @@ Partial Class Consignaciones
         '
         Me.ComboBoxBanco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.ComboBoxBanco.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ComboBoxBanco.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxBanco.FormattingEnabled = True
         Me.ComboBoxBanco.Location = New System.Drawing.Point(17, 49)
         Me.ComboBoxBanco.Name = "ComboBoxBanco"
-        Me.ComboBoxBanco.Size = New System.Drawing.Size(293, 21)
+        Me.ComboBoxBanco.Size = New System.Drawing.Size(293, 23)
         Me.ComboBoxBanco.TabIndex = 19
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.Red
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.Label19.Location = New System.Drawing.Point(104, 1)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(140, 18)
+        Me.Label19.Size = New System.Drawing.Size(168, 20)
         Me.Label19.TabIndex = 13
         Me.Label19.Text = "INGRESAR DATOS"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.Location = New System.Drawing.Point(14, 80)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(102, 13)
+        Me.Label20.Size = New System.Drawing.Size(126, 16)
         Me.Label20.TabIndex = 12
         Me.Label20.Text = "INGRESAR VALOR"
         '
         'TextBoxValorAingresar
         '
-        Me.TextBoxValorAingresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxValorAingresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxValorAingresar.Location = New System.Drawing.Point(30, 96)
         Me.TextBoxValorAingresar.MaxLength = 20
         Me.TextBoxValorAingresar.Name = "TextBoxValorAingresar"
-        Me.TextBoxValorAingresar.Size = New System.Drawing.Size(150, 21)
+        Me.TextBoxValorAingresar.Size = New System.Drawing.Size(150, 22)
         Me.TextBoxValorAingresar.TabIndex = 10
         '
         'Label23
         '
         Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label23.Location = New System.Drawing.Point(14, 30)
         Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(129, 13)
+        Me.Label23.Size = New System.Drawing.Size(161, 16)
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "SELECCCIONAR BANCO"
         '
@@ -508,11 +517,12 @@ Partial Class Consignaciones
         Me.Controls.Add(Me.ComboBoxSub2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridViewConsignaciones)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Consignaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Consignaciones"
+        Me.Text = "                                                                                 " &
+    "                                                                                " &
+    "              GESTIONAR CONSIGNACIONES"
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -525,8 +535,6 @@ Partial Class Consignaciones
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents DataGridViewConsignaciones As DataGridView
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
