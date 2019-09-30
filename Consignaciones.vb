@@ -71,6 +71,9 @@ Public Class Consignaciones
 
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+            PanelIngresarDatos.Visible = False
+        End If
         cargarDatagridConsignaciones()
         CargarComboSub2()
         CargarComboBanco()
@@ -131,14 +134,6 @@ Public Class Consignaciones
         End If
     End Sub
 
-    Private Sub RadioButtonCargarD_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButtonCargarD.CheckedChanged
-        If RadioButtonCargarD.Checked = True Then
-            PanelIngresarDatos.Enabled = False
-        Else
-            PanelIngresarDatos.Enabled = True
-        End If
-
-    End Sub
 
     Private Sub TextBoxCA_TextChanged(sender As Object, e As EventArgs) Handles TextBoxCupo.TextChanged
         TextBoxCupo.Text = FormatCurrency(TextBoxCupo.Text)
@@ -165,10 +160,10 @@ Public Class Consignaciones
 
         Try
                 Dim conexion4 As New conexion
+            MsgBox(DataGridViewConsignaciones.SelectedCells(2).Value & "','" & DataGridViewConsignaciones.SelectedCells(3).Value)
+            Dim cmd4 As New MySqlCommand("CALL ActualizarEstadoConsig('" & DataGridViewConsignaciones.SelectedCells(3).Value & "','" & DataGridViewConsignaciones.SelectedCells(2).Value & "');", conexion4.conexion)
 
-                Dim cmd4 As New MySqlCommand("CALL ActualizarEstadoConsig('" & DataGridViewConsignaciones.SelectedCells(0).Value & "','" & DataGridViewConsignaciones.SelectedCells(2).Value & "');", conexion4.conexion)
-
-                conexion4.AbrirConexion()
+            conexion4.AbrirConexion()
                 If Convert.ToString(DataGridViewConsignaciones.CurrentRow.Cells("Column2").Value).Equals("") Then
                     MsgBox("SELECCIONE UN ESTADO VALIDO", MsgBoxStyle.Information, "INFORMACION")
 
@@ -240,8 +235,8 @@ Public Class Consignaciones
             DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "ESTADO PAGO") And Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
 
             e.Cancel = True
+        ElseIf Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
 
-        Else
             e.Cancel = True
         End If
     End Sub
@@ -395,4 +390,6 @@ Public Class Consignaciones
         End Try
         Return consignacionesSub
     End Function
+
+
 End Class

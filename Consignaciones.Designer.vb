@@ -23,8 +23,8 @@ Partial Class Consignaciones
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
@@ -53,7 +53,6 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos = New System.Windows.Forms.Panel()
         Me.LabelRuta = New System.Windows.Forms.Label()
         Me.LinkLabelSeleccionar = New System.Windows.Forms.LinkLabel()
-        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.ButtonIngrearDatos = New System.Windows.Forms.Button()
         Me.ComboBoxBanco = New System.Windows.Forms.ComboBox()
@@ -61,10 +60,8 @@ Partial Class Consignaciones
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TextBoxValorAingresar = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
+        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
         Me.ToolTipConsignaciones = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RadioButtonCargarD = New System.Windows.Forms.RadioButton()
-        Me.RadioButtonIngresarD = New System.Windows.Forms.RadioButton()
-        Me.Label15 = New System.Windows.Forms.Label()
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
@@ -89,30 +86,30 @@ Partial Class Consignaciones
         'DataGridViewConsignaciones
         '
         Me.DataGridViewConsignaciones.AllowUserToAddRows = False
-        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewConsignaciones.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewConsignaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsignaciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column3, Me.Column1, Me.Column2})
-        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle24
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
         Me.DataGridViewConsignaciones.RowHeadersVisible = False
         Me.DataGridViewConsignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewConsignaciones.Size = New System.Drawing.Size(1205, 486)
+        Me.DataGridViewConsignaciones.Size = New System.Drawing.Size(1028, 486)
         Me.DataGridViewConsignaciones.TabIndex = 1
         '
         'Column3
@@ -347,9 +344,9 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.Controls.Add(Me.Label20)
         Me.PanelIngresarDatos.Controls.Add(Me.TextBoxValorAingresar)
         Me.PanelIngresarDatos.Controls.Add(Me.Label23)
-        Me.PanelIngresarDatos.Location = New System.Drawing.Point(873, 37)
+        Me.PanelIngresarDatos.Location = New System.Drawing.Point(689, 40)
         Me.PanelIngresarDatos.Name = "PanelIngresarDatos"
-        Me.PanelIngresarDatos.Size = New System.Drawing.Size(327, 153)
+        Me.PanelIngresarDatos.Size = New System.Drawing.Size(336, 153)
         Me.PanelIngresarDatos.TabIndex = 19
         '
         'LabelRuta
@@ -374,23 +371,13 @@ Partial Class Consignaciones
         Me.LinkLabelSeleccionar.TabStop = True
         Me.LinkLabelSeleccionar.Text = "SELECCIONAR SOPORTE"
         '
-        'PictureBoxParaGuardar
-        '
-        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(731, 201)
-        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
-        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(462, 473)
-        Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxParaGuardar.TabIndex = 22
-        Me.PictureBoxParaGuardar.TabStop = False
-        Me.PictureBoxParaGuardar.Visible = False
-        '
         'Label9
         '
         Me.Label9.BackColor = System.Drawing.Color.White
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(17, 96)
+        Me.Label9.Location = New System.Drawing.Point(15, 96)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(16, 21)
         Me.Label9.TabIndex = 2
@@ -459,38 +446,15 @@ Partial Class Consignaciones
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "SELECCCIONAR BANCO"
         '
-        'RadioButtonCargarD
+        'PictureBoxParaGuardar
         '
-        Me.RadioButtonCargarD.AutoSize = True
-        Me.RadioButtonCargarD.Location = New System.Drawing.Point(707, 63)
-        Me.RadioButtonCargarD.Name = "RadioButtonCargarD"
-        Me.RadioButtonCargarD.Size = New System.Drawing.Size(119, 17)
-        Me.RadioButtonCargarD.TabIndex = 24
-        Me.RadioButtonCargarD.TabStop = True
-        Me.RadioButtonCargarD.Text = "MOSTRAR DATOS"
-        Me.RadioButtonCargarD.UseVisualStyleBackColor = True
-        '
-        'RadioButtonIngresarD
-        '
-        Me.RadioButtonIngresarD.AutoSize = True
-        Me.RadioButtonIngresarD.Location = New System.Drawing.Point(707, 90)
-        Me.RadioButtonIngresarD.Name = "RadioButtonIngresarD"
-        Me.RadioButtonIngresarD.Size = New System.Drawing.Size(121, 17)
-        Me.RadioButtonIngresarD.TabIndex = 25
-        Me.RadioButtonIngresarD.TabStop = True
-        Me.RadioButtonIngresarD.Text = "INGRESAR DATOS"
-        Me.RadioButtonIngresarD.UseVisualStyleBackColor = True
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(725, 38)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(84, 15)
-        Me.Label15.TabIndex = 21
-        Me.Label15.Text = "MOVIMIENTO"
+        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(731, 201)
+        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
+        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(462, 473)
+        Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxParaGuardar.TabIndex = 22
+        Me.PictureBoxParaGuardar.TabStop = False
+        Me.PictureBoxParaGuardar.Visible = False
         '
         'ButtonActualizar
         '
@@ -499,9 +463,9 @@ Partial Class Consignaciones
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
         Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonActualizar.Location = New System.Drawing.Point(693, 147)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(518, 160)
         Me.ButtonActualizar.Name = "ButtonActualizar"
-        Me.ButtonActualizar.Size = New System.Drawing.Size(157, 44)
+        Me.ButtonActualizar.Size = New System.Drawing.Size(154, 34)
         Me.ButtonActualizar.TabIndex = 10
         Me.ButtonActualizar.Text = "REFRESCAR"
         Me.ButtonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -514,9 +478,9 @@ Partial Class Consignaciones
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(518, 147)
+        Me.ButtonExportar.Location = New System.Drawing.Point(518, 119)
         Me.ButtonExportar.Name = "ButtonExportar"
-        Me.ButtonExportar.Size = New System.Drawing.Size(154, 44)
+        Me.ButtonExportar.Size = New System.Drawing.Size(154, 37)
         Me.ButtonExportar.TabIndex = 13
         Me.ButtonExportar.Text = "EXPORTAR"
         Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -529,7 +493,7 @@ Partial Class Consignaciones
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
         Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.Location = New System.Drawing.Point(518, 87)
+        Me.ButtonBuscar.Location = New System.Drawing.Point(518, 76)
         Me.ButtonBuscar.Name = "ButtonBuscar"
         Me.ButtonBuscar.Size = New System.Drawing.Size(154, 39)
         Me.ButtonBuscar.TabIndex = 22
@@ -545,10 +509,7 @@ Partial Class Consignaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1205, 682)
-        Me.Controls.Add(Me.Label15)
-        Me.Controls.Add(Me.RadioButtonIngresarD)
-        Me.Controls.Add(Me.RadioButtonCargarD)
+        Me.ClientSize = New System.Drawing.Size(1028, 682)
         Me.Controls.Add(Me.ButtonActualizar)
         Me.Controls.Add(Me.ButtonExportar)
         Me.Controls.Add(Me.PanelIngresarDatos)
@@ -612,10 +573,7 @@ Partial Class Consignaciones
     Friend WithEvents TextBoxValorAingresar As TextBox
     Friend WithEvents Label23 As Label
     Friend WithEvents ToolTipConsignaciones As ToolTip
-    Friend WithEvents RadioButtonCargarD As RadioButton
-    Friend WithEvents RadioButtonIngresarD As RadioButton
     Protected WithEvents ComboBoxBanco As ComboBox
-    Friend WithEvents Label15 As Label
     Friend WithEvents ButtonIngrearDatos As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
