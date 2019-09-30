@@ -66,8 +66,7 @@ Public Class ConsultarEP
 
         End If
 
-        cargarDatagridConsultar()
-        CargarComboSub()
+
 
 
     End Sub
