@@ -44,12 +44,10 @@ Partial Class Consignaciones
         Me.ComboBoxSub2 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBoxBusquedaPorFecha = New System.Windows.Forms.GroupBox()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
+        Me.MaskedTextBoxDesdeC = New System.Windows.Forms.MaskedTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
+        Me.MaskedTextBoxHastaC = New System.Windows.Forms.MaskedTextBox()
         Me.PanelIngresarDatos = New System.Windows.Forms.Panel()
         Me.LabelRuta = New System.Windows.Forms.Label()
         Me.LinkLabelSeleccionar = New System.Windows.Forms.LinkLabel()
@@ -86,6 +84,9 @@ Partial Class Consignaciones
         'DataGridViewConsignaciones
         '
         Me.DataGridViewConsignaciones.AllowUserToAddRows = False
+        Me.DataGridViewConsignaciones.AllowUserToDeleteRows = False
+        Me.DataGridViewConsignaciones.AllowUserToResizeColumns = False
+        Me.DataGridViewConsignaciones.AllowUserToResizeRows = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -105,11 +106,11 @@ Partial Class Consignaciones
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridViewConsignaciones.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewConsignaciones.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 196)
+        Me.DataGridViewConsignaciones.Location = New System.Drawing.Point(0, 200)
         Me.DataGridViewConsignaciones.Name = "DataGridViewConsignaciones"
         Me.DataGridViewConsignaciones.RowHeadersVisible = False
         Me.DataGridViewConsignaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewConsignaciones.Size = New System.Drawing.Size(1028, 486)
+        Me.DataGridViewConsignaciones.Size = New System.Drawing.Size(1205, 486)
         Me.DataGridViewConsignaciones.TabIndex = 1
         '
         'Column3
@@ -203,33 +204,37 @@ Partial Class Consignaciones
         'TextBoxCupoDisponible
         '
         Me.TextBoxCupoDisponible.Enabled = False
-        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(155, 64)
+        Me.TextBoxCupoDisponible.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(155, 63)
         Me.TextBoxCupoDisponible.Name = "TextBoxCupoDisponible"
-        Me.TextBoxCupoDisponible.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxCupoDisponible.Size = New System.Drawing.Size(149, 23)
         Me.TextBoxCupoDisponible.TabIndex = 10
         '
         'TextBoxSaldoInicial
         '
         Me.TextBoxSaldoInicial.Enabled = False
+        Me.TextBoxSaldoInicial.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(155, 93)
         Me.TextBoxSaldoInicial.Name = "TextBoxSaldoInicial"
-        Me.TextBoxSaldoInicial.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxSaldoInicial.Size = New System.Drawing.Size(149, 23)
         Me.TextBoxSaldoInicial.TabIndex = 5
         '
         'TextBoxCupo
         '
         Me.TextBoxCupo.Enabled = False
+        Me.TextBoxCupo.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCupo.Location = New System.Drawing.Point(155, 33)
         Me.TextBoxCupo.Name = "TextBoxCupo"
-        Me.TextBoxCupo.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxCupo.Size = New System.Drawing.Size(149, 23)
         Me.TextBoxCupo.TabIndex = 9
         '
         'TextBoxSaldoPConsignar
         '
         Me.TextBoxSaldoPConsignar.Enabled = False
+        Me.TextBoxSaldoPConsignar.Font = New System.Drawing.Font("LCD", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(155, 122)
         Me.TextBoxSaldoPConsignar.Name = "TextBoxSaldoPConsignar"
-        Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(149, 20)
+        Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(149, 23)
         Me.TextBoxSaldoPConsignar.TabIndex = 6
         '
         'Panel2
@@ -242,11 +247,10 @@ Partial Class Consignaciones
         'ComboBoxSub2
         '
         Me.ComboBoxSub2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ComboBoxSub2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBoxSub2.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ComboBoxSub2.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ComboBoxSub2.FormattingEnabled = True
         Me.ComboBoxSub2.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.ComboBoxSub2.Location = New System.Drawing.Point(344, 50)
+        Me.ComboBoxSub2.Location = New System.Drawing.Point(411, 55)
         Me.ComboBoxSub2.Name = "ComboBoxSub2"
         Me.ComboBoxSub2.Size = New System.Drawing.Size(157, 21)
         Me.ComboBoxSub2.TabIndex = 15
@@ -256,7 +260,7 @@ Partial Class Consignaciones
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(341, 35)
+        Me.Label2.Location = New System.Drawing.Point(408, 40)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(107, 13)
         Me.Label2.TabIndex = 5
@@ -265,26 +269,28 @@ Partial Class Consignaciones
         'GroupBoxBusquedaPorFecha
         '
         Me.GroupBoxBusquedaPorFecha.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBox1)
+        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBoxDesdeC)
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label3)
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label13)
-        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBox2)
+        Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBoxHastaC)
         Me.GroupBoxBusquedaPorFecha.ForeColor = System.Drawing.Color.Red
-        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(344, 79)
+        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(411, 84)
         Me.GroupBoxBusquedaPorFecha.Name = "GroupBoxBusquedaPorFecha"
         Me.GroupBoxBusquedaPorFecha.Size = New System.Drawing.Size(157, 114)
         Me.GroupBoxBusquedaPorFecha.TabIndex = 23
         Me.GroupBoxBusquedaPorFecha.TabStop = False
         Me.GroupBoxBusquedaPorFecha.Text = "Formato: Año/Mes/Dia"
         '
-        'MaskedTextBox1
+        'MaskedTextBoxDesdeC
         '
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(24, 35)
-        Me.MaskedTextBox1.Mask = "0000/00/00"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(102, 20)
-        Me.MaskedTextBox1.TabIndex = 5
-        Me.MaskedTextBox1.ValidatingType = GetType(Date)
+        Me.MaskedTextBoxDesdeC.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        Me.MaskedTextBoxDesdeC.Location = New System.Drawing.Point(24, 35)
+        Me.MaskedTextBoxDesdeC.Mask = "0000/00/00"
+        Me.MaskedTextBoxDesdeC.Name = "MaskedTextBoxDesdeC"
+        Me.MaskedTextBoxDesdeC.Size = New System.Drawing.Size(102, 20)
+        Me.MaskedTextBoxDesdeC.TabIndex = 5
+        Me.MaskedTextBoxDesdeC.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.MaskedTextBoxDesdeC.ValidatingType = GetType(Date)
         '
         'Label3
         '
@@ -304,33 +310,16 @@ Partial Class Consignaciones
         Me.Label13.TabIndex = 4
         Me.Label13.Text = "HASTA:"
         '
-        'MaskedTextBox2
+        'MaskedTextBoxHastaC
         '
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(26, 75)
-        Me.MaskedTextBox2.Mask = "0000/00/00"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.MaskedTextBox2.TabIndex = 6
-        Me.MaskedTextBox2.ValidatingType = GetType(Date)
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(517, 36)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(108, 13)
-        Me.Label14.TabIndex = 21
-        Me.Label14.Text = "N° DE REFERENCIA"
-        '
-        'TextBoxNumReferencia
-        '
-        Me.TextBoxNumReferencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBoxNumReferencia.Location = New System.Drawing.Point(518, 51)
-        Me.TextBoxNumReferencia.MaxLength = 10
-        Me.TextBoxNumReferencia.Name = "TextBoxNumReferencia"
-        Me.TextBoxNumReferencia.Size = New System.Drawing.Size(154, 22)
-        Me.TextBoxNumReferencia.TabIndex = 20
-        Me.TextBoxNumReferencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.MaskedTextBoxHastaC.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.MaskedTextBoxHastaC.Location = New System.Drawing.Point(26, 75)
+        Me.MaskedTextBoxHastaC.Mask = "0000/00/00"
+        Me.MaskedTextBoxHastaC.Name = "MaskedTextBoxHastaC"
+        Me.MaskedTextBoxHastaC.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBoxHastaC.TabIndex = 6
+        Me.MaskedTextBoxHastaC.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
+        Me.MaskedTextBoxHastaC.ValidatingType = GetType(Date)
         '
         'PanelIngresarDatos
         '
@@ -344,7 +333,7 @@ Partial Class Consignaciones
         Me.PanelIngresarDatos.Controls.Add(Me.Label20)
         Me.PanelIngresarDatos.Controls.Add(Me.TextBoxValorAingresar)
         Me.PanelIngresarDatos.Controls.Add(Me.Label23)
-        Me.PanelIngresarDatos.Location = New System.Drawing.Point(689, 40)
+        Me.PanelIngresarDatos.Location = New System.Drawing.Point(864, 42)
         Me.PanelIngresarDatos.Name = "PanelIngresarDatos"
         Me.PanelIngresarDatos.Size = New System.Drawing.Size(336, 153)
         Me.PanelIngresarDatos.TabIndex = 19
@@ -352,7 +341,7 @@ Partial Class Consignaciones
         'LabelRuta
         '
         Me.LabelRuta.AutoEllipsis = True
-        Me.LabelRuta.Location = New System.Drawing.Point(140, 128)
+        Me.LabelRuta.Location = New System.Drawing.Point(140, 130)
         Me.LabelRuta.Name = "LabelRuta"
         Me.LabelRuta.Size = New System.Drawing.Size(179, 19)
         Me.LabelRuta.TabIndex = 24
@@ -385,7 +374,7 @@ Partial Class Consignaciones
         '
         'ButtonIngrearDatos
         '
-        Me.ButtonIngrearDatos.BackColor = System.Drawing.Color.Black
+        Me.ButtonIngrearDatos.BackColor = System.Drawing.Color.Teal
         Me.ButtonIngrearDatos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White
         Me.ButtonIngrearDatos.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonIngrearDatos.ForeColor = System.Drawing.Color.White
@@ -400,7 +389,6 @@ Partial Class Consignaciones
         'ComboBoxBanco
         '
         Me.ComboBoxBanco.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ComboBoxBanco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBoxBanco.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ComboBoxBanco.FormattingEnabled = True
         Me.ComboBoxBanco.Location = New System.Drawing.Point(17, 49)
@@ -440,7 +428,7 @@ Partial Class Consignaciones
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(14, 28)
+        Me.Label23.Location = New System.Drawing.Point(14, 30)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(129, 13)
         Me.Label23.TabIndex = 11
@@ -448,9 +436,9 @@ Partial Class Consignaciones
         '
         'PictureBoxParaGuardar
         '
-        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(731, 201)
+        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(730, 217)
         Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
-        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(462, 473)
+        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(463, 462)
         Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBoxParaGuardar.TabIndex = 22
         Me.PictureBoxParaGuardar.TabStop = False
@@ -463,7 +451,7 @@ Partial Class Consignaciones
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
         Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonActualizar.Location = New System.Drawing.Point(518, 160)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(630, 163)
         Me.ButtonActualizar.Name = "ButtonActualizar"
         Me.ButtonActualizar.Size = New System.Drawing.Size(154, 34)
         Me.ButtonActualizar.TabIndex = 10
@@ -478,7 +466,7 @@ Partial Class Consignaciones
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(518, 119)
+        Me.ButtonExportar.Location = New System.Drawing.Point(630, 103)
         Me.ButtonExportar.Name = "ButtonExportar"
         Me.ButtonExportar.Size = New System.Drawing.Size(154, 37)
         Me.ButtonExportar.TabIndex = 13
@@ -493,7 +481,7 @@ Partial Class Consignaciones
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
         Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.Location = New System.Drawing.Point(518, 76)
+        Me.ButtonBuscar.Location = New System.Drawing.Point(630, 41)
         Me.ButtonBuscar.Name = "ButtonBuscar"
         Me.ButtonBuscar.Size = New System.Drawing.Size(154, 39)
         Me.ButtonBuscar.TabIndex = 22
@@ -509,20 +497,18 @@ Partial Class Consignaciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 682)
+        Me.ClientSize = New System.Drawing.Size(1205, 686)
+        Me.Controls.Add(Me.PictureBoxParaGuardar)
         Me.Controls.Add(Me.ButtonActualizar)
         Me.Controls.Add(Me.ButtonExportar)
         Me.Controls.Add(Me.PanelIngresarDatos)
         Me.Controls.Add(Me.GroupBoxBusquedaPorFecha)
         Me.Controls.Add(Me.ButtonBuscar)
-        Me.Controls.Add(Me.Label14)
-        Me.Controls.Add(Me.TextBoxNumReferencia)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.ComboBoxSub2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridViewConsignaciones)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.PictureBoxParaGuardar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "Consignaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -560,13 +546,11 @@ Partial Class Consignaciones
     Friend WithEvents ButtonExportar As Button
     Friend WithEvents ButtonActualizar As Button
     Friend WithEvents GroupBoxBusquedaPorFecha As GroupBox
-    Friend WithEvents MaskedTextBox1 As MaskedTextBox
+    Friend WithEvents MaskedTextBoxDesdeC As MaskedTextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents MaskedTextBox2 As MaskedTextBox
+    Friend WithEvents MaskedTextBoxHastaC As MaskedTextBox
     Friend WithEvents ButtonBuscar As Button
-    Friend WithEvents Label14 As Label
-    Friend WithEvents TextBoxNumReferencia As TextBox
     Friend WithEvents PanelIngresarDatos As Panel
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label

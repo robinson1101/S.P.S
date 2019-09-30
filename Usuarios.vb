@@ -24,6 +24,18 @@ Public Class Usuarios
             DataGridViewUsuarios.Columns(8).Width = 100
             DataGridViewUsuarios.Columns(9).Width = 141
 
+            DataGridViewUsuarios.Columns(0).SortMode = False
+            DataGridViewUsuarios.Columns(1).SortMode = False
+            DataGridViewUsuarios.Columns(2).SortMode = False
+            DataGridViewUsuarios.Columns(3).SortMode = False
+            DataGridViewUsuarios.Columns(4).SortMode = False
+            DataGridViewUsuarios.Columns(5).SortMode = False
+            DataGridViewUsuarios.Columns(6).SortMode = False
+            DataGridViewUsuarios.Columns(7).SortMode = False
+            DataGridViewUsuarios.Columns(8).SortMode = False
+            DataGridViewUsuarios.Columns(9).SortMode = False
+
+
             conexion6.CerrarConexion()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -220,4 +232,30 @@ Public Class Usuarios
         End Try
         CargarDataUsuarios()
     End Sub
+
+    Private Sub TextBoxCedula_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxCedula.KeyPress
+        'metodo para evitar que se ingresen letras pero que se puedan borrar los numeros
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+
+        End If
+    End Sub
+
+    Private Sub TextBoxTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxTelefono.KeyPress
+        'metodo para evitar que se ingresen letras pero que se puedan borrar los numeros
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+
+        End If
+    End Sub
+
+    Private Sub TextBoxCupo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxCupo.KeyPress
+        'metodo para evitar que se ingresen letras pero que se puedan borrar los numeros
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = Not IsNumeric(e.KeyChar) And Not Char.IsControl(e.KeyChar)
+
+        End If
+    End Sub
+
+
 End Class

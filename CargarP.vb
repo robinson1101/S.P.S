@@ -16,14 +16,8 @@ Public Class Cargar_pago
             End If
             conexion7.CerrarConexion()
 
-            Dim conexion10 As New conexion
-            Dim cmd9 As New MySqlCommand("CALL CargarSaldoPConsignar('" & Principal.LabelUsuarioU.Text & "');", conexion10.conexion)
-            conexion10.AbrirConexion()
-            Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
-            If leer9.Read Then
-                saldoPConsignar = leer9(0)
-            End If
-            conexion10.CerrarConexion()
+
+            saldoPConsignar = Consignaciones.Deuda() - Consignaciones.Consignaciones()
 
 
             'codigo para validar que el datagrid no guarde campos vacios
@@ -115,7 +109,7 @@ Public Class Cargar_pago
                             cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
                             cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
                             cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
-                            cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToInt16(fila.Cells("Column8").Value)
+                            cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToInt32(fila.Cells("Column8").Value)
                             cmd1.Parameters.Add("?EstadoActual", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column9").Value)
 
                             cmd1.ExecuteNonQuery()
@@ -190,5 +184,7 @@ Public Class Cargar_pago
         End Try
     End Sub
 
+    Private Sub Cargar_pago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
 End Class

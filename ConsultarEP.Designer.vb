@@ -32,8 +32,6 @@ Partial Class ConsultarEP
         Me.MaskedTextBoxDesde = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBoxHasta = New System.Windows.Forms.MaskedTextBox()
         Me.DataGridViewConsultar = New System.Windows.Forms.DataGridView()
-        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.ToolTipConsultar = New System.Windows.Forms.ToolTip(Me.components)
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
@@ -45,6 +43,8 @@ Partial Class ConsultarEP
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -122,6 +122,7 @@ Partial Class ConsultarEP
         'DataGridViewConsultar
         '
         Me.DataGridViewConsultar.AllowUserToAddRows = False
+        Me.DataGridViewConsultar.AllowUserToDeleteRows = False
         Me.DataGridViewConsultar.AllowUserToResizeColumns = False
         Me.DataGridViewConsultar.AllowUserToResizeRows = False
         Me.DataGridViewConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -140,24 +141,8 @@ Partial Class ConsultarEP
         Me.DataGridViewConsultar.RowHeadersVisible = False
         Me.DataGridViewConsultar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.DataGridViewConsultar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridViewConsultar.Size = New System.Drawing.Size(1028, 551)
+        Me.DataGridViewConsultar.Size = New System.Drawing.Size(1205, 551)
         Me.DataGridViewConsultar.TabIndex = 8
-        '
-        'Column1
-        '
-        Me.Column1.HeaderText = ""
-        Me.Column1.Image = Global.Legar.Resources.Actualizar50
-        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Column1.Name = "Column1"
-        Me.Column1.ToolTipText = "Actualizar estado"
-        '
-        'Column2
-        '
-        Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Column2.HeaderText = "CAMBIAR A:"
-        Me.Column2.Items.AddRange(New Object() {"PAGO", "NO PAGO", "R. ANULADO"})
-        Me.Column2.Name = "Column2"
-        Me.Column2.ToolTipText = "Seleccionar"
         '
         'ButtonActualizar
         '
@@ -267,11 +252,28 @@ Partial Class ConsultarEP
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "Actualizar estado"
         '
+        'Column1
+        '
+        Me.Column1.HeaderText = ""
+        Me.Column1.Image = Global.Legar.Resources.Actualizar50
+        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column1.Name = "Column1"
+        Me.Column1.ToolTipText = "Actualizar estado"
+        '
+        'Column2
+        '
+        Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Column2.HeaderText = "CAMBIAR A:"
+        Me.Column2.Items.AddRange(New Object() {"PAGO", "NO PAGO", "R. ANULADO"})
+        Me.Column2.Name = "Column2"
+        Me.Column2.ToolTipText = "Seleccionar"
+        Me.Column2.Width = 116
+        '
         'ConsultarEP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 686)
+        Me.ClientSize = New System.Drawing.Size(1205, 686)
         Me.Controls.Add(Me.ButtonActualizar)
         Me.Controls.Add(Me.ButtonExportar)
         Me.Controls.Add(Me.GroupBox1)
@@ -311,11 +313,11 @@ Partial Class ConsultarEP
     Friend WithEvents Label5 As Label
     Friend WithEvents ComboBoxSub As ComboBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-    Friend WithEvents Column1 As DataGridViewImageColumn
-    Friend WithEvents Column2 As DataGridViewComboBoxColumn
     Friend WithEvents ButtonExportar As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Column1 As DataGridViewImageColumn
+    Friend WithEvents Column2 As DataGridViewComboBoxColumn
 End Class

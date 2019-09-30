@@ -23,8 +23,8 @@ Partial Class Usuarios
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridViewUsuarios = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.RadioButtonIngresar = New System.Windows.Forms.RadioButton()
@@ -50,33 +50,36 @@ Partial Class Usuarios
         Me.ButtonEliminar = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ToolTipUsuarios = New System.Windows.Forms.ToolTip(Me.components)
-        Me.LabelIdUsuario = New System.Windows.Forms.Label()
         Me.ComboBoxTipoUsuario = New System.Windows.Forms.ComboBox()
+        Me.LabelIdUsuario = New System.Windows.Forms.Label()
         CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridViewUsuarios
         '
         Me.DataGridViewUsuarios.AllowUserToAddRows = False
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.DataGridViewUsuarios.AllowUserToDeleteRows = False
+        Me.DataGridViewUsuarios.AllowUserToResizeColumns = False
+        Me.DataGridViewUsuarios.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        Me.DataGridViewUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewUsuarios.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewUsuarios.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewUsuarios.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DataGridViewUsuarios.Location = New System.Drawing.Point(3, 50)
+        Me.DataGridViewUsuarios.MultiSelect = False
         Me.DataGridViewUsuarios.Name = "DataGridViewUsuarios"
         Me.DataGridViewUsuarios.RowHeadersVisible = False
         Me.DataGridViewUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
@@ -141,14 +144,18 @@ Partial Class Usuarios
         '
         'TextBoxNombre
         '
+        Me.TextBoxNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxNombre.Location = New System.Drawing.Point(3, 510)
+        Me.TextBoxNombre.MaxLength = 25
         Me.TextBoxNombre.Name = "TextBoxNombre"
         Me.TextBoxNombre.Size = New System.Drawing.Size(155, 20)
         Me.TextBoxNombre.TabIndex = 6
         '
         'TextBoxApellido
         '
+        Me.TextBoxApellido.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxApellido.Location = New System.Drawing.Point(164, 510)
+        Me.TextBoxApellido.MaxLength = 25
         Me.TextBoxApellido.Name = "TextBoxApellido"
         Me.TextBoxApellido.Size = New System.Drawing.Size(163, 20)
         Me.TextBoxApellido.TabIndex = 8
@@ -164,7 +171,9 @@ Partial Class Usuarios
         '
         'TextBoxCedula
         '
+        Me.TextBoxCedula.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxCedula.Location = New System.Drawing.Point(334, 510)
+        Me.TextBoxCedula.MaxLength = 10
         Me.TextBoxCedula.Name = "TextBoxCedula"
         Me.TextBoxCedula.Size = New System.Drawing.Size(143, 20)
         Me.TextBoxCedula.TabIndex = 10
@@ -180,7 +189,9 @@ Partial Class Usuarios
         '
         'TextBoxTelefono
         '
+        Me.TextBoxTelefono.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxTelefono.Location = New System.Drawing.Point(484, 510)
+        Me.TextBoxTelefono.MaxLength = 10
         Me.TextBoxTelefono.Name = "TextBoxTelefono"
         Me.TextBoxTelefono.Size = New System.Drawing.Size(147, 20)
         Me.TextBoxTelefono.TabIndex = 12
@@ -205,7 +216,9 @@ Partial Class Usuarios
         '
         'TextBoxUsuario
         '
+        Me.TextBoxUsuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxUsuario.Location = New System.Drawing.Point(804, 510)
+        Me.TextBoxUsuario.MaxLength = 30
         Me.TextBoxUsuario.Name = "TextBoxUsuario"
         Me.TextBoxUsuario.Size = New System.Drawing.Size(137, 20)
         Me.TextBoxUsuario.TabIndex = 16
@@ -222,6 +235,7 @@ Partial Class Usuarios
         'TextBoxContraseña
         '
         Me.TextBoxContraseña.Location = New System.Drawing.Point(948, 510)
+        Me.TextBoxContraseña.MaxLength = 25
         Me.TextBoxContraseña.Name = "TextBoxContraseña"
         Me.TextBoxContraseña.Size = New System.Drawing.Size(134, 20)
         Me.TextBoxContraseña.TabIndex = 18
@@ -237,7 +251,9 @@ Partial Class Usuarios
         '
         'TextBoxCupo
         '
+        Me.TextBoxCupo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TextBoxCupo.Location = New System.Drawing.Point(1090, 510)
+        Me.TextBoxCupo.MaxLength = 8
         Me.TextBoxCupo.Name = "TextBoxCupo"
         Me.TextBoxCupo.Size = New System.Drawing.Size(113, 20)
         Me.TextBoxCupo.TabIndex = 20
@@ -301,16 +317,6 @@ Partial Class Usuarios
         Me.Label10.TabIndex = 24
         Me.Label10.Text = "Movimientos a realizar..."
         '
-        'LabelIdUsuario
-        '
-        Me.LabelIdUsuario.AutoSize = True
-        Me.LabelIdUsuario.Location = New System.Drawing.Point(0, 399)
-        Me.LabelIdUsuario.Name = "LabelIdUsuario"
-        Me.LabelIdUsuario.Size = New System.Drawing.Size(51, 13)
-        Me.LabelIdUsuario.TabIndex = 25
-        Me.LabelIdUsuario.Text = "idUsuario"
-        Me.LabelIdUsuario.Visible = False
-        '
         'ComboBoxTipoUsuario
         '
         Me.ComboBoxTipoUsuario.FlatStyle = System.Windows.Forms.FlatStyle.System
@@ -320,6 +326,16 @@ Partial Class Usuarios
         Me.ComboBoxTipoUsuario.Size = New System.Drawing.Size(159, 21)
         Me.ComboBoxTipoUsuario.TabIndex = 26
         Me.ToolTipUsuarios.SetToolTip(Me.ComboBoxTipoUsuario, "Seleccionar tipo de usuario")
+        '
+        'LabelIdUsuario
+        '
+        Me.LabelIdUsuario.AutoSize = True
+        Me.LabelIdUsuario.Location = New System.Drawing.Point(0, 399)
+        Me.LabelIdUsuario.Name = "LabelIdUsuario"
+        Me.LabelIdUsuario.Size = New System.Drawing.Size(51, 13)
+        Me.LabelIdUsuario.TabIndex = 25
+        Me.LabelIdUsuario.Text = "idUsuario"
+        Me.LabelIdUsuario.Visible = False
         '
         'Usuarios
         '

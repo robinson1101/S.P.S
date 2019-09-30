@@ -22,10 +22,10 @@ Partial Class Cargar_pago
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridViewPagos = New System.Windows.Forms.DataGridView()
         Me.ButtonSubirP = New System.Windows.Forms.Button()
@@ -36,7 +36,6 @@ Partial Class Cargar_pago
         Me.LabelNombreP = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.LabelCedulaP = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,8 +48,10 @@ Partial Class Cargar_pago
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.LABLE = New System.Windows.Forms.Label()
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -66,64 +67,68 @@ Partial Class Cargar_pago
         'DataGridViewPagos
         '
         Me.DataGridViewPagos.AllowUserToAddRows = False
+        Me.DataGridViewPagos.AllowUserToResizeColumns = False
+        Me.DataGridViewPagos.AllowUserToResizeRows = False
         Me.DataGridViewPagos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
         Me.DataGridViewPagos.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewPagos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.DeepSkyBlue
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewPagos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DeepSkyBlue
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewPagos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewPagos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewPagos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column10, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9, Me.Column11})
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DataGridViewPagos.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridViewPagos.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewPagos.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.DataGridViewPagos.Location = New System.Drawing.Point(0, 118)
         Me.DataGridViewPagos.Name = "DataGridViewPagos"
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.DodgerBlue
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewPagos.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DodgerBlue
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewPagos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewPagos.RowHeadersVisible = False
         Me.DataGridViewPagos.Size = New System.Drawing.Size(1205, 568)
         Me.DataGridViewPagos.TabIndex = 1
         '
         'ButtonSubirP
         '
-        Me.ButtonSubirP.Location = New System.Drawing.Point(1080, 70)
+        Me.ButtonSubirP.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonSubirP.Location = New System.Drawing.Point(1050, 12)
         Me.ButtonSubirP.Name = "ButtonSubirP"
-        Me.ButtonSubirP.Size = New System.Drawing.Size(120, 42)
+        Me.ButtonSubirP.Size = New System.Drawing.Size(150, 100)
         Me.ButtonSubirP.TabIndex = 2
         Me.ButtonSubirP.Text = "GUARDAR PAGOS"
-        Me.ButtonSubirP.UseVisualStyleBackColor = True
+        Me.ButtonSubirP.UseVisualStyleBackColor = False
         '
         'ButtonIngresarR
         '
-        Me.ButtonIngresarR.Location = New System.Drawing.Point(926, 70)
+        Me.ButtonIngresarR.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonIngresarR.Location = New System.Drawing.Point(896, 12)
         Me.ButtonIngresarR.Name = "ButtonIngresarR"
-        Me.ButtonIngresarR.Size = New System.Drawing.Size(148, 42)
+        Me.ButtonIngresarR.Size = New System.Drawing.Size(148, 100)
         Me.ButtonIngresarR.TabIndex = 3
         Me.ButtonIngresarR.Text = "INGRESAR REGISTRO"
-        Me.ButtonIngresarR.UseVisualStyleBackColor = True
+        Me.ButtonIngresarR.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 24)
+        Me.Label2.Location = New System.Drawing.Point(8, 38)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(127, 13)
         Me.Label2.TabIndex = 4
@@ -132,7 +137,7 @@ Partial Class Cargar_pago
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 49)
+        Me.Label3.Location = New System.Drawing.Point(8, 63)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 13)
         Me.Label3.TabIndex = 5
@@ -142,7 +147,7 @@ Partial Class Cargar_pago
         '
         Me.LabelIdSub.AutoSize = True
         Me.LabelIdSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelIdSub.Location = New System.Drawing.Point(138, 21)
+        Me.LabelIdSub.Location = New System.Drawing.Point(140, 35)
         Me.LabelIdSub.Name = "LabelIdSub"
         Me.LabelIdSub.Size = New System.Drawing.Size(21, 16)
         Me.LabelIdSub.TabIndex = 6
@@ -152,7 +157,7 @@ Partial Class Cargar_pago
         '
         Me.LabelNombreP.AutoSize = True
         Me.LabelNombreP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombreP.Location = New System.Drawing.Point(138, 47)
+        Me.LabelNombreP.Location = New System.Drawing.Point(140, 61)
         Me.LabelNombreP.Name = "LabelNombreP"
         Me.LabelNombreP.Size = New System.Drawing.Size(67, 16)
         Me.LabelNombreP.TabIndex = 7
@@ -161,7 +166,7 @@ Partial Class Cargar_pago
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 73)
+        Me.Label7.Location = New System.Drawing.Point(8, 87)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(53, 13)
         Me.Label7.TabIndex = 9
@@ -171,29 +176,11 @@ Partial Class Cargar_pago
         '
         Me.LabelCedulaP.AutoSize = True
         Me.LabelCedulaP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCedulaP.Location = New System.Drawing.Point(138, 71)
+        Me.LabelCedulaP.Location = New System.Drawing.Point(140, 85)
         Me.LabelCedulaP.Name = "LabelCedulaP"
         Me.LabelCedulaP.Size = New System.Drawing.Size(62, 16)
         Me.LabelCedulaP.TabIndex = 10
         Me.LabelCedulaP.Text = "CEDULA"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.White
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.LabelCedulaP)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.LabelIdSub)
-        Me.GroupBox1.Controls.Add(Me.LabelNombreP)
-        Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.GroupBox1.ForeColor = System.Drawing.Color.Navy
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(335, 100)
-        Me.GroupBox1.TabIndex = 11
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "DATOS SUBDISTRIBUIDOR"
         '
         'DataGridViewImageColumn1
         '
@@ -213,8 +200,8 @@ Partial Class Cargar_pago
         'Column1
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
         Me.Column1.FillWeight = 105.0!
         Me.Column1.HeaderText = "ID REGISTRO"
         Me.Column1.Name = "Column1"
@@ -238,7 +225,7 @@ Partial Class Cargar_pago
         Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Column4.HeaderText = "VENDEDOR"
         Me.Column4.Name = "Column4"
-        Me.Column4.Width = 195
+        Me.Column4.Width = 198
         '
         'Column5
         '
@@ -271,7 +258,7 @@ Partial Class Cargar_pago
         '
         Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Column8.HeaderText = "VALOR"
-        Me.Column8.MaxInputLength = 7
+        Me.Column8.MaxInputLength = 8
         Me.Column8.Name = "Column8"
         '
         'Column9
@@ -290,12 +277,37 @@ Partial Class Cargar_pago
         Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column11.Width = 5
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Panel1.Controls.Add(Me.LABLE)
+        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label3)
+        Me.Panel1.Controls.Add(Me.LabelNombreP)
+        Me.Panel1.Controls.Add(Me.LabelCedulaP)
+        Me.Panel1.Controls.Add(Me.LabelIdSub)
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Location = New System.Drawing.Point(12, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(379, 110)
+        Me.Panel1.TabIndex = 11
+        '
+        'LABLE
+        '
+        Me.LABLE.AutoSize = True
+        Me.LABLE.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LABLE.Location = New System.Drawing.Point(8, 8)
+        Me.LABLE.Name = "LABLE"
+        Me.LABLE.Size = New System.Drawing.Size(157, 16)
+        Me.LABLE.TabIndex = 11
+        Me.LABLE.Text = "DATOS DE USUARIO"
+        '
         'Cargar_pago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 686)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ButtonIngresarR)
         Me.Controls.Add(Me.ButtonSubirP)
         Me.Controls.Add(Me.DataGridViewPagos)
@@ -305,8 +317,8 @@ Partial Class Cargar_pago
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Cargar_pago"
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -323,7 +335,6 @@ Partial Class Cargar_pago
     Friend WithEvents Label7 As Label
     Friend WithEvents LabelCedulaP As Label
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
-    Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -335,4 +346,6 @@ Partial Class Cargar_pago
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewImageColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LABLE As Label
 End Class

@@ -1,7 +1,11 @@
 ﻿Imports Microsoft.Office.Interop
 Imports MySql.Data.MySqlClient
 
+
+
 Public Class ConsultarEP
+
+
     Sub cargarDatagridConsultar()
         Try
             Dim conexion3 As New conexion
@@ -108,53 +112,79 @@ Public Class ConsultarEP
             Else
                 'Codigo para validar si el sub esta excediendo el cupo asignado
                 Dim cupo As Integer = 0
+                Dim deuda As Integer = 0
+                Dim consignaciones As Integer = 0
                 Dim saldoPConsignar As Integer = 0
 
                 If DataGridViewConsultar.Rows(e.RowIndex).Cells(1).Value = "PAGO" Then
-                    Dim conexion7 As New conexion
-                    Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & Principal.LabelUsuarioU.Text & "','" & Principal.LabelTipoU.Text & "');", conexion7.conexion)
-                    conexion7.AbrirConexion()
-                    Dim leer6 As MySqlDataReader = cmd6.ExecuteReader()
-                    If leer6.Read Then
-                        cupo = leer6(0)
-                    End If
+                    Try
+                        Dim conexion7 As New conexion
+                        Dim cmd6 As New MySqlCommand("CALL CargarCupo('" & DataGridViewConsultar.Rows(e.RowIndex).Cells(3).Value.ToString() & "','SUBDISTRIBUIDOR');", conexion7.conexion)
+                        conexion7.AbrirConexion()
+                        Dim leer6 As MySqlDataReader = cmd6.ExecuteReader()
+                        If leer6.Read Then
+                            cupo = leer6(0) + 0
+                        End If
 
-                    conexion7.CerrarConexion()
+                        conexion7.CerrarConexion()
+                    Catch ex As Exception
+                        cupo = 0
+                    End Try
 
-                    Dim conexion10 As New conexion
-                    Dim cmd9 As New MySqlCommand("CALL CargarSaldoPConsignar('" & Principal.LabelUsuarioU.Text & "');", conexion10.conexion)
-                    conexion10.AbrirConexion()
-                    Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
-                    If leer9.Read Then
-                        saldoPConsignar = leer9(0)
-                    End If
+                    Try
+                        Dim conexion10 As New conexion
+                        Dim cmd9 As New MySqlCommand("CALL CargarDeuda('" & DataGridViewConsultar.Rows(e.RowIndex).Cells(3).Value.ToString() & "');", conexion10.conexion)
+                        conexion10.AbrirConexion()
+                        Dim leer9 As MySqlDataReader = cmd9.ExecuteReader()
+                        If leer9.Read Then
+                            deuda = leer9(0) + 0
+                        End If
+                        conexion10.CerrarConexion()
+                    Catch ex As Exception
+                        deuda = 0
+                    End Try
 
-                    conexion10.CerrarConexion()
+                    Try
+                        Dim conexion11 As New conexion
+                        Dim cmd11 As New MySqlCommand("CALL CargarConsignacionesPagas('" & DataGridViewConsultar.Rows(e.RowIndex).Cells(3).Value.ToString() & "');", conexion11.conexion)
+                        conexion11.AbrirConexion()
+                        Dim leer11 As MySqlDataReader = cmd11.ExecuteReader()
+                        If leer11.Read Then
+                            consignaciones = leer11(0) + 0
+                        End If
 
+                        conexion11.CerrarConexion()
+                    Catch ex As Exception
+                        consignaciones = 0
+                    End Try
+
+                    saldoPConsignar = deuda - consignaciones
                     Dim valorCelda As String = DataGridViewConsultar.Rows(e.RowIndex).Cells(10).Value.ToString()
+
+
                     saldoPConsignar += valorCelda
                 End If
 
                 MsgBox(saldoPConsignar & "<=" & cupo)
 
                 If saldoPConsignar <= cupo Then
-                        Dim Result As DialogResult = MessageBox.Show("¿DESEA ACTUALIZAR EL ESTADO?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                        If Result = DialogResult.Yes Then
+                    Dim Result As DialogResult = MessageBox.Show("¿DESEA ACTUALIZAR EL ESTADO?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                    If Result = DialogResult.Yes Then
 
-                            cmd4.ExecuteNonQuery()
-                            MsgBox("ESTADO ACTUALIZADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
-
-                        End If
-                        conexion4.CerrarConexion()
-                        cargarDatagridConsultar()
-
-                    Else
-                        cargarDatagridConsultar()
-                        FormGif.ShowDialog()
+                        cmd4.ExecuteNonQuery()
+                        MsgBox("ESTADO ACTUALIZADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
 
                     End If
+                    conexion4.CerrarConexion()
+                    cargarDatagridConsultar()
+
+                Else
+                    cargarDatagridConsultar()
+                    FormGif.ShowDialog()
 
                 End If
+
+            End If
 
 
         Catch ex As Exception
@@ -467,4 +497,7 @@ Public Class ConsultarEP
 
     End Sub
 
+    Private Sub ComboBoxSub_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxSub.KeyPress
+        e.Handled = True
+    End Sub
 End Class

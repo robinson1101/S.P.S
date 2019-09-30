@@ -24,17 +24,17 @@ Partial Class Login
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonIngresar = New System.Windows.Forms.Button()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
         Me.TextBoxUser = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolTipLogin = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBoxFondo = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,6 +58,17 @@ Partial Class Login
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(331, 547)
         Me.Panel1.TabIndex = 1
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.ErrorImage = Nothing
+        Me.PictureBox1.Image = Global.Legar.Resources.loginn1
+        Me.PictureBox1.Location = New System.Drawing.Point(86, 55)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(163, 173)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
         '
         'LinkLabel1
         '
@@ -102,6 +113,7 @@ Partial Class Login
         Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxPassword.ForeColor = System.Drawing.Color.Black
         Me.TextBoxPassword.Location = New System.Drawing.Point(70, 310)
+        Me.TextBoxPassword.MaxLength = 25
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TextBoxPassword.Size = New System.Drawing.Size(219, 22)
@@ -115,11 +127,34 @@ Partial Class Login
         Me.TextBoxUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxUser.ForeColor = System.Drawing.Color.Black
         Me.TextBoxUser.Location = New System.Drawing.Point(70, 245)
+        Me.TextBoxUser.MaxLength = 30
         Me.TextBoxUser.Multiline = True
         Me.TextBoxUser.Name = "TextBoxUser"
         Me.TextBoxUser.Size = New System.Drawing.Size(219, 21)
         Me.TextBoxUser.TabIndex = 2
         Me.ToolTipLogin.SetToolTip(Me.TextBoxUser, "Ingresar usuario")
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Silver
+        Me.PictureBox3.Image = Global.Legar.Resources.locked
+        Me.PictureBox3.Location = New System.Drawing.Point(35, 310)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(35, 22)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 7
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Silver
+        Me.PictureBox2.Image = Global.Legar.Resources.user1
+        Me.PictureBox2.Location = New System.Drawing.Point(35, 245)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(35, 21)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 6
+        Me.PictureBox2.TabStop = False
         '
         'Label2
         '
@@ -144,39 +179,6 @@ Partial Class Login
         Me.Label3.Size = New System.Drawing.Size(213, 16)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Sistema de pagos sub-distribuidor"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.ErrorImage = Nothing
-        Me.PictureBox1.Image = Global.Legar.Resources.loginn1
-        Me.PictureBox1.Location = New System.Drawing.Point(86, 55)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(163, 173)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Silver
-        Me.PictureBox3.Image = Global.Legar.Resources.locked
-        Me.PictureBox3.Location = New System.Drawing.Point(35, 310)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(35, 22)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox3.TabIndex = 7
-        Me.PictureBox3.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Silver
-        Me.PictureBox2.Image = Global.Legar.Resources.user1
-        Me.PictureBox2.Location = New System.Drawing.Point(35, 245)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(35, 21)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox2.TabIndex = 6
-        Me.PictureBox2.TabStop = False
         '
         'PictureBoxFondo
         '
