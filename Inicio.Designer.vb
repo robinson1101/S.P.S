@@ -23,6 +23,7 @@ Partial Class Login
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
@@ -136,7 +137,7 @@ Partial Class Login
         '
         'PictureBox3
         '
-        Me.PictureBox3.BackColor = System.Drawing.Color.Silver
+        Me.PictureBox3.BackColor = System.Drawing.Color.DarkGray
         Me.PictureBox3.Image = Global.Legar.Resources.locked
         Me.PictureBox3.Location = New System.Drawing.Point(35, 310)
         Me.PictureBox3.Name = "PictureBox3"
@@ -147,7 +148,7 @@ Partial Class Login
         '
         'PictureBox2
         '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Silver
+        Me.PictureBox2.BackColor = System.Drawing.Color.DarkGray
         Me.PictureBox2.Image = Global.Legar.Resources.user1
         Me.PictureBox2.Location = New System.Drawing.Point(35, 245)
         Me.PictureBox2.Name = "PictureBox2"
@@ -201,6 +202,7 @@ Partial Class Login
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBoxFondo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Login"
         Me.Opacity = 0.88R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

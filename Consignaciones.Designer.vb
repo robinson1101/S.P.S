@@ -198,7 +198,7 @@ Partial Class Consignaciones
         '
         Me.TextBoxCupoDisponible.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCupoDisponible.Enabled = False
-        Me.TextBoxCupoDisponible.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCupoDisponible.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCupoDisponible.ForeColor = System.Drawing.Color.Black
         Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(177, 63)
         Me.TextBoxCupoDisponible.Multiline = True
@@ -210,7 +210,7 @@ Partial Class Consignaciones
         '
         Me.TextBoxSaldoInicial.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxSaldoInicial.Enabled = False
-        Me.TextBoxSaldoInicial.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSaldoInicial.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSaldoInicial.ForeColor = System.Drawing.Color.Black
         Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(177, 98)
         Me.TextBoxSaldoInicial.Multiline = True
@@ -222,7 +222,7 @@ Partial Class Consignaciones
         '
         Me.TextBoxCupo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCupo.Enabled = False
-        Me.TextBoxCupo.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxCupo.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCupo.ForeColor = System.Drawing.Color.Black
         Me.TextBoxCupo.Location = New System.Drawing.Point(177, 28)
         Me.TextBoxCupo.Multiline = True
@@ -234,7 +234,7 @@ Partial Class Consignaciones
         '
         Me.TextBoxSaldoPConsignar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxSaldoPConsignar.Enabled = False
-        Me.TextBoxSaldoPConsignar.Font = New System.Drawing.Font("LCD", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBoxSaldoPConsignar.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSaldoPConsignar.ForeColor = System.Drawing.Color.Black
         Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(177, 133)
         Me.TextBoxSaldoPConsignar.Multiline = True
