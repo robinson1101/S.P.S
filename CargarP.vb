@@ -90,7 +90,7 @@ Public Class Cargar_pago
                 Next
 
 
-                If saldoPConsignar <= cupo Then
+                If saldoPConsignar <= cupo Or cupo = 0 Then
                     Dim Result As DialogResult = MessageBox.Show("¿DESEA SUBIR LOS DATOS INGRESADOS EN LA TABLA?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                     If Result = DialogResult.Yes Then
 

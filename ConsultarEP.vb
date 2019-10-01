@@ -159,15 +159,15 @@ Public Class ConsultarEP
                     End Try
 
                     saldoPConsignar = deuda - consignaciones
-                    Dim valorCelda As String = DataGridViewConsultar.Rows(e.RowIndex).Cells(10).Value.ToString()
 
 
-                    saldoPConsignar += valorCelda
+
+
                 End If
 
                 MsgBox(saldoPConsignar & "<=" & cupo)
 
-                If saldoPConsignar <= cupo Then
+                If saldoPConsignar <= cupo Or cupo = 0 Then
                     Dim Result As DialogResult = MessageBox.Show("¿DESEA ACTUALIZAR EL ESTADO?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
                     If Result = DialogResult.Yes Then
 
