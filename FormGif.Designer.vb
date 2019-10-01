@@ -32,7 +32,7 @@ Partial Class FormGif
         '
         Me.PictureBoxGif.BackColor = System.Drawing.Color.Transparent
         Me.PictureBoxGif.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBoxGif.Image = Global.Legar.Resources.giphy
+        Me.PictureBoxGif.Image = Global.S.P.S.Resources.giphy
         Me.PictureBoxGif.Location = New System.Drawing.Point(0, 0)
         Me.PictureBoxGif.Name = "PictureBoxGif"
         Me.PictureBoxGif.Size = New System.Drawing.Size(375, 308)

@@ -137,7 +137,7 @@ Partial Class ConsultarEP
         'Column1
         '
         Me.Column1.HeaderText = ""
-        Me.Column1.Image = Global.Legar.Resources.Actualizar50
+        Me.Column1.Image = Global.S.P.S.Resources.Actualizar50
         Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.Column1.Name = "Column1"
         Me.Column1.ToolTipText = "Actualizar estado"
@@ -155,7 +155,7 @@ Partial Class ConsultarEP
         '
         Me.ButtonActualizar.FlatAppearance.BorderSize = 0
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
+        Me.ButtonActualizar.Image = Global.S.P.S.Resources.icons8_actualizar_en_la_nube_50
         Me.ButtonActualizar.Location = New System.Drawing.Point(1124, 65)
         Me.ButtonActualizar.Name = "ButtonActualizar"
         Me.ButtonActualizar.Size = New System.Drawing.Size(48, 44)
@@ -167,7 +167,7 @@ Partial Class ConsultarEP
         '
         Me.ButtonBuscar.FlatAppearance.BorderSize = 0
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
+        Me.ButtonBuscar.Image = Global.S.P.S.Resources.búsqueda50px
         Me.ButtonBuscar.Location = New System.Drawing.Point(370, 43)
         Me.ButtonBuscar.Name = "ButtonBuscar"
         Me.ButtonBuscar.Size = New System.Drawing.Size(46, 46)
@@ -242,7 +242,7 @@ Partial Class ConsultarEP
         '
         Me.ButtonExportar.FlatAppearance.BorderSize = 0
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
+        Me.ButtonExportar.Image = Global.S.P.S.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonExportar.Location = New System.Drawing.Point(1041, 65)
         Me.ButtonExportar.Name = "ButtonExportar"
@@ -254,7 +254,7 @@ Partial Class ConsultarEP
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.Legar.Resources.Actualizar50
+        Me.DataGridViewImageColumn1.Image = Global.S.P.S.Resources.Actualizar50
         Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "Actualizar estado"

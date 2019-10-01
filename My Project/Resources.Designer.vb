@@ -42,7 +42,7 @@ Friend Class Resources
     Friend Shared ReadOnly Property ResourceManager() As Global.System.Resources.ResourceManager
         Get
             If Object.ReferenceEquals(resourceMan, Nothing) Then
-                Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("Legar.Resources", GetType(Resources).Assembly)
+                Dim temp As Global.System.Resources.ResourceManager = New Global.System.Resources.ResourceManager("S.P.S.Resources", GetType(Resources).Assembly)
                 resourceMan = temp
             End If
             Return resourceMan
@@ -249,6 +249,16 @@ Friend Class Resources
     Friend Shared ReadOnly Property sps() As System.Drawing.Bitmap
         Get
             Dim obj As Object = ResourceManager.GetObject("sps", resourceCulture)
+            Return CType(obj,System.Drawing.Bitmap)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+    '''</summary>
+    Friend Shared ReadOnly Property sps1() As System.Drawing.Bitmap
+        Get
+            Dim obj As Object = ResourceManager.GetObject("sps1", resourceCulture)
             Return CType(obj,System.Drawing.Bitmap)
         End Get
     End Property

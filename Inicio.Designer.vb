@@ -25,7 +25,6 @@ Partial Class Login
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonIngresar = New System.Windows.Forms.Button()
         Me.TextBoxPassword = New System.Windows.Forms.TextBox()
@@ -48,7 +47,6 @@ Partial Class Login
         '
         Me.Panel1.BackColor = System.Drawing.Color.DarkGray
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.LinkLabel1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.ButtonIngresar)
         Me.Panel1.Controls.Add(Me.TextBoxPassword)
@@ -59,17 +57,6 @@ Partial Class Login
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(331, 547)
         Me.Panel1.TabIndex = 1
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.LinkColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LinkLabel1.Location = New System.Drawing.Point(109, 494)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(113, 13)
-        Me.LinkLabel1.TabIndex = 5
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "Olvido su contraseña.."
         '
         'Label1
         '
@@ -88,7 +75,7 @@ Partial Class Login
         Me.ButtonIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonIngresar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ButtonIngresar.Location = New System.Drawing.Point(70, 391)
+        Me.ButtonIngresar.Location = New System.Drawing.Point(70, 437)
         Me.ButtonIngresar.Name = "ButtonIngresar"
         Me.ButtonIngresar.Size = New System.Drawing.Size(218, 44)
         Me.ButtonIngresar.TabIndex = 4
@@ -102,7 +89,7 @@ Partial Class Login
         Me.TextBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxPassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxPassword.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxPassword.Location = New System.Drawing.Point(70, 310)
+        Me.TextBoxPassword.Location = New System.Drawing.Point(70, 365)
         Me.TextBoxPassword.MaxLength = 25
         Me.TextBoxPassword.Name = "TextBoxPassword"
         Me.TextBoxPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
@@ -116,7 +103,7 @@ Partial Class Login
         Me.TextBoxUser.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxUser.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxUser.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxUser.Location = New System.Drawing.Point(70, 245)
+        Me.TextBoxUser.Location = New System.Drawing.Point(70, 300)
         Me.TextBoxUser.MaxLength = 30
         Me.TextBoxUser.Multiline = True
         Me.TextBoxUser.Name = "TextBoxUser"
@@ -127,7 +114,7 @@ Partial Class Login
         'PictureBox4
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.White
-        Me.PictureBox4.Image = Global.Legar.Resources.sps
+        Me.PictureBox4.Image = Global.S.P.S.Resources.sps
         Me.PictureBox4.Location = New System.Drawing.Point(5, 404)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(255, 138)
@@ -138,10 +125,10 @@ Partial Class Login
         'PictureBox1
         '
         Me.PictureBox1.ErrorImage = Nothing
-        Me.PictureBox1.Image = Global.Legar.Resources.loginn1
-        Me.PictureBox1.Location = New System.Drawing.Point(86, 55)
+        Me.PictureBox1.Image = Global.S.P.S.Resources.loginn1
+        Me.PictureBox1.Location = New System.Drawing.Point(48, 44)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(163, 173)
+        Me.PictureBox1.Size = New System.Drawing.Size(240, 216)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
@@ -149,8 +136,8 @@ Partial Class Login
         'PictureBox3
         '
         Me.PictureBox3.BackColor = System.Drawing.Color.DarkGray
-        Me.PictureBox3.Image = Global.Legar.Resources.locked
-        Me.PictureBox3.Location = New System.Drawing.Point(35, 310)
+        Me.PictureBox3.Image = Global.S.P.S.Resources.locked
+        Me.PictureBox3.Location = New System.Drawing.Point(35, 365)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(35, 22)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -160,8 +147,8 @@ Partial Class Login
         'PictureBox2
         '
         Me.PictureBox2.BackColor = System.Drawing.Color.DarkGray
-        Me.PictureBox2.Image = Global.Legar.Resources.user1
-        Me.PictureBox2.Location = New System.Drawing.Point(35, 245)
+        Me.PictureBox2.Image = Global.S.P.S.Resources.user1
+        Me.PictureBox2.Location = New System.Drawing.Point(35, 300)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(35, 21)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -171,7 +158,7 @@ Partial Class Login
         'PictureBoxFondo
         '
         Me.PictureBoxFondo.BackColor = System.Drawing.Color.White
-        Me.PictureBoxFondo.Image = Global.Legar.Resources.Imagen1
+        Me.PictureBoxFondo.Image = Global.S.P.S.Resources.Imagen1
         Me.PictureBoxFondo.Location = New System.Drawing.Point(0, 0)
         Me.PictureBoxFondo.Name = "PictureBoxFondo"
         Me.PictureBoxFondo.Size = New System.Drawing.Size(595, 547)
@@ -213,7 +200,6 @@ Partial Class Login
     Friend WithEvents TextBoxUser As TextBox
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ToolTipLogin As ToolTip
     Friend WithEvents PictureBox4 As PictureBox

@@ -1,4 +1,5 @@
-﻿Imports System
+﻿Imports System.Resources
+Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -8,10 +9,10 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("Legar")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyTitle("S.P.S")>
+<Assembly: AssemblyDescription("Sistema de pagos subdistribuidor")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Legar")>
+<Assembly: AssemblyProduct("")>
 <Assembly: AssemblyCopyright("Copyright ©  2019")>
 <Assembly: AssemblyTrademark("")>
 
@@ -31,5 +32,6 @@ Imports System.Runtime.InteropServices
 ' utilizando el carácter "*", como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.0.0")>
-<Assembly: AssemblyFileVersion("1.0.0.0")>
+<Assembly: AssemblyVersion("1.0.0.1")>
+<Assembly: AssemblyFileVersion("1.0.0.1")>
+<Assembly: NeutralResourcesLanguage("es")>

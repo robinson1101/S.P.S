@@ -182,7 +182,7 @@ Partial Class Cargar_pago
         'Column11
         '
         Me.Column11.HeaderText = ""
-        Me.Column11.Image = Global.Legar.Resources.delete_4_90871
+        Me.Column11.Image = Global.S.P.S.Resources.delete_4_90871
         Me.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.Column11.Name = "Column11"
         Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
@@ -268,7 +268,7 @@ Partial Class Cargar_pago
         'DataGridViewImageColumn1
         '
         Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.Legar.Resources.delete_4_90871
+        Me.DataGridViewImageColumn1.Image = Global.S.P.S.Resources.delete_4_90871
         Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]

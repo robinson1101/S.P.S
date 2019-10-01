@@ -116,7 +116,7 @@ Partial Class Consignaciones
         '
         Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
         Me.Column1.HeaderText = ""
-        Me.Column1.Image = Global.Legar.Resources.Actualizar50
+        Me.Column1.Image = Global.S.P.S.Resources.Actualizar50
         Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
         Me.Column1.Name = "Column1"
         Me.Column1.Width = 35
@@ -463,7 +463,7 @@ Partial Class Consignaciones
         Me.ButtonActualizar.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ButtonActualizar.FlatAppearance.BorderSize = 0
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
+        Me.ButtonActualizar.Image = Global.S.P.S.Resources.icons8_actualizar_en_la_nube_50
         Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonActualizar.Location = New System.Drawing.Point(650, 151)
         Me.ButtonActualizar.Name = "ButtonActualizar"
@@ -478,7 +478,7 @@ Partial Class Consignaciones
         Me.ButtonExportar.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ButtonExportar.FlatAppearance.BorderSize = 0
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
+        Me.ButtonExportar.Image = Global.S.P.S.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonExportar.Location = New System.Drawing.Point(650, 79)
         Me.ButtonExportar.Name = "ButtonExportar"
@@ -493,7 +493,7 @@ Partial Class Consignaciones
         Me.ButtonBuscar.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ButtonBuscar.FlatAppearance.BorderSize = 0
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
+        Me.ButtonBuscar.Image = Global.S.P.S.Resources.búsqueda50px
         Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ButtonBuscar.Location = New System.Drawing.Point(650, 13)
         Me.ButtonBuscar.Name = "ButtonBuscar"
