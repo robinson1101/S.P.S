@@ -124,7 +124,14 @@ Public Class Cargar_pago
 
                 Else
                     DataGridViewPagos.Rows.Clear()
+
+                    a = Consignaciones.Cupo() - (Consignaciones.Deuda() - Consignaciones.Consignaciones())
+                    LabelCupoNeto.Text = a
+                    LabelCupoRestante.Text = a
+                    LabelValorTotal.Text = "0"
+                    Label6.Visible = False
                     FormGif.ShowDialog()
+
 
                 End If
 
@@ -183,9 +190,49 @@ Public Class Cargar_pago
             MsgBox(ex.Message)
         End Try
     End Sub
-
+    Public a As Integer = 0
+    Public b As Integer = 0
+    Public c As Integer = 0
     Private Sub Cargar_pago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        a = Consignaciones.Cupo() - (Consignaciones.Deuda() - Consignaciones.Consignaciones())
+        LabelCupoNeto.Text = a
+        LabelCupoRestante.Text = LabelCupoNeto.Text
+
+
+    End Sub
+    Private Sub DataGridViewPagos_CellValueChanged(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewPagos.CellValueChanged
+
+        If DataGridViewPagos.Rows.Count > 0 Then
+            Dim Total As Single
+            Dim cont As Integer = 0 'PARA CONTADOR DE PARTIDAS
+
+            For Each row As DataGridViewRow In Me.DataGridViewPagos.Rows
+                Total += Val(row.Cells(8).Value) 'ROW.CELLS (NUMERO DE LA COLUMNA A SUMAR).VALUE
+            Next
+            b = Total.ToString
+            LabelValorTotal.Text = b
+        End If
+
+        c = a - b
+        LabelCupoRestante.Text = c
+        If LabelCupoRestante.Text < 0 Then
+            Label6.Visible = True
+        Else
+            Label6.Visible = False
+        End If
 
     End Sub
 
+    Private Sub LabelCupoNeto_TextChanged(sender As Object, e As EventArgs) Handles LabelCupoNeto.TextChanged
+        LabelCupoNeto.Text = FormatCurrency(LabelCupoNeto.Text)
+    End Sub
+
+    Private Sub LabelValorTotal_TextChanged(sender As Object, e As EventArgs) Handles LabelValorTotal.TextChanged
+        LabelValorTotal.Text = FormatCurrency(LabelValorTotal.Text)
+    End Sub
+
+    Private Sub LabelCupoRestante_TextChanged(sender As Object, e As EventArgs) Handles LabelCupoRestante.TextChanged
+        LabelCupoRestante.Text = FormatCurrency(LabelCupoRestante.Text)
+    End Sub
 End Class

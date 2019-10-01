@@ -50,6 +50,13 @@ Partial Class Cargar_pago
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LABLE = New System.Windows.Forms.Label()
+        Me.LabelCupoNeto = New System.Windows.Forms.Label()
+        Me.LabelValorTotal = New System.Windows.Forms.Label()
+        Me.LabelCupoRestante = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -292,11 +299,98 @@ Partial Class Cargar_pago
         Me.LABLE.TabIndex = 11
         Me.LABLE.Text = "DATOS DE USUARIO"
         '
+        'LabelCupoNeto
+        '
+        Me.LabelCupoNeto.AutoSize = True
+        Me.LabelCupoNeto.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCupoNeto.ForeColor = System.Drawing.Color.Green
+        Me.LabelCupoNeto.Location = New System.Drawing.Point(667, 11)
+        Me.LabelCupoNeto.Name = "LabelCupoNeto"
+        Me.LabelCupoNeto.Size = New System.Drawing.Size(21, 24)
+        Me.LabelCupoNeto.TabIndex = 12
+        Me.LabelCupoNeto.Text = "0"
+        '
+        'LabelValorTotal
+        '
+        Me.LabelValorTotal.AutoSize = True
+        Me.LabelValorTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelValorTotal.ForeColor = System.Drawing.Color.Gold
+        Me.LabelValorTotal.Location = New System.Drawing.Point(667, 63)
+        Me.LabelValorTotal.Name = "LabelValorTotal"
+        Me.LabelValorTotal.Size = New System.Drawing.Size(21, 24)
+        Me.LabelValorTotal.TabIndex = 13
+        Me.LabelValorTotal.Text = "0"
+        '
+        'LabelCupoRestante
+        '
+        Me.LabelCupoRestante.AutoSize = True
+        Me.LabelCupoRestante.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.LabelCupoRestante.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCupoRestante.ForeColor = System.Drawing.Color.Red
+        Me.LabelCupoRestante.Location = New System.Drawing.Point(667, 36)
+        Me.LabelCupoRestante.Name = "LabelCupoRestante"
+        Me.LabelCupoRestante.Size = New System.Drawing.Size(21, 24)
+        Me.LabelCupoRestante.TabIndex = 14
+        Me.LabelCupoRestante.Text = "0"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(460, 34)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(201, 24)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "CUPO RESTANTE ="
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(491, 61)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(170, 24)
+        Me.Label4.TabIndex = 16
+        Me.Label4.Text = "VALOR TOTAL ="
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(576, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(85, 24)
+        Me.Label5.TabIndex = 15
+        Me.Label5.Text = "CUPO ="
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label6.Location = New System.Drawing.Point(566, 91)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(106, 15)
+        Me.Label6.TabIndex = 18
+        Me.Label6.Text = "CUPO EXCEDIDO"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label6.Visible = False
+        '
         'Cargar_pago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 686)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.LabelCupoRestante)
+        Me.Controls.Add(Me.LabelValorTotal)
+        Me.Controls.Add(Me.LabelCupoNeto)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.ButtonIngresarR)
         Me.Controls.Add(Me.ButtonSubirP)
@@ -310,6 +404,7 @@ Partial Class Cargar_pago
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents DataGridViewPagos As DataGridView
@@ -335,4 +430,11 @@ Partial Class Cargar_pago
     Friend WithEvents Column11 As DataGridViewImageColumn
     Friend WithEvents Panel1 As Panel
     Friend WithEvents LABLE As Label
+    Friend WithEvents LabelCupoNeto As Label
+    Friend WithEvents LabelValorTotal As Label
+    Friend WithEvents LabelCupoRestante As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
 End Class
