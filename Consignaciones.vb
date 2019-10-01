@@ -73,16 +73,14 @@ Public Class Consignaciones
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
-            PanelIngresarDatos.Visible = False
-        End If
 
-        TextBoxCupo.Text = Cupo()
-        TextBoxCupoDisponible.Text = Cupo() - (Deuda() - Consignaciones())
-        TextBoxSaldoInicial.Text = Deuda()
-        TextBoxSaldoPConsignar.Text = Deuda() - Consignaciones()
 
         If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
+            TextBoxCupo.Text = Cupo()
+            TextBoxCupoDisponible.Text = Cupo() - (Deuda() - Consignaciones())
+            TextBoxSaldoInicial.Text = Deuda()
+            TextBoxSaldoPConsignar.Text = Deuda() - Consignaciones()
+            CargarComboBanco()
 
             ComboBoxSub2.Text = Principal.LabelUsuarioU.Text
             ComboBoxSub2.Enabled = False
@@ -107,12 +105,23 @@ Public Class Consignaciones
             DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
 
             conexion9.CerrarConexion()
+
+
+
+        ElseIf Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+            PanelIngresarDatos.Visible = False
+            TextBoxCupo.Text = 0
+            TextBoxCupoDisponible.Text = 0
+            TextBoxSaldoInicial.Text = 0
+            TextBoxSaldoPConsignar.Text = 0
+
             CargarComboBanco()
-        Else
 
             ComboBoxSub2.Text = "TODOS"
 
             CargarComboSub2()
+
+
 
             cargarDatagridConsignaciones()
         End If
@@ -205,14 +214,15 @@ Public Class Consignaciones
                 If Result = DialogResult.Yes Then
 
                     cmd4.ExecuteNonQuery()
-                    cargarDatagridConsignaciones()
 
-                    TextBoxCupo.Text = Cupo()
-                    TextBoxCupoDisponible.Text = Cupo() - (Deuda() - Consignaciones())
-                    TextBoxSaldoInicial.Text = Deuda()
-                    TextBoxSaldoPConsignar.Text = Deuda() - Consignaciones()
+
+                    TextBoxCupo.Text = 0
+                    TextBoxCupoDisponible.Text = 0
+                    TextBoxSaldoInicial.Text = 0
+                    TextBoxSaldoPConsignar.Text = 0
 
                     ComboBoxSub2.Text = "TODOS"
+                    cargarDatagridConsignaciones()
                     MsgBox("ESTADO ACTUALIZADO CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
 
                 End If
@@ -256,11 +266,34 @@ Public Class Consignaciones
                 LabelRuta.Text = ""
                 TextBoxValorAingresar.Text = ""
 
-                cargarDatagridConsignaciones()
+
                 TextBoxCupo.Text = Cupo()
                 TextBoxCupoDisponible.Text = Cupo() - (Deuda() - Consignaciones())
                 TextBoxSaldoInicial.Text = Deuda()
                 TextBoxSaldoPConsignar.Text = Deuda() - Consignaciones()
+
+                Dim conexion12 As New conexion
+                Dim cmd12 As New MySqlCommand("CALL BusquedaSubC('" & ComboBoxSub2.Text & "');", conexion12.conexion)
+                conexion12.AbrirConexion()
+                Dim datas12 As New DataSet
+                Dim adaptador12 As New MySqlDataAdapter(cmd12)
+                adaptador12.Fill(datas12, "consignaciones")
+                DataGridViewConsignaciones.DataSource = datas12.Tables("consignaciones")
+
+                DataGridViewConsignaciones.Columns(0).Width = 100
+                'DataGridViewConsignaciones.Columns(1).Width = 100
+                DataGridViewConsignaciones.Columns(2).Width = 100
+                DataGridViewConsignaciones.Columns(3).Width = 35
+                DataGridViewConsignaciones.Columns(4).Width = 100
+                DataGridViewConsignaciones.Columns(5).Width = 130
+                DataGridViewConsignaciones.Columns(6).Width = 200
+                DataGridViewConsignaciones.Columns(7).Width = 300
+                DataGridViewConsignaciones.Columns(0).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsignaciones.Columns(1).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
+
+                conexion12.CerrarConexion()
+
                 MsgBox("DATOS GUARDADOS CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
 
             Catch ex As Exception
@@ -577,7 +610,35 @@ Public Class Consignaciones
     End Function
 
     Private Sub ButtonActualizar_Click(sender As Object, e As EventArgs) Handles ButtonActualizar.Click
-        cargarDatagridConsignaciones()
+        If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+            cargarDatagridConsignaciones()
+
+        ElseIf Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
+
+            Dim conexion13 As New conexion
+            Dim cmd13 As New MySqlCommand("CALL BusquedaSubC('" & ComboBoxSub2.Text & "');", conexion13.conexion)
+            conexion13.AbrirConexion()
+            Dim datas13 As New DataSet
+            Dim adaptador13 As New MySqlDataAdapter(cmd13)
+            adaptador13.Fill(datas13, "consignaciones")
+            DataGridViewConsignaciones.DataSource = datas13.Tables("consignaciones")
+
+            DataGridViewConsignaciones.Columns(0).Width = 100
+            'DataGridViewConsignaciones.Columns(1).Width = 100
+            DataGridViewConsignaciones.Columns(2).Width = 100
+            DataGridViewConsignaciones.Columns(3).Width = 35
+            DataGridViewConsignaciones.Columns(4).Width = 100
+            DataGridViewConsignaciones.Columns(5).Width = 130
+            DataGridViewConsignaciones.Columns(6).Width = 200
+            DataGridViewConsignaciones.Columns(7).Width = 300
+            DataGridViewConsignaciones.Columns(0).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+            DataGridViewConsignaciones.Columns(1).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+            DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
+
+            conexion13.CerrarConexion()
+
+        End If
+
 
     End Sub
 
