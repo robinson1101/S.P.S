@@ -399,7 +399,9 @@ Partial Class Cargar_pago
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Cargar_pago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = resources.GetString("$this.Text")
+        Me.Text = "                                                                                 " &
+    "                                                                                " &
+    "       CARGAR PAGO"
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

@@ -37,41 +37,42 @@ Public Class ConsultarEP
 
     End Sub
     Private Sub ConsultarEP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Try
 
 
-        If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
+            If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
 
-            ComboBoxSub.Text = Principal.LabelUsuarioU.Text
-            ComboBoxSub.Enabled = False
-            Dim conexion9 As New conexion
-            Dim cmd9 As New MySqlCommand("CALL BusquedaSub('" & ComboBoxSub.Text & "');", conexion9.conexion)
-            conexion9.AbrirConexion()
-            Dim datas9 As New DataSet
-            Dim adaptador9 As New MySqlDataAdapter(cmd9)
-            adaptador9.Fill(datas9, "pagos")
-            DataGridViewConsultar.DataSource = datas9.Tables("pagos")
+                ComboBoxSub.Text = Principal.LabelUsuarioU.Text
+                ComboBoxSub.Enabled = False
+                Dim conexion9 As New conexion
+                Dim cmd9 As New MySqlCommand("CALL BusquedaSub('" & ComboBoxSub.Text & "');", conexion9.conexion)
+                conexion9.AbrirConexion()
+                Dim datas9 As New DataSet
+                Dim adaptador9 As New MySqlDataAdapter(cmd9)
+                adaptador9.Fill(datas9, "pagos")
+                DataGridViewConsultar.DataSource = datas9.Tables("pagos")
 
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
 
-            conexion9.CerrarConexion()
-        Else
-            ComboBoxSub.Text = "TODOS"
-            cargarDatagridConsultar()
-            CargarComboSub()
+                conexion9.CerrarConexion()
+            Else
+                ComboBoxSub.Text = "TODOS"
+                cargarDatagridConsultar()
+                CargarComboSub()
 
-        End If
-
-
-
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message, MsgBoxStyle.Critical, "ERROR")
+        End Try
 
     End Sub
 
@@ -92,8 +93,41 @@ Public Class ConsultarEP
     End Sub
 
     Private Sub ButtonActualizar_Click(sender As Object, e As EventArgs) Handles ButtonActualizar.Click
-        cargarDatagridConsultar()
-        CargarComboSub()
+        Try
+
+
+            If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
+
+
+                Dim conexion9 As New conexion
+                Dim cmd9 As New MySqlCommand("CALL BusquedaSub('" & ComboBoxSub.Text & "');", conexion9.conexion)
+                conexion9.AbrirConexion()
+                Dim datas9 As New DataSet
+                Dim adaptador9 As New MySqlDataAdapter(cmd9)
+                adaptador9.Fill(datas9, "pagos")
+                DataGridViewConsultar.DataSource = datas9.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion9.CerrarConexion()
+            Else
+                ComboBoxSub.Text = "TODOS"
+                cargarDatagridConsultar()
+                CargarComboSub()
+
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message, MsgBoxStyle.Critical, "ERROR")
+        End Try
     End Sub
 
     Private Sub DataGridViewConsultar_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewConsultar.CellClick
@@ -233,11 +267,21 @@ Public Class ConsultarEP
 
                 dr1 = dset.Tables(0).NewRow
 
-                For j As Integer = 2 To 9
 
-                    dr1(j) = DataGridViewConsultar.Rows(i).Cells(j).Value
+                dr1(0) = DataGridViewConsultar.Rows(i).Cells(2).Value
+                dr1(1) = DataGridViewConsultar.Rows(i).Cells(3).Value
+                dr1(2) = DataGridViewConsultar.Rows(i).Cells(4).Value
+                dr1(3) = DataGridViewConsultar.Rows(i).Cells(5).Value
+                dr1(4) = DataGridViewConsultar.Rows(i).Cells(6).Value
+                dr1(5) = DataGridViewConsultar.Rows(i).Cells(7).Value
+                dr1(6) = DataGridViewConsultar.Rows(i).Cells(8).Value
+                dr1(7) = DataGridViewConsultar.Rows(i).Cells(9).Value
+                dr1(8) = DataGridViewConsultar.Rows(i).Cells(10).Value
+                dr1(9) = DataGridViewConsultar.Rows(i).Cells(11).Value
 
-                Next
+
+
+
                 dset.Tables(0).Rows.Add(dr1)
 
             Next
@@ -277,7 +321,7 @@ Public Class ConsultarEP
             wSheet.Columns.AutoFit()
 
             'este metodo crea una carpeta en documentos
-            Dim strFileName As String = My.Computer.FileSystem.SpecialDirectories.Desktop & "\ExportadoSdPS"
+            Dim strFileName As String = My.Computer.FileSystem.SpecialDirectories.Desktop & "\PagosSdPS"
             '  Dim strFileName As String = "C:\Users\CVR\Desktop\Reporte .xlsx"
             Dim blnFileOpen As Boolean = False
             Try
@@ -323,177 +367,181 @@ Public Class ConsultarEP
     End Sub
 
     Private Sub ButtonBuscar_Click(sender As Object, e As EventArgs) Handles ButtonBuscar.Click
-
-
-        If ComboBoxSub.SelectedItem <> "TODOS" And TextBoxNumReferencia.Text <> "" And MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
-            Dim conexion10 As New conexion
-            Dim cmd10 As New MySqlCommand("CALL BusquedaSubReferenciaFecha('" & ComboBoxSub.Text & "','" & TextBoxNumReferencia.Text & "','" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion10.conexion)
-            conexion10.AbrirConexion()
-            Dim datas10 As New DataSet
-            Dim adaptador10 As New MySqlDataAdapter(cmd10)
-            adaptador10.Fill(datas10, "pagos")
-            DataGridViewConsultar.DataSource = datas10.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion10.CerrarConexion()
-
-        ElseIf TextBoxNumReferencia.Text <> "" And ComboBoxSub.Text <> "" Then
-
-            Dim conexion10 As New conexion
-            Dim cmd10 As New MySqlCommand("CALL BusquedaSubReferencia('" & TextBoxNumReferencia.Text & "','" & ComboBoxSub.Text & "');", conexion10.conexion)
-            conexion10.AbrirConexion()
-            Dim datas10 As New DataSet
-            Dim adaptador10 As New MySqlDataAdapter(cmd10)
-            adaptador10.Fill(datas10, "pagos")
-            DataGridViewConsultar.DataSource = datas10.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion10.CerrarConexion()
-        ElseIf TextBoxNumReferencia.Text <> "" And MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
-
-            Dim conexion10 As New conexion
-            Dim cmd10 As New MySqlCommand("CALL BusquedaReferenciaFecha('" & TextBoxNumReferencia.Text & "','" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion10.conexion)
-            conexion10.AbrirConexion()
-            Dim datas10 As New DataSet
-            Dim adaptador10 As New MySqlDataAdapter(cmd10)
-            adaptador10.Fill(datas10, "pagos")
-            DataGridViewConsultar.DataSource = datas10.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion10.CerrarConexion()
-
-        ElseIf ComboBoxSub.Text <> "" And MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
-
-            Dim conexion10 As New conexion
-            Dim cmd10 As New MySqlCommand("CALL BusquedaSubFecha('" & ComboBoxSub.Text & "','" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion10.conexion)
-            conexion10.AbrirConexion()
-            Dim datas10 As New DataSet
-            Dim adaptador10 As New MySqlDataAdapter(cmd10)
-            adaptador10.Fill(datas10, "pagos")
-            DataGridViewConsultar.DataSource = datas10.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion10.CerrarConexion()
-
-        ElseIf ComboBoxSub.Text <> "TODOS" Then
-
-            Dim conexion9 As New conexion
-            Dim cmd9 As New MySqlCommand("CALL BusquedaSub('" & ComboBoxSub.Text & "');", conexion9.conexion)
-            conexion9.AbrirConexion()
-            Dim datas9 As New DataSet
-            Dim adaptador9 As New MySqlDataAdapter(cmd9)
-            adaptador9.Fill(datas9, "pagos")
-            DataGridViewConsultar.DataSource = datas9.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion9.CerrarConexion()
-
-        ElseIf TextBoxNumReferencia.Text <> "" Then
-
-            Dim conexion9 As New conexion
-            Dim cmd9 As New MySqlCommand("CALL BusquedaReferencia('" & TextBoxNumReferencia.Text & "');", conexion9.conexion)
-            conexion9.AbrirConexion()
-            Dim datas9 As New DataSet
-            Dim adaptador9 As New MySqlDataAdapter(cmd9)
-            adaptador9.Fill(datas9, "pagos")
-            DataGridViewConsultar.DataSource = datas9.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion9.CerrarConexion()
-        ElseIf MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
-            Dim conexion8 As New conexion
-            Dim cmd8 As New MySqlCommand("CALL BusquedaFecha('" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion8.conexion)
-            conexion8.AbrirConexion()
-            Dim datas8 As New DataSet
-            Dim adaptador8 As New MySqlDataAdapter(cmd8)
-            adaptador8.Fill(datas8, "pagos")
-            DataGridViewConsultar.DataSource = datas8.Tables("pagos")
-
-            DataGridViewConsultar.Columns(6).Width = 240
-            DataGridViewConsultar.Columns(3).Width = 100
-            DataGridViewConsultar.Columns(4).Width = 70
-            DataGridViewConsultar.Columns(2).Width = 30
-            DataGridViewConsultar.Columns(5).Width = 130
-            DataGridViewConsultar.Columns(9).Width = 80
-            DataGridViewConsultar.Columns(10).Width = 100
-            DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsultar.Columns(0).Width = 35
-            DataGridViewConsultar.Columns(1).DisplayIndex = 10
-
-            conexion8.CerrarConexion()
+        Try
 
 
 
-        ElseIf ComboBoxSub.Text = "TODOS" Then
+            If ComboBoxSub.SelectedItem <> "TODOS" And TextBoxNumReferencia.Text <> "" And MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
+                Dim conexion10 As New conexion
+                Dim cmd10 As New MySqlCommand("CALL BusquedaSubReferenciaFecha('" & ComboBoxSub.Text & "','" & TextBoxNumReferencia.Text & "','" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion10.conexion)
+                conexion10.AbrirConexion()
+                Dim datas10 As New DataSet
+                Dim adaptador10 As New MySqlDataAdapter(cmd10)
+                adaptador10.Fill(datas10, "pagos")
+                DataGridViewConsultar.DataSource = datas10.Tables("pagos")
 
-            cargarDatagridConsultar()
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
 
-        Else
+                conexion10.CerrarConexion()
 
-            MsgBox("LOS PARAMETROS DE BUSQUEDA NO SON VALIDOS", MsgBoxStyle.Exclamation, "AVISO")
-            TextBoxNumReferencia.Focus()
-        End If
+            ElseIf TextBoxNumReferencia.Text <> "" And ComboBoxSub.Text <> "" Then
 
+                Dim conexion10 As New conexion
+                Dim cmd10 As New MySqlCommand("CALL BusquedaSubReferencia('" & TextBoxNumReferencia.Text & "','" & ComboBoxSub.Text & "');", conexion10.conexion)
+                conexion10.AbrirConexion()
+                Dim datas10 As New DataSet
+                Dim adaptador10 As New MySqlDataAdapter(cmd10)
+                adaptador10.Fill(datas10, "pagos")
+                DataGridViewConsultar.DataSource = datas10.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion10.CerrarConexion()
+            ElseIf TextBoxNumReferencia.Text <> "" And MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
+
+                Dim conexion10 As New conexion
+                Dim cmd10 As New MySqlCommand("CALL BusquedaReferenciaFecha('" & TextBoxNumReferencia.Text & "','" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion10.conexion)
+                conexion10.AbrirConexion()
+                Dim datas10 As New DataSet
+                Dim adaptador10 As New MySqlDataAdapter(cmd10)
+                adaptador10.Fill(datas10, "pagos")
+                DataGridViewConsultar.DataSource = datas10.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion10.CerrarConexion()
+
+            ElseIf ComboBoxSub.Text <> "" And MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
+
+                Dim conexion10 As New conexion
+                Dim cmd10 As New MySqlCommand("CALL BusquedaSubFecha('" & ComboBoxSub.Text & "','" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion10.conexion)
+                conexion10.AbrirConexion()
+                Dim datas10 As New DataSet
+                Dim adaptador10 As New MySqlDataAdapter(cmd10)
+                adaptador10.Fill(datas10, "pagos")
+                DataGridViewConsultar.DataSource = datas10.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion10.CerrarConexion()
+
+            ElseIf ComboBoxSub.Text <> "TODOS" Then
+
+                Dim conexion9 As New conexion
+                Dim cmd9 As New MySqlCommand("CALL BusquedaSub('" & ComboBoxSub.Text & "');", conexion9.conexion)
+                conexion9.AbrirConexion()
+                Dim datas9 As New DataSet
+                Dim adaptador9 As New MySqlDataAdapter(cmd9)
+                adaptador9.Fill(datas9, "pagos")
+                DataGridViewConsultar.DataSource = datas9.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion9.CerrarConexion()
+
+            ElseIf TextBoxNumReferencia.Text <> "" Then
+
+                Dim conexion9 As New conexion
+                Dim cmd9 As New MySqlCommand("CALL BusquedaReferencia('" & TextBoxNumReferencia.Text & "');", conexion9.conexion)
+                conexion9.AbrirConexion()
+                Dim datas9 As New DataSet
+                Dim adaptador9 As New MySqlDataAdapter(cmd9)
+                adaptador9.Fill(datas9, "pagos")
+                DataGridViewConsultar.DataSource = datas9.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion9.CerrarConexion()
+            ElseIf MaskedTextBoxDesde.Text <> "" And MaskedTextBoxHasta.Text <> "" Then
+                Dim conexion8 As New conexion
+                Dim cmd8 As New MySqlCommand("CALL BusquedaFecha('" & MaskedTextBoxDesde.Text & "','" & MaskedTextBoxHasta.Text & "');", conexion8.conexion)
+                conexion8.AbrirConexion()
+                Dim datas8 As New DataSet
+                Dim adaptador8 As New MySqlDataAdapter(cmd8)
+                adaptador8.Fill(datas8, "pagos")
+                DataGridViewConsultar.DataSource = datas8.Tables("pagos")
+
+                DataGridViewConsultar.Columns(6).Width = 240
+                DataGridViewConsultar.Columns(3).Width = 100
+                DataGridViewConsultar.Columns(4).Width = 70
+                DataGridViewConsultar.Columns(2).Width = 30
+                DataGridViewConsultar.Columns(5).Width = 130
+                DataGridViewConsultar.Columns(9).Width = 80
+                DataGridViewConsultar.Columns(10).Width = 100
+                DataGridViewConsultar.Columns(0).DisplayIndex = 11 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsultar.Columns(0).Width = 35
+                DataGridViewConsultar.Columns(1).DisplayIndex = 10
+
+                conexion8.CerrarConexion()
+
+
+
+            ElseIf ComboBoxSub.Text = "TODOS" Then
+
+                cargarDatagridConsultar()
+
+            Else
+
+                MsgBox("LOS PARAMETROS DE BUSQUEDA NO SON VALIDOS", MsgBoxStyle.Exclamation, "AVISO")
+                TextBoxNumReferencia.Focus()
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message, MsgBoxStyle.Critical, "ERROR")
+        End Try
 
     End Sub
 

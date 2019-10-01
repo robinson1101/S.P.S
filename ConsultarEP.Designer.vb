@@ -37,13 +37,10 @@ Partial Class ConsultarEP
         Me.ToolTipConsultar = New System.Windows.Forms.ToolTip(Me.components)
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBoxSub = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -115,6 +112,7 @@ Partial Class ConsultarEP
         Me.DataGridViewConsultar.AllowUserToDeleteRows = False
         Me.DataGridViewConsultar.AllowUserToResizeColumns = False
         Me.DataGridViewConsultar.AllowUserToResizeRows = False
+        Me.DataGridViewConsultar.BackgroundColor = System.Drawing.Color.White
         Me.DataGridViewConsultar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewConsultar.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
@@ -153,27 +151,45 @@ Partial Class ConsultarEP
         '
         'ButtonActualizar
         '
-        Me.ButtonActualizar.FlatAppearance.BorderSize = 0
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.S.P.S.Resources.icons8_actualizar_en_la_nube_50
-        Me.ButtonActualizar.Location = New System.Drawing.Point(1124, 65)
+        Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonActualizar.Location = New System.Drawing.Point(1056, 25)
         Me.ButtonActualizar.Name = "ButtonActualizar"
-        Me.ButtonActualizar.Size = New System.Drawing.Size(48, 44)
+        Me.ButtonActualizar.Size = New System.Drawing.Size(137, 97)
         Me.ButtonActualizar.TabIndex = 10
+        Me.ButtonActualizar.Text = "REFRESCAR"
+        Me.ButtonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolTipConsultar.SetToolTip(Me.ButtonActualizar, "Refrescar datos")
         Me.ButtonActualizar.UseVisualStyleBackColor = True
         '
         'ButtonBuscar
         '
-        Me.ButtonBuscar.FlatAppearance.BorderSize = 0
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonBuscar.Image = Global.S.P.S.Resources.búsqueda50px
-        Me.ButtonBuscar.Location = New System.Drawing.Point(370, 43)
+        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonBuscar.Location = New System.Drawing.Point(356, 26)
         Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(46, 46)
+        Me.ButtonBuscar.Size = New System.Drawing.Size(127, 96)
         Me.ButtonBuscar.TabIndex = 9
+        Me.ButtonBuscar.Text = "BUSCAR"
+        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ToolTipConsultar.SetToolTip(Me.ButtonBuscar, "Buscar")
         Me.ButtonBuscar.UseVisualStyleBackColor = True
+        '
+        'ButtonExportar
+        '
+        Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ButtonExportar.Image = Global.S.P.S.Resources.icons8_microsoft_excel_2019_50
+        Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonExportar.Location = New System.Drawing.Point(902, 25)
+        Me.ButtonExportar.Name = "ButtonExportar"
+        Me.ButtonExportar.Size = New System.Drawing.Size(127, 97)
+        Me.ButtonExportar.TabIndex = 13
+        Me.ButtonExportar.Text = "EXPORTAR"
+        Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ToolTipConsultar.SetToolTip(Me.ButtonExportar, "Exportar")
+        Me.ButtonExportar.UseVisualStyleBackColor = False
         '
         'Label5
         '
@@ -193,36 +209,6 @@ Partial Class ConsultarEP
         Me.ComboBoxSub.Size = New System.Drawing.Size(187, 21)
         Me.ComboBoxSub.TabIndex = 12
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.ForeColor = System.Drawing.Color.Blue
-        Me.Label6.Location = New System.Drawing.Point(365, 97)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 13)
-        Me.Label6.TabIndex = 14
-        Me.Label6.Text = "BUSCAR"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.ForeColor = System.Drawing.Color.Blue
-        Me.Label7.Location = New System.Drawing.Point(1038, 118)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(66, 13)
-        Me.Label7.TabIndex = 15
-        Me.Label7.Text = "EXPORTAR"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Blue
-        Me.Label8.Location = New System.Drawing.Point(1111, 118)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(74, 13)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "ACTUALIZAR"
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
@@ -237,19 +223,6 @@ Partial Class ConsultarEP
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Formato: Año/Mes/Dia"
-        '
-        'ButtonExportar
-        '
-        Me.ButtonExportar.FlatAppearance.BorderSize = 0
-        Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonExportar.Image = Global.S.P.S.Resources.icons8_microsoft_excel_2019_50
-        Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(1041, 65)
-        Me.ButtonExportar.Name = "ButtonExportar"
-        Me.ButtonExportar.Size = New System.Drawing.Size(52, 44)
-        Me.ButtonExportar.TabIndex = 13
-        Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonExportar.UseVisualStyleBackColor = False
         '
         'DataGridViewImageColumn1
         '
@@ -267,9 +240,6 @@ Partial Class ConsultarEP
         Me.Controls.Add(Me.ButtonActualizar)
         Me.Controls.Add(Me.ButtonExportar)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ComboBoxSub)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.ButtonBuscar)
@@ -280,7 +250,9 @@ Partial Class ConsultarEP
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ConsultarEP"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = resources.GetString("$this.Text")
+        Me.Text = "                                                                                 " &
+    "                                                                                " &
+    "     BUSQUEDA DE PAGOS"
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -302,9 +274,6 @@ Partial Class ConsultarEP
     Friend WithEvents ComboBoxSub As ComboBox
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
     Friend WithEvents ButtonExportar As Button
-    Friend WithEvents Label6 As Label
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Column1 As DataGridViewImageColumn
     Friend WithEvents Column2 As DataGridViewComboBoxColumn

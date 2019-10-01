@@ -52,6 +52,7 @@ Partial Class Usuarios
         Me.Label10 = New System.Windows.Forms.Label()
         Me.ToolTipUsuarios = New System.Windows.Forms.ToolTip(Me.components)
         Me.ComboBoxTipoUsuario = New System.Windows.Forms.ComboBox()
+        Me.ButtonExport = New System.Windows.Forms.Button()
         Me.LabelIdUsuario = New System.Windows.Forms.Label()
         CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -273,7 +274,7 @@ Partial Class Usuarios
         Me.ButtonIngresar.BackColor = System.Drawing.Color.White
         Me.ButtonIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonIngresar.Location = New System.Drawing.Point(228, 596)
+        Me.ButtonIngresar.Location = New System.Drawing.Point(286, 596)
         Me.ButtonIngresar.Name = "ButtonIngresar"
         Me.ButtonIngresar.Size = New System.Drawing.Size(163, 48)
         Me.ButtonIngresar.TabIndex = 21
@@ -286,7 +287,7 @@ Partial Class Usuarios
         Me.ButtonModificar.BackColor = System.Drawing.Color.White
         Me.ButtonModificar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonModificar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonModificar.Location = New System.Drawing.Point(508, 596)
+        Me.ButtonModificar.Location = New System.Drawing.Point(529, 596)
         Me.ButtonModificar.Name = "ButtonModificar"
         Me.ButtonModificar.Size = New System.Drawing.Size(163, 48)
         Me.ButtonModificar.TabIndex = 22
@@ -299,7 +300,7 @@ Partial Class Usuarios
         Me.ButtonEliminar.BackColor = System.Drawing.Color.White
         Me.ButtonEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonEliminar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ButtonEliminar.Location = New System.Drawing.Point(769, 596)
+        Me.ButtonEliminar.Location = New System.Drawing.Point(778, 596)
         Me.ButtonEliminar.Name = "ButtonEliminar"
         Me.ButtonEliminar.Size = New System.Drawing.Size(163, 48)
         Me.ButtonEliminar.TabIndex = 23
@@ -328,6 +329,19 @@ Partial Class Usuarios
         Me.ComboBoxTipoUsuario.TabIndex = 26
         Me.ToolTipUsuarios.SetToolTip(Me.ComboBoxTipoUsuario, "Seleccionar tipo de usuario")
         '
+        'ButtonExport
+        '
+        Me.ButtonExport.BackColor = System.Drawing.Color.White
+        Me.ButtonExport.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.ButtonExport.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonExport.Location = New System.Drawing.Point(1039, 385)
+        Me.ButtonExport.Name = "ButtonExport"
+        Me.ButtonExport.Size = New System.Drawing.Size(163, 48)
+        Me.ButtonExport.TabIndex = 27
+        Me.ButtonExport.Text = "EXPORTAR"
+        Me.ToolTipUsuarios.SetToolTip(Me.ButtonExport, "Exportar datos")
+        Me.ButtonExport.UseVisualStyleBackColor = False
+        '
         'LabelIdUsuario
         '
         Me.LabelIdUsuario.AutoSize = True
@@ -343,6 +357,7 @@ Partial Class Usuarios
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1205, 678)
+        Me.Controls.Add(Me.ButtonExport)
         Me.Controls.Add(Me.ComboBoxTipoUsuario)
         Me.Controls.Add(Me.LabelIdUsuario)
         Me.Controls.Add(Me.Label10)
@@ -373,7 +388,9 @@ Partial Class Usuarios
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Usuarios"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = resources.GetString("$this.Text")
+        Me.Text = "                                                                                 " &
+    "                                                                                " &
+    "                         USUARIOS"
         CType(Me.DataGridViewUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -407,4 +424,5 @@ Partial Class Usuarios
     Friend WithEvents ToolTipUsuarios As ToolTip
     Friend WithEvents LabelIdUsuario As Label
     Friend WithEvents ComboBoxTipoUsuario As ComboBox
+    Friend WithEvents ButtonExport As Button
 End Class

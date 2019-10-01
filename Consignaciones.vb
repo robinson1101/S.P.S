@@ -73,66 +73,69 @@ Public Class Consignaciones
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        Try
 
 
-        If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
-            PanelIngresarDatos.Visible = False
-        End If
-
-
-
-        If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
-            TextBoxCupo.Text = Cupo()
-            TextBoxCupoDisponible.Text = Cupo() - (Deuda() - Consignaciones())
-            TextBoxSaldoInicial.Text = Deuda()
-            TextBoxSaldoPConsignar.Text = Deuda() - Consignaciones()
-            CargarComboBanco()
-
-            ComboBoxSub2.Text = Principal.LabelUsuarioU.Text
-            ComboBoxSub2.Enabled = False
-            Dim conexion9 As New conexion
-            Dim cmd9 As New MySqlCommand("CALL BusquedaSubC('" & ComboBoxSub2.Text & "');", conexion9.conexion)
-            conexion9.AbrirConexion()
-            Dim datas9 As New DataSet
-            Dim adaptador9 As New MySqlDataAdapter(cmd9)
-            adaptador9.Fill(datas9, "consignaciones")
-            DataGridViewConsignaciones.DataSource = datas9.Tables("consignaciones")
-
-            DataGridViewConsignaciones.Columns(0).Width = 100
-            'DataGridViewConsignaciones.Columns(1).Width = 100
-            DataGridViewConsignaciones.Columns(2).Width = 100
-            DataGridViewConsignaciones.Columns(3).Width = 35
-            DataGridViewConsignaciones.Columns(4).Width = 100
-            DataGridViewConsignaciones.Columns(5).Width = 130
-            DataGridViewConsignaciones.Columns(6).Width = 200
-            DataGridViewConsignaciones.Columns(7).Width = 300
-            DataGridViewConsignaciones.Columns(0).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsignaciones.Columns(1).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
-
-            conexion9.CerrarConexion()
+            If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+                PanelIngresarDatos.Visible = False
+            End If
 
 
 
-        ElseIf Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
-            PanelIngresarDatos.Visible = False
-            TextBoxCupo.Text = 0
-            TextBoxCupoDisponible.Text = 0
-            TextBoxSaldoInicial.Text = 0
-            TextBoxSaldoPConsignar.Text = 0
+            If Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
+                TextBoxCupo.Text = Cupo()
+                TextBoxCupoDisponible.Text = Cupo() - (Deuda() - Consignaciones())
+                TextBoxSaldoInicial.Text = Deuda()
+                TextBoxSaldoPConsignar.Text = Deuda() - Consignaciones()
+                CargarComboBanco()
 
-            CargarComboBanco()
+                ComboBoxSub2.Text = Principal.LabelUsuarioU.Text
+                ComboBoxSub2.Enabled = False
+                Dim conexion9 As New conexion
+                Dim cmd9 As New MySqlCommand("CALL BusquedaSubC('" & ComboBoxSub2.Text & "');", conexion9.conexion)
+                conexion9.AbrirConexion()
+                Dim datas9 As New DataSet
+                Dim adaptador9 As New MySqlDataAdapter(cmd9)
+                adaptador9.Fill(datas9, "consignaciones")
+                DataGridViewConsignaciones.DataSource = datas9.Tables("consignaciones")
 
-            ComboBoxSub2.Text = "TODOS"
+                DataGridViewConsignaciones.Columns(0).Width = 100
+                'DataGridViewConsignaciones.Columns(1).Width = 100
+                DataGridViewConsignaciones.Columns(2).Width = 100
+                DataGridViewConsignaciones.Columns(3).Width = 35
+                DataGridViewConsignaciones.Columns(4).Width = 100
+                DataGridViewConsignaciones.Columns(5).Width = 130
+                DataGridViewConsignaciones.Columns(6).Width = 200
+                DataGridViewConsignaciones.Columns(7).Width = 300
+                DataGridViewConsignaciones.Columns(0).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsignaciones.Columns(1).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
 
-            CargarComboSub2()
+                conexion9.CerrarConexion()
 
 
 
-            cargarDatagridConsignaciones()
-        End If
-        Loading.Hide()
+            ElseIf Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+                PanelIngresarDatos.Visible = False
+                TextBoxCupo.Text = 0
+                TextBoxCupoDisponible.Text = 0
+                TextBoxSaldoInicial.Text = 0
+                TextBoxSaldoPConsignar.Text = 0
 
+                CargarComboBanco()
+
+                ComboBoxSub2.Text = "TODOS"
+
+                CargarComboSub2()
+
+
+
+                cargarDatagridConsignaciones()
+            End If
+            Loading.Hide()
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message, MsgBoxStyle.Critical, "ERROR")
+        End Try
     End Sub
 
     Private Sub TextBoxValorAingresar_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBoxValorAingresar.KeyPress
@@ -616,35 +619,39 @@ Public Class Consignaciones
     End Function
 
     Private Sub ButtonActualizar_Click(sender As Object, e As EventArgs) Handles ButtonActualizar.Click
-        If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
-            cargarDatagridConsignaciones()
+        Try
 
-        ElseIf Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
+            If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
+                cargarDatagridConsignaciones()
 
-            Dim conexion13 As New conexion
-            Dim cmd13 As New MySqlCommand("CALL BusquedaSubC('" & ComboBoxSub2.Text & "');", conexion13.conexion)
-            conexion13.AbrirConexion()
-            Dim datas13 As New DataSet
-            Dim adaptador13 As New MySqlDataAdapter(cmd13)
-            adaptador13.Fill(datas13, "consignaciones")
-            DataGridViewConsignaciones.DataSource = datas13.Tables("consignaciones")
+            ElseIf Principal.LabelTipoU.Text = "SUBDISTRIBUIDOR" Then
 
-            DataGridViewConsignaciones.Columns(0).Width = 100
-            'DataGridViewConsignaciones.Columns(1).Width = 100
-            DataGridViewConsignaciones.Columns(2).Width = 100
-            DataGridViewConsignaciones.Columns(3).Width = 35
-            DataGridViewConsignaciones.Columns(4).Width = 100
-            DataGridViewConsignaciones.Columns(5).Width = 130
-            DataGridViewConsignaciones.Columns(6).Width = 200
-            DataGridViewConsignaciones.Columns(7).Width = 300
-            DataGridViewConsignaciones.Columns(0).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsignaciones.Columns(1).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
-            DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
+                Dim conexion13 As New conexion
+                Dim cmd13 As New MySqlCommand("CALL BusquedaSubC('" & ComboBoxSub2.Text & "');", conexion13.conexion)
+                conexion13.AbrirConexion()
+                Dim datas13 As New DataSet
+                Dim adaptador13 As New MySqlDataAdapter(cmd13)
+                adaptador13.Fill(datas13, "consignaciones")
+                DataGridViewConsignaciones.DataSource = datas13.Tables("consignaciones")
 
-            conexion13.CerrarConexion()
+                DataGridViewConsignaciones.Columns(0).Width = 100
+                'DataGridViewConsignaciones.Columns(1).Width = 100
+                DataGridViewConsignaciones.Columns(2).Width = 100
+                DataGridViewConsignaciones.Columns(3).Width = 35
+                DataGridViewConsignaciones.Columns(4).Width = 100
+                DataGridViewConsignaciones.Columns(5).Width = 130
+                DataGridViewConsignaciones.Columns(6).Width = 200
+                DataGridViewConsignaciones.Columns(7).Width = 300
+                DataGridViewConsignaciones.Columns(0).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsignaciones.Columns(1).DisplayIndex = 9 'posicionar el boton actualizar en la ultima posicion del datagrid
+                DataGridViewConsignaciones.Columns(2).DisplayIndex = 7 'posicionar el boton actualizar en la ultima posicion del datagrid
 
-        End If
+                conexion13.CerrarConexion()
 
+            End If
+        Catch ex As Exception
+            MsgBox("ERROR DE CONEXION" & vbCrLf & ex.Message, MsgBoxStyle.Critical, "ERROR")
+        End Try
 
     End Sub
 
@@ -659,7 +666,7 @@ Public Class Consignaciones
             'Agregar tabla al Dataset
             dset.Tables.Add()
             'AGregar Columna a la tabla
-            For i As Integer = 2 To ((DataGridViewConsignaciones.ColumnCount - 1))
+            For i As Integer = 3 To ((DataGridViewConsignaciones.ColumnCount - 1))
 
                 dset.Tables(0).Columns.Add(DataGridViewConsignaciones.Columns(i).HeaderText)
             Next
@@ -670,11 +677,17 @@ Public Class Consignaciones
 
                 dr1 = dset.Tables(0).NewRow
 
-                For j As Integer = 2 To 9
 
-                    dr1(j) = DataGridViewConsignaciones.Rows(i).Cells(j).Value
 
-                Next
+                dr1(0) = DataGridViewConsignaciones.Rows(i).Cells(3).Value
+                dr1(1) = DataGridViewConsignaciones.Rows(i).Cells(4).Value
+                dr1(2) = DataGridViewConsignaciones.Rows(i).Cells(5).Value
+                dr1(3) = DataGridViewConsignaciones.Rows(i).Cells(6).Value
+                dr1(4) = DataGridViewConsignaciones.Rows(i).Cells(7).Value
+                dr1(5) = DataGridViewConsignaciones.Rows(i).Cells(8).Value
+                dr1(6) = DataGridViewConsignaciones.Rows(i).Cells(9).Value
+
+
                 dset.Tables(0).Rows.Add(dr1)
 
             Next
@@ -714,7 +727,7 @@ Public Class Consignaciones
             wSheet.Columns.AutoFit()
 
             'este metodo crea una carpeta en documentos
-            Dim strFileName As String = My.Computer.FileSystem.SpecialDirectories.Desktop & "\ExportadoSPS"
+            Dim strFileName As String = My.Computer.FileSystem.SpecialDirectories.Desktop & "\ConsignacionesSPS"
             '  Dim strFileName As String = "C:\Users\CVR\Desktop\Reporte .xlsx"
             Dim blnFileOpen As Boolean = False
             Try

@@ -1,4 +1,5 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports Microsoft.Office.Interop
+Imports MySql.Data.MySqlClient
 
 Public Class Usuarios
     Sub CargarDataUsuarios()
@@ -257,5 +258,92 @@ Public Class Usuarios
         End If
     End Sub
 
+    Private Sub ButtonExport_Click(sender As Object, e As EventArgs) Handles ButtonExport.Click
+        Try
+            If ((DataGridViewUsuarios.Columns.Count = 0) Or (DataGridViewUsuarios.Rows.Count = 0)) Then
+                Exit Sub
+            End If
 
+            'Creando Dataset para Exportar
+            Dim dset As New DataSet
+            'Agregar tabla al Dataset
+            dset.Tables.Add()
+            'AGregar Columna a la tabla
+            For i As Integer = 0 To ((DataGridViewUsuarios.ColumnCount - 1))
+
+                dset.Tables(0).Columns.Add(DataGridViewUsuarios.Columns(i).HeaderText)
+            Next
+            'Agregar filas a la tabla
+            Dim dr1 As DataRow
+            For i As Integer = 0 To (DataGridViewUsuarios.RowCount) - 1
+
+
+                dr1 = dset.Tables(0).NewRow
+
+                For j As Integer = 0 To 9
+
+                    dr1(j) = DataGridViewUsuarios.Rows(i).Cells(j).Value
+
+                Next
+
+                dset.Tables(0).Rows.Add(dr1)
+
+            Next
+
+            Dim aplicacion As New Excel.Application
+            Dim wBook As Microsoft.Office.Interop.Excel.Workbook
+            Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
+
+            wBook = aplicacion.Workbooks.Add()
+            wSheet = wBook.ActiveSheet()
+
+            Dim dt As System.Data.DataTable = dset.Tables(0)
+            Dim dc As System.Data.DataColumn
+            Dim dr As System.Data.DataRow
+            Dim colIndex As Integer = 0
+            Dim rowIndex As Integer = 0
+
+            For Each dc In dt.Columns
+                colIndex = colIndex + 1
+                aplicacion.Cells(1, colIndex) = dc.ColumnName
+            Next
+
+            For Each dr In dt.Rows
+                rowIndex = rowIndex + 1
+                colIndex = 0
+                For Each dc In dt.Columns
+                    colIndex = colIndex + 1
+                    aplicacion.Cells(rowIndex + 1, colIndex) = dr(dc.ColumnName)
+
+                Next
+            Next
+            'Configurar la orientacion de la  hoja y el tamaño
+            ''''''''' wSheet.PageSetup.Orientation = Excel.XlPageOrientation.xlLandscape
+            ''''''  wSheet.PageSetup.PaperSize = Excel.XlPaperSize.xlPaperLegalDataGridViewConsignaciones
+            'Configurar con negrilla la cabecera y tenga autofit
+            wSheet.Rows.Item(1).Font.Bold = 1
+            wSheet.Columns.AutoFit()
+
+            'este metodo crea una carpeta en documentos
+            Dim strFileName As String = My.Computer.FileSystem.SpecialDirectories.Desktop & "\UsuariosSPS"
+            '  Dim strFileName As String = "C:\Users\CVR\Desktop\Reporte .xlsx"
+            Dim blnFileOpen As Boolean = False
+            Try
+                Dim fileTemp As System.IO.FileStream = System.IO.File.OpenWrite(strFileName)
+                fileTemp.Close()
+            Catch ex As Exception
+                blnFileOpen = False
+            End Try
+
+            If System.IO.File.Exists(strFileName) Then
+                System.IO.File.Delete(strFileName)
+            End If
+            MessageBox.Show("DOCUMENTO EXPORTADO CORRECTAMENTE.", "INFORMACION", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1)
+            wBook.SaveAs(strFileName)
+            aplicacion.Workbooks.Open(strFileName)
+            aplicacion.Visible = True
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "S.P.S", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
 End Class

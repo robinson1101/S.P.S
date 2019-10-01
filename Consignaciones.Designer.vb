@@ -58,12 +58,12 @@ Partial Class Consignaciones
         Me.Label20 = New System.Windows.Forms.Label()
         Me.TextBoxValorAingresar = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
         Me.ToolTipConsignaciones = New System.Windows.Forms.ToolTip(Me.components)
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBoxParaGuardar = New System.Windows.Forms.PictureBox()
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.GroupBoxBusquedaPorFecha.SuspendLayout()
@@ -77,6 +77,7 @@ Partial Class Consignaciones
         Me.DataGridViewConsignaciones.AllowUserToDeleteRows = False
         Me.DataGridViewConsignaciones.AllowUserToResizeColumns = False
         Me.DataGridViewConsignaciones.AllowUserToResizeRows = False
+        Me.DataGridViewConsignaciones.BackgroundColor = System.Drawing.Color.White
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -258,11 +259,12 @@ Partial Class Consignaciones
         '
         Me.ComboBoxSub2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ComboBoxSub2.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.ComboBoxSub2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBoxSub2.FormattingEnabled = True
         Me.ComboBoxSub2.ImeMode = System.Windows.Forms.ImeMode.[On]
         Me.ComboBoxSub2.Location = New System.Drawing.Point(462, 23)
         Me.ComboBoxSub2.Name = "ComboBoxSub2"
-        Me.ComboBoxSub2.Size = New System.Drawing.Size(157, 21)
+        Me.ComboBoxSub2.Size = New System.Drawing.Size(157, 23)
         Me.ComboBoxSub2.TabIndex = 15
         Me.ToolTipConsignaciones.SetToolTip(Me.ComboBoxSub2, "Seleccionar SUB")
         '
@@ -283,10 +285,11 @@ Partial Class Consignaciones
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label3)
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label13)
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBoxHastaC)
+        Me.GroupBoxBusquedaPorFecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBoxBusquedaPorFecha.ForeColor = System.Drawing.Color.Red
-        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(462, 73)
+        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(462, 61)
         Me.GroupBoxBusquedaPorFecha.Name = "GroupBoxBusquedaPorFecha"
-        Me.GroupBoxBusquedaPorFecha.Size = New System.Drawing.Size(157, 114)
+        Me.GroupBoxBusquedaPorFecha.Size = New System.Drawing.Size(157, 126)
         Me.GroupBoxBusquedaPorFecha.TabIndex = 23
         Me.GroupBoxBusquedaPorFecha.TabStop = False
         Me.GroupBoxBusquedaPorFecha.Text = "Formato: Año/Mes/Dia"
@@ -297,7 +300,7 @@ Partial Class Consignaciones
         Me.MaskedTextBoxDesdeC.Location = New System.Drawing.Point(24, 35)
         Me.MaskedTextBoxDesdeC.Mask = "0000/00/00"
         Me.MaskedTextBoxDesdeC.Name = "MaskedTextBoxDesdeC"
-        Me.MaskedTextBoxDesdeC.Size = New System.Drawing.Size(102, 20)
+        Me.MaskedTextBoxDesdeC.Size = New System.Drawing.Size(102, 21)
         Me.MaskedTextBoxDesdeC.TabIndex = 5
         Me.MaskedTextBoxDesdeC.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         Me.MaskedTextBoxDesdeC.ValidatingType = GetType(Date)
@@ -307,7 +310,7 @@ Partial Class Consignaciones
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(22, 19)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.Size = New System.Drawing.Size(52, 15)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "DESDE:"
         '
@@ -316,7 +319,7 @@ Partial Class Consignaciones
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(26, 59)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(46, 13)
+        Me.Label13.Size = New System.Drawing.Size(48, 15)
         Me.Label13.TabIndex = 4
         Me.Label13.Text = "HASTA:"
         '
@@ -326,7 +329,7 @@ Partial Class Consignaciones
         Me.MaskedTextBoxHastaC.Location = New System.Drawing.Point(26, 75)
         Me.MaskedTextBoxHastaC.Mask = "0000/00/00"
         Me.MaskedTextBoxHastaC.Name = "MaskedTextBoxHastaC"
-        Me.MaskedTextBoxHastaC.Size = New System.Drawing.Size(100, 20)
+        Me.MaskedTextBoxHastaC.Size = New System.Drawing.Size(100, 21)
         Me.MaskedTextBoxHastaC.TabIndex = 6
         Me.MaskedTextBoxHastaC.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals
         Me.MaskedTextBoxHastaC.ValidatingType = GetType(Date)
@@ -448,16 +451,6 @@ Partial Class Consignaciones
         Me.Label23.TabIndex = 11
         Me.Label23.Text = "SELECCCIONAR BANCO"
         '
-        'PictureBoxParaGuardar
-        '
-        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(730, 217)
-        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
-        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(463, 462)
-        Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBoxParaGuardar.TabIndex = 22
-        Me.PictureBoxParaGuardar.TabStop = False
-        Me.PictureBoxParaGuardar.Visible = False
-        '
         'ButtonActualizar
         '
         Me.ButtonActualizar.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -465,9 +458,9 @@ Partial Class Consignaciones
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.S.P.S.Resources.icons8_actualizar_en_la_nube_50
         Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonActualizar.Location = New System.Drawing.Point(650, 151)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(659, 133)
         Me.ButtonActualizar.Name = "ButtonActualizar"
-        Me.ButtonActualizar.Size = New System.Drawing.Size(154, 34)
+        Me.ButtonActualizar.Size = New System.Drawing.Size(154, 51)
         Me.ButtonActualizar.TabIndex = 10
         Me.ButtonActualizar.Text = "REFRESCAR"
         Me.ButtonActualizar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -480,9 +473,9 @@ Partial Class Consignaciones
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonExportar.Image = Global.S.P.S.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(650, 79)
+        Me.ButtonExportar.Location = New System.Drawing.Point(659, 73)
         Me.ButtonExportar.Name = "ButtonExportar"
-        Me.ButtonExportar.Size = New System.Drawing.Size(154, 37)
+        Me.ButtonExportar.Size = New System.Drawing.Size(154, 49)
         Me.ButtonExportar.TabIndex = 13
         Me.ButtonExportar.Text = "EXPORTAR"
         Me.ButtonExportar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -495,9 +488,9 @@ Partial Class Consignaciones
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonBuscar.Image = Global.S.P.S.Resources.búsqueda50px
         Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.Location = New System.Drawing.Point(650, 13)
+        Me.ButtonBuscar.Location = New System.Drawing.Point(659, 13)
         Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(154, 39)
+        Me.ButtonBuscar.Size = New System.Drawing.Size(154, 50)
         Me.ButtonBuscar.TabIndex = 22
         Me.ButtonBuscar.Text = "BUSCAR"
         Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -506,6 +499,16 @@ Partial Class Consignaciones
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PictureBoxParaGuardar
+        '
+        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(730, 61)
+        Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
+        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(463, 618)
+        Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBoxParaGuardar.TabIndex = 22
+        Me.PictureBoxParaGuardar.TabStop = False
+        Me.PictureBoxParaGuardar.Visible = False
         '
         'Consignaciones
         '
@@ -527,8 +530,8 @@ Partial Class Consignaciones
         Me.Name = "Consignaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "                                                                                 " &
-    "                                                                                " &
-    "              GESTIONAR CONSIGNACIONES"
+    "                                                                       GESTIONAR" &
+    " CONSIGNACIONES"
         CType(Me.DataGridViewConsignaciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -575,10 +578,10 @@ Partial Class Consignaciones
     Friend WithEvents ButtonIngrearDatos As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
-    Friend WithEvents PictureBoxParaGuardar As PictureBox
     Friend WithEvents LinkLabelSeleccionar As LinkLabel
     Friend WithEvents LabelRuta As Label
     Friend WithEvents Column3 As DataGridViewLinkColumn
     Friend WithEvents Column1 As DataGridViewImageColumn
     Friend WithEvents Column2 As DataGridViewComboBoxColumn
+    Friend WithEvents PictureBoxParaGuardar As PictureBox
 End Class

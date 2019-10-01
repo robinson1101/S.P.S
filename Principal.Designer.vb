@@ -88,8 +88,10 @@ Partial Class Principal
         '
         'ButtonCargarP
         '
-        Me.ButtonCargarP.BackColor = System.Drawing.Color.White
+        Me.ButtonCargarP.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.ButtonCargarP.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonCargarP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonCargarP.ForeColor = System.Drawing.Color.White
         Me.ButtonCargarP.Location = New System.Drawing.Point(0, 133)
         Me.ButtonCargarP.Name = "ButtonCargarP"
         Me.ButtonCargarP.Size = New System.Drawing.Size(412, 41)
@@ -99,8 +101,10 @@ Partial Class Principal
         '
         'ButtonConsultarEstP
         '
-        Me.ButtonConsultarEstP.BackColor = System.Drawing.Color.White
+        Me.ButtonConsultarEstP.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.ButtonConsultarEstP.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonConsultarEstP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonConsultarEstP.ForeColor = System.Drawing.Color.White
         Me.ButtonConsultarEstP.Location = New System.Drawing.Point(0, 180)
         Me.ButtonConsultarEstP.Name = "ButtonConsultarEstP"
         Me.ButtonConsultarEstP.Size = New System.Drawing.Size(412, 40)
@@ -110,8 +114,10 @@ Partial Class Principal
         '
         'ButtonGestionarConsig
         '
-        Me.ButtonGestionarConsig.BackColor = System.Drawing.Color.White
+        Me.ButtonGestionarConsig.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.ButtonGestionarConsig.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.ButtonGestionarConsig.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ButtonGestionarConsig.ForeColor = System.Drawing.Color.White
         Me.ButtonGestionarConsig.Location = New System.Drawing.Point(0, 227)
         Me.ButtonGestionarConsig.Name = "ButtonGestionarConsig"
         Me.ButtonGestionarConsig.Size = New System.Drawing.Size(412, 40)
@@ -143,7 +149,7 @@ Partial Class Principal
         '
         Me.LinkLabelUsuarios.AutoSize = True
         Me.LinkLabelUsuarios.LinkColor = System.Drawing.Color.Blue
-        Me.LinkLabelUsuarios.Location = New System.Drawing.Point(127, 272)
+        Me.LinkLabelUsuarios.Location = New System.Drawing.Point(127, 273)
         Me.LinkLabelUsuarios.Name = "LinkLabelUsuarios"
         Me.LinkLabelUsuarios.Size = New System.Drawing.Size(129, 13)
         Me.LinkLabelUsuarios.TabIndex = 10
@@ -154,6 +160,7 @@ Partial Class Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(413, 294)
         Me.Controls.Add(Me.LinkLabelUsuarios)
         Me.Controls.Add(Me.LabelUsuarioU)
@@ -170,7 +177,7 @@ Partial Class Principal
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "                                                            PRINCIPAL"
+        Me.Text = "                                                      PRINCIPAL"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
