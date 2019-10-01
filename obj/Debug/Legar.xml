@@ -112,6 +112,11 @@ Legar
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
 </summary>
 </member>
+<member name="P:Legar.Resources.sps">
+<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member>
 <member name="P:Legar.Resources.user">
 <summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

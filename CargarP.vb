@@ -187,4 +187,5 @@ Public Class Cargar_pago
     Private Sub Cargar_pago_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
     End Sub
+
 End Class

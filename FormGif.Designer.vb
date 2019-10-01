@@ -22,6 +22,7 @@ Partial Class FormGif
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormGif))
         Me.PictureBoxGif = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBoxGif, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,6 +60,7 @@ Partial Class FormGif
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBoxGif)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FormGif"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBoxGif, System.ComponentModel.ISupportInitialize).EndInit()

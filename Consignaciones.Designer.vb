@@ -25,6 +25,7 @@ Partial Class Consignaciones
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Consignaciones))
         Me.DataGridViewConsignaciones = New System.Windows.Forms.DataGridView()
         Me.Column3 = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
@@ -196,11 +197,12 @@ Partial Class Consignaciones
         '
         'TextBoxCupoDisponible
         '
+        Me.TextBoxCupoDisponible.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBoxCupoDisponible.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCupoDisponible.Enabled = False
         Me.TextBoxCupoDisponible.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCupoDisponible.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(177, 63)
+        Me.TextBoxCupoDisponible.Location = New System.Drawing.Point(177, 67)
         Me.TextBoxCupoDisponible.Multiline = True
         Me.TextBoxCupoDisponible.Name = "TextBoxCupoDisponible"
         Me.TextBoxCupoDisponible.Size = New System.Drawing.Size(231, 31)
@@ -208,11 +210,12 @@ Partial Class Consignaciones
         '
         'TextBoxSaldoInicial
         '
+        Me.TextBoxSaldoInicial.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBoxSaldoInicial.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxSaldoInicial.Enabled = False
         Me.TextBoxSaldoInicial.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSaldoInicial.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(177, 98)
+        Me.TextBoxSaldoInicial.Location = New System.Drawing.Point(177, 102)
         Me.TextBoxSaldoInicial.Multiline = True
         Me.TextBoxSaldoInicial.Name = "TextBoxSaldoInicial"
         Me.TextBoxSaldoInicial.Size = New System.Drawing.Size(231, 31)
@@ -220,11 +223,12 @@ Partial Class Consignaciones
         '
         'TextBoxCupo
         '
+        Me.TextBoxCupo.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBoxCupo.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxCupo.Enabled = False
         Me.TextBoxCupo.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxCupo.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxCupo.Location = New System.Drawing.Point(177, 28)
+        Me.TextBoxCupo.Location = New System.Drawing.Point(177, 32)
         Me.TextBoxCupo.Multiline = True
         Me.TextBoxCupo.Name = "TextBoxCupo"
         Me.TextBoxCupo.Size = New System.Drawing.Size(231, 31)
@@ -232,11 +236,12 @@ Partial Class Consignaciones
         '
         'TextBoxSaldoPConsignar
         '
+        Me.TextBoxSaldoPConsignar.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.TextBoxSaldoPConsignar.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBoxSaldoPConsignar.Enabled = False
         Me.TextBoxSaldoPConsignar.Font = New System.Drawing.Font("Lucida Bright", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBoxSaldoPConsignar.ForeColor = System.Drawing.Color.Black
-        Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(177, 133)
+        Me.TextBoxSaldoPConsignar.Location = New System.Drawing.Point(177, 137)
         Me.TextBoxSaldoPConsignar.Multiline = True
         Me.TextBoxSaldoPConsignar.Name = "TextBoxSaldoPConsignar"
         Me.TextBoxSaldoPConsignar.Size = New System.Drawing.Size(231, 30)
@@ -255,7 +260,7 @@ Partial Class Consignaciones
         Me.ComboBoxSub2.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.ComboBoxSub2.FormattingEnabled = True
         Me.ComboBoxSub2.ImeMode = System.Windows.Forms.ImeMode.[On]
-        Me.ComboBoxSub2.Location = New System.Drawing.Point(462, 55)
+        Me.ComboBoxSub2.Location = New System.Drawing.Point(462, 23)
         Me.ComboBoxSub2.Name = "ComboBoxSub2"
         Me.ComboBoxSub2.Size = New System.Drawing.Size(157, 21)
         Me.ComboBoxSub2.TabIndex = 15
@@ -265,7 +270,7 @@ Partial Class Consignaciones
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(459, 40)
+        Me.Label2.Location = New System.Drawing.Point(459, 8)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(107, 13)
         Me.Label2.TabIndex = 5
@@ -279,7 +284,7 @@ Partial Class Consignaciones
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.Label13)
         Me.GroupBoxBusquedaPorFecha.Controls.Add(Me.MaskedTextBoxHastaC)
         Me.GroupBoxBusquedaPorFecha.ForeColor = System.Drawing.Color.Red
-        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(462, 84)
+        Me.GroupBoxBusquedaPorFecha.Location = New System.Drawing.Point(462, 73)
         Me.GroupBoxBusquedaPorFecha.Name = "GroupBoxBusquedaPorFecha"
         Me.GroupBoxBusquedaPorFecha.Size = New System.Drawing.Size(157, 114)
         Me.GroupBoxBusquedaPorFecha.TabIndex = 23
@@ -460,7 +465,7 @@ Partial Class Consignaciones
         Me.ButtonActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonActualizar.Image = Global.Legar.Resources.icons8_actualizar_en_la_nube_50
         Me.ButtonActualizar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonActualizar.Location = New System.Drawing.Point(630, 163)
+        Me.ButtonActualizar.Location = New System.Drawing.Point(650, 151)
         Me.ButtonActualizar.Name = "ButtonActualizar"
         Me.ButtonActualizar.Size = New System.Drawing.Size(154, 34)
         Me.ButtonActualizar.TabIndex = 10
@@ -475,7 +480,7 @@ Partial Class Consignaciones
         Me.ButtonExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonExportar.Image = Global.Legar.Resources.icons8_microsoft_excel_2019_50
         Me.ButtonExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonExportar.Location = New System.Drawing.Point(630, 103)
+        Me.ButtonExportar.Location = New System.Drawing.Point(650, 79)
         Me.ButtonExportar.Name = "ButtonExportar"
         Me.ButtonExportar.Size = New System.Drawing.Size(154, 37)
         Me.ButtonExportar.TabIndex = 13
@@ -490,7 +495,7 @@ Partial Class Consignaciones
         Me.ButtonBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ButtonBuscar.Image = Global.Legar.Resources.búsqueda50px
         Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.Location = New System.Drawing.Point(630, 41)
+        Me.ButtonBuscar.Location = New System.Drawing.Point(650, 13)
         Me.ButtonBuscar.Name = "ButtonBuscar"
         Me.ButtonBuscar.Size = New System.Drawing.Size(154, 39)
         Me.ButtonBuscar.TabIndex = 22
@@ -518,6 +523,7 @@ Partial Class Consignaciones
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.DataGridViewConsignaciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Consignaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "                                                                                 " &

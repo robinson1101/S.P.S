@@ -26,17 +26,8 @@ Partial Class Cargar_pago
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cargar_pago))
         Me.DataGridViewPagos = New System.Windows.Forms.DataGridView()
-        Me.ButtonSubirP = New System.Windows.Forms.Button()
-        Me.ButtonIngresarR = New System.Windows.Forms.Button()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.LabelIdSub = New System.Windows.Forms.Label()
-        Me.LabelNombreP = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.LabelCedulaP = New System.Windows.Forms.Label()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,21 +39,20 @@ Partial Class Cargar_pago
         Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.ButtonSubirP = New System.Windows.Forms.Button()
+        Me.ButtonIngresarR = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.LabelIdSub = New System.Windows.Forms.Label()
+        Me.LabelNombreP = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LabelCedulaP = New System.Windows.Forms.Label()
+        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LABLE = New System.Windows.Forms.Label()
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(521, 2)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(227, 31)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "CARGAR PAGO"
         '
         'DataGridViewPagos
         '
@@ -104,92 +94,6 @@ Partial Class Cargar_pago
         Me.DataGridViewPagos.RowHeadersVisible = False
         Me.DataGridViewPagos.Size = New System.Drawing.Size(1205, 568)
         Me.DataGridViewPagos.TabIndex = 1
-        '
-        'ButtonSubirP
-        '
-        Me.ButtonSubirP.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ButtonSubirP.Location = New System.Drawing.Point(1050, 12)
-        Me.ButtonSubirP.Name = "ButtonSubirP"
-        Me.ButtonSubirP.Size = New System.Drawing.Size(150, 100)
-        Me.ButtonSubirP.TabIndex = 2
-        Me.ButtonSubirP.Text = "GUARDAR PAGOS"
-        Me.ButtonSubirP.UseVisualStyleBackColor = False
-        '
-        'ButtonIngresarR
-        '
-        Me.ButtonIngresarR.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ButtonIngresarR.Location = New System.Drawing.Point(896, 12)
-        Me.ButtonIngresarR.Name = "ButtonIngresarR"
-        Me.ButtonIngresarR.Size = New System.Drawing.Size(148, 100)
-        Me.ButtonIngresarR.TabIndex = 3
-        Me.ButtonIngresarR.Text = "INGRESAR REGISTRO"
-        Me.ButtonIngresarR.UseVisualStyleBackColor = False
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(8, 38)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 13)
-        Me.Label2.TabIndex = 4
-        Me.Label2.Text = "ID. SUBDISTRIBUIDOR:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 63)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "NOMBRE:"
-        '
-        'LabelIdSub
-        '
-        Me.LabelIdSub.AutoSize = True
-        Me.LabelIdSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelIdSub.Location = New System.Drawing.Point(140, 35)
-        Me.LabelIdSub.Name = "LabelIdSub"
-        Me.LabelIdSub.Size = New System.Drawing.Size(21, 16)
-        Me.LabelIdSub.TabIndex = 6
-        Me.LabelIdSub.Text = "ID"
-        '
-        'LabelNombreP
-        '
-        Me.LabelNombreP.AutoSize = True
-        Me.LabelNombreP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombreP.Location = New System.Drawing.Point(140, 61)
-        Me.LabelNombreP.Name = "LabelNombreP"
-        Me.LabelNombreP.Size = New System.Drawing.Size(67, 16)
-        Me.LabelNombreP.TabIndex = 7
-        Me.LabelNombreP.Text = "NOMBRE"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(8, 87)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(53, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "CEDULA:"
-        '
-        'LabelCedulaP
-        '
-        Me.LabelCedulaP.AutoSize = True
-        Me.LabelCedulaP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelCedulaP.Location = New System.Drawing.Point(140, 85)
-        Me.LabelCedulaP.Name = "LabelCedulaP"
-        Me.LabelCedulaP.Size = New System.Drawing.Size(62, 16)
-        Me.LabelCedulaP.TabIndex = 10
-        Me.LabelCedulaP.Text = "CEDULA"
-        '
-        'DataGridViewImageColumn1
-        '
-        Me.DataGridViewImageColumn1.HeaderText = ""
-        Me.DataGridViewImageColumn1.Image = Global.Legar.Resources.delete_4_90871
-        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
-        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewImageColumn1.Width = 5
         '
         'Column10
         '
@@ -277,6 +181,92 @@ Partial Class Cargar_pago
         Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Column11.Width = 5
         '
+        'ButtonSubirP
+        '
+        Me.ButtonSubirP.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonSubirP.Location = New System.Drawing.Point(1050, 12)
+        Me.ButtonSubirP.Name = "ButtonSubirP"
+        Me.ButtonSubirP.Size = New System.Drawing.Size(150, 100)
+        Me.ButtonSubirP.TabIndex = 2
+        Me.ButtonSubirP.Text = "GUARDAR PAGOS"
+        Me.ButtonSubirP.UseVisualStyleBackColor = False
+        '
+        'ButtonIngresarR
+        '
+        Me.ButtonIngresarR.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ButtonIngresarR.Location = New System.Drawing.Point(896, 12)
+        Me.ButtonIngresarR.Name = "ButtonIngresarR"
+        Me.ButtonIngresarR.Size = New System.Drawing.Size(148, 100)
+        Me.ButtonIngresarR.TabIndex = 3
+        Me.ButtonIngresarR.Text = "INGRESAR REGISTRO"
+        Me.ButtonIngresarR.UseVisualStyleBackColor = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(8, 38)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(127, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "ID. SUBDISTRIBUIDOR:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 63)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(57, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "NOMBRE:"
+        '
+        'LabelIdSub
+        '
+        Me.LabelIdSub.AutoSize = True
+        Me.LabelIdSub.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelIdSub.Location = New System.Drawing.Point(140, 35)
+        Me.LabelIdSub.Name = "LabelIdSub"
+        Me.LabelIdSub.Size = New System.Drawing.Size(21, 16)
+        Me.LabelIdSub.TabIndex = 6
+        Me.LabelIdSub.Text = "ID"
+        '
+        'LabelNombreP
+        '
+        Me.LabelNombreP.AutoSize = True
+        Me.LabelNombreP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelNombreP.Location = New System.Drawing.Point(140, 61)
+        Me.LabelNombreP.Name = "LabelNombreP"
+        Me.LabelNombreP.Size = New System.Drawing.Size(67, 16)
+        Me.LabelNombreP.TabIndex = 7
+        Me.LabelNombreP.Text = "NOMBRE"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(8, 87)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(53, 13)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "CEDULA:"
+        '
+        'LabelCedulaP
+        '
+        Me.LabelCedulaP.AutoSize = True
+        Me.LabelCedulaP.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelCedulaP.Location = New System.Drawing.Point(140, 85)
+        Me.LabelCedulaP.Name = "LabelCedulaP"
+        Me.LabelCedulaP.Size = New System.Drawing.Size(62, 16)
+        Me.LabelCedulaP.TabIndex = 10
+        Me.LabelCedulaP.Text = "CEDULA"
+        '
+        'DataGridViewImageColumn1
+        '
+        Me.DataGridViewImageColumn1.HeaderText = ""
+        Me.DataGridViewImageColumn1.Image = Global.Legar.Resources.delete_4_90871
+        Me.DataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
+        Me.DataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewImageColumn1.Width = 5
+        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -287,7 +277,7 @@ Partial Class Cargar_pago
         Me.Panel1.Controls.Add(Me.LabelCedulaP)
         Me.Panel1.Controls.Add(Me.LabelIdSub)
         Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Location = New System.Drawing.Point(12, 2)
+        Me.Panel1.Location = New System.Drawing.Point(7, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(379, 110)
         Me.Panel1.TabIndex = 11
@@ -311,20 +301,17 @@ Partial Class Cargar_pago
         Me.Controls.Add(Me.ButtonIngresarR)
         Me.Controls.Add(Me.ButtonSubirP)
         Me.Controls.Add(Me.DataGridViewPagos)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Cargar_pago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Cargar_pago"
+        Me.Text = resources.GetString("$this.Text")
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents DataGridViewPagos As DataGridView
     Friend WithEvents ButtonSubirP As Button
     Friend WithEvents ButtonIngresarR As Button

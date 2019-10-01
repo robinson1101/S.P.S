@@ -164,3 +164,4 @@ C:\Users\DESKTOP\Documents\GitHub\S.P.S\obj\Debug\SPS.vbproj.CopyComplete
 C:\Users\DESKTOP\Documents\GitHub\S.P.S\obj\Debug\Legar.exe
 C:\Users\DESKTOP\Documents\GitHub\S.P.S\obj\Debug\Legar.xml
 C:\Users\DESKTOP\Documents\GitHub\S.P.S\obj\Debug\Legar.pdb
+C:\Users\CVR\Documents\GitHub\S.P.S\obj\Debug\Legar.Loading.resources

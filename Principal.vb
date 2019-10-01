@@ -16,7 +16,11 @@ Public Class Principal
     End Sub
 
     Private Sub ButtonGestionarConsig_Click(sender As Object, e As EventArgs) Handles ButtonGestionarConsig.Click
-        Consignaciones.ShowDialog()
+        'llamando al loading
+
+        Loading.Show()
+        Loading.TimerLoading.Start()
+
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load

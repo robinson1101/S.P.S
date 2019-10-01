@@ -246,6 +246,16 @@ Friend Class Resources
     '''<summary>
     '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
     '''</summary>
+    Friend Shared ReadOnly Property sps() As System.Drawing.Bitmap
+        Get
+            Dim obj As Object = ResourceManager.GetObject("sps", resourceCulture)
+            Return CType(obj,System.Drawing.Bitmap)
+        End Get
+    End Property
+    
+    '''<summary>
+    '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+    '''</summary>
     Friend Shared ReadOnly Property user() As System.Drawing.Bitmap
         Get
             Dim obj As Object = ResourceManager.GetObject("user", resourceCulture)

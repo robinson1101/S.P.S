@@ -24,7 +24,7 @@ Partial Class ConsultarEP
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ConsultarEP))
         Me.TextBoxNumReferencia = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -32,6 +32,8 @@ Partial Class ConsultarEP
         Me.MaskedTextBoxDesde = New System.Windows.Forms.MaskedTextBox()
         Me.MaskedTextBoxHasta = New System.Windows.Forms.MaskedTextBox()
         Me.DataGridViewConsultar = New System.Windows.Forms.DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         Me.ToolTipConsultar = New System.Windows.Forms.ToolTip(Me.components)
         Me.ButtonActualizar = New System.Windows.Forms.Button()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
@@ -43,21 +45,9 @@ Partial Class ConsultarEP
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ButtonExportar = New System.Windows.Forms.Button()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewComboBoxColumn()
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(498, 4)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(233, 24)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "BUSQUEDA DE PAGOS"
         '
         'TextBoxNumReferencia
         '
@@ -143,6 +133,23 @@ Partial Class ConsultarEP
         Me.DataGridViewConsultar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewConsultar.Size = New System.Drawing.Size(1205, 551)
         Me.DataGridViewConsultar.TabIndex = 8
+        '
+        'Column1
+        '
+        Me.Column1.HeaderText = ""
+        Me.Column1.Image = Global.Legar.Resources.Actualizar50
+        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column1.Name = "Column1"
+        Me.Column1.ToolTipText = "Actualizar estado"
+        '
+        'Column2
+        '
+        Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Column2.HeaderText = "CAMBIAR A:"
+        Me.Column2.Items.AddRange(New Object() {"PAGO", "NO PAGO", "R. ANULADO"})
+        Me.Column2.Name = "Column2"
+        Me.Column2.ToolTipText = "Seleccionar"
+        Me.Column2.Width = 116
         '
         'ButtonActualizar
         '
@@ -252,23 +259,6 @@ Partial Class ConsultarEP
         Me.DataGridViewImageColumn1.Name = "DataGridViewImageColumn1"
         Me.DataGridViewImageColumn1.ToolTipText = "Actualizar estado"
         '
-        'Column1
-        '
-        Me.Column1.HeaderText = ""
-        Me.Column1.Image = Global.Legar.Resources.Actualizar50
-        Me.Column1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Column1.Name = "Column1"
-        Me.Column1.ToolTipText = "Actualizar estado"
-        '
-        'Column2
-        '
-        Me.Column2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Column2.HeaderText = "CAMBIAR A:"
-        Me.Column2.Items.AddRange(New Object() {"PAGO", "NO PAGO", "R. ANULADO"})
-        Me.Column2.Name = "Column2"
-        Me.Column2.ToolTipText = "Seleccionar"
-        Me.Column2.Width = 116
-        '
         'ConsultarEP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -286,11 +276,11 @@ Partial Class ConsultarEP
         Me.Controls.Add(Me.DataGridViewConsultar)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxNumReferencia)
-        Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ConsultarEP"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Consultar"
+        Me.Text = resources.GetString("$this.Text")
         CType(Me.DataGridViewConsultar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -298,8 +288,6 @@ Partial Class ConsultarEP
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents TextBoxNumReferencia As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

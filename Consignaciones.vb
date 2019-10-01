@@ -73,6 +73,7 @@ Public Class Consignaciones
     End Sub
     Private Sub Consignaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
         If Principal.LabelTipoU.Text = "ADMINISTRADOR" Then
             PanelIngresarDatos.Visible = False
         End If
@@ -116,7 +117,7 @@ Public Class Consignaciones
 
             cargarDatagridConsignaciones()
         End If
-
+        Loading.Hide()
 
     End Sub
 
@@ -667,6 +668,11 @@ Public Class Consignaciones
         Catch ex As Exception
             MessageBox.Show(ex.Message, "S.P.S", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+
+
+
+
+
     End Sub
 
     Private Sub ComboBoxSub2_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxSub2.KeyPress
