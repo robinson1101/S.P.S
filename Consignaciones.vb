@@ -210,7 +210,7 @@ Public Class Consignaciones
 
         Try
             Dim conexion4 As New conexion
-            MsgBox(DataGridViewConsignaciones.SelectedCells(2).Value & "','" & DataGridViewConsignaciones.SelectedCells(3).Value)
+
             Dim cmd4 As New MySqlCommand("CALL ActualizarEstadoConsig('" & DataGridViewConsignaciones.SelectedCells(3).Value & "','" & DataGridViewConsignaciones.SelectedCells(2).Value & "');", conexion4.conexion)
 
             conexion4.AbrirConexion()
@@ -365,7 +365,7 @@ Public Class Consignaciones
         If Not ((TypeOf cell2 Is DataGridViewLinkCell) And (DataGridViewConsignaciones.Columns(e.ColumnIndex).Name = "Column3")) Then Return
 
         Try
-            Dim bin As String
+            Dim bin As String = ""
             Dim conexion6 As New conexion
             Dim cmd5 As New MySqlCommand("CALL TraerImagen('" & Convert.ToString(DataGridViewConsignaciones.CurrentRow.Cells(3).Value) & "');", conexion6.conexion)
             conexion6.AbrirConexion()
@@ -483,7 +483,7 @@ Public Class Consignaciones
 
     Private Sub ButtonBuscar_Click(sender As Object, e As EventArgs) Handles ButtonBuscar.Click
         Try
-            MsgBox(MaskedTextBoxDesdeC.Text & " " & MaskedTextBoxDesdeC.Text)
+
             If MaskedTextBoxDesdeC.Text <> "" And MaskedTextBoxHastaC.Text <> "" And ComboBoxSub2.Text <> "TODOS" Then
                 Dim conexion6 As New conexion
                 Dim cmd5 As New MySqlCommand("CALL BusquedaSubFechaC('" & ComboBoxSub2.Text & "','" & MaskedTextBoxDesdeC.Text & "','" & MaskedTextBoxHastaC.Text & "');", conexion6.conexion)
@@ -765,5 +765,12 @@ Public Class Consignaciones
 
     Private Sub ComboBoxBanco_KeyPress(sender As Object, e As KeyPressEventArgs) Handles ComboBoxBanco.KeyPress
         e.Handled = True
+    End Sub
+
+    Private Sub DataGridViewConsignaciones_KeyDown(sender As Object, e As KeyEventArgs) Handles DataGridViewConsignaciones.KeyDown
+        If (e.KeyData <> Keys.F5) Then Return
+
+        ButtonActualizar.PerformClick()
+
     End Sub
 End Class

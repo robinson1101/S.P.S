@@ -176,6 +176,7 @@ Partial Class Login
         Me.Controls.Add(Me.PictureBoxFondo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Login"
         Me.Opacity = 0.88R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

@@ -61,6 +61,7 @@ Partial Class FormGif
         Me.Controls.Add(Me.PictureBoxGif)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "FormGif"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         CType(Me.PictureBoxGif, System.ComponentModel.ISupportInitialize).EndInit()

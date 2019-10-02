@@ -502,9 +502,9 @@ Partial Class Consignaciones
         '
         'PictureBoxParaGuardar
         '
-        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(730, 61)
+        Me.PictureBoxParaGuardar.Location = New System.Drawing.Point(730, 8)
         Me.PictureBoxParaGuardar.Name = "PictureBoxParaGuardar"
-        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(463, 618)
+        Me.PictureBoxParaGuardar.Size = New System.Drawing.Size(463, 671)
         Me.PictureBoxParaGuardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBoxParaGuardar.TabIndex = 22
         Me.PictureBoxParaGuardar.TabStop = False
@@ -527,6 +527,7 @@ Partial Class Consignaciones
         Me.Controls.Add(Me.DataGridViewConsignaciones)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Consignaciones"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "                                                                                 " &

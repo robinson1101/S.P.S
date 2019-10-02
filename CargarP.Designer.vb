@@ -28,17 +28,6 @@ Partial Class Cargar_pago
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Cargar_pago))
         Me.DataGridViewPagos = New System.Windows.Forms.DataGridView()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewComboBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
         Me.ButtonSubirP = New System.Windows.Forms.Button()
         Me.ButtonIngresarR = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -57,6 +46,17 @@ Partial Class Cargar_pago
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewComboBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewImageColumn()
         CType(Me.DataGridViewPagos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -101,92 +101,6 @@ Partial Class Cargar_pago
         Me.DataGridViewPagos.RowHeadersVisible = False
         Me.DataGridViewPagos.Size = New System.Drawing.Size(1205, 568)
         Me.DataGridViewPagos.TabIndex = 1
-        '
-        'Column10
-        '
-        Me.Column10.HeaderText = "ID"
-        Me.Column10.Name = "Column10"
-        Me.Column10.Width = 43
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Column1.FillWeight = 105.0!
-        Me.Column1.HeaderText = "ID REGISTRO"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 130
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column2.HeaderText = "N° DOC"
-        Me.Column2.Name = "Column2"
-        '
-        'Column3
-        '
-        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column3.HeaderText = "FECHA"
-        Me.Column3.Name = "Column3"
-        Me.Column3.Width = 130
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column4.HeaderText = "VENDEDOR"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 198
-        '
-        'Column5
-        '
-        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column5.HeaderText = "NO° MIN"
-        Me.Column5.MaxInputLength = 10
-        Me.Column5.Name = "Column5"
-        Me.Column5.Width = 130
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column6.HeaderText = "REFERENCIA"
-        Me.Column6.MaxInputLength = 10
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 120
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Column7.HeaderText = "TIPO"
-        Me.Column7.Items.AddRange(New Object() {"SERVICIO", "EQUIPO", "CLARO FIJO", "REPOSICION"})
-        Me.Column7.Name = "Column7"
-        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
-        Me.Column7.Width = 105
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column8.HeaderText = "VALOR"
-        Me.Column8.MaxInputLength = 8
-        Me.Column8.Name = "Column8"
-        '
-        'Column9
-        '
-        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Column9.HeaderText = "ESTADO ACTUAL"
-        Me.Column9.Name = "Column9"
-        Me.Column9.Width = 125
-        '
-        'Column11
-        '
-        Me.Column11.HeaderText = ""
-        Me.Column11.Image = Global.S.P.S.Resources.delete_4_90871
-        Me.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
-        Me.Column11.Name = "Column11"
-        Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Column11.Width = 5
         '
         'ButtonSubirP
         '
@@ -379,6 +293,92 @@ Partial Class Cargar_pago
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.Label6.Visible = False
         '
+        'Column10
+        '
+        Me.Column10.HeaderText = "ID"
+        Me.Column10.Name = "Column10"
+        Me.Column10.Width = 43
+        '
+        'Column1
+        '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        Me.Column1.DefaultCellStyle = DataGridViewCellStyle2
+        Me.Column1.FillWeight = 105.0!
+        Me.Column1.HeaderText = "ID REGISTRO"
+        Me.Column1.Name = "Column1"
+        Me.Column1.Width = 130
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column2.HeaderText = "No.CORTE"
+        Me.Column2.Name = "Column2"
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column3.HeaderText = "FECHA"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 130
+        '
+        'Column4
+        '
+        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column4.HeaderText = "VENDEDOR"
+        Me.Column4.Name = "Column4"
+        Me.Column4.Width = 198
+        '
+        'Column5
+        '
+        Me.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column5.HeaderText = "NO° MIN"
+        Me.Column5.MaxInputLength = 10
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 130
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column6.HeaderText = "REFERENCIA"
+        Me.Column6.MaxInputLength = 10
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 120
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Column7.HeaderText = "TIPO"
+        Me.Column7.Items.AddRange(New Object() {"SERVICIO", "EQUIPO", "CLARO FIJO", "REPOSICION"})
+        Me.Column7.Name = "Column7"
+        Me.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
+        Me.Column7.Width = 105
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column8.HeaderText = "VALOR"
+        Me.Column8.MaxInputLength = 8
+        Me.Column8.Name = "Column8"
+        '
+        'Column9
+        '
+        Me.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Column9.HeaderText = "ESTADO ACTUAL"
+        Me.Column9.Name = "Column9"
+        Me.Column9.Width = 125
+        '
+        'Column11
+        '
+        Me.Column11.HeaderText = ""
+        Me.Column11.Image = Global.S.P.S.Resources.delete_4_90871
+        Me.Column11.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom
+        Me.Column11.Name = "Column11"
+        Me.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Column11.Width = 5
+        '
         'Cargar_pago
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -397,6 +397,7 @@ Partial Class Cargar_pago
         Me.Controls.Add(Me.DataGridViewPagos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Cargar_pago"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "                                                                                 " &
@@ -419,6 +420,15 @@ Partial Class Cargar_pago
     Friend WithEvents Label7 As Label
     Friend WithEvents LabelCedulaP As Label
     Friend WithEvents DataGridViewImageColumn1 As DataGridViewImageColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents LABLE As Label
+    Friend WithEvents LabelCupoNeto As Label
+    Friend WithEvents LabelValorTotal As Label
+    Friend WithEvents LabelCupoRestante As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
@@ -430,13 +440,4 @@ Partial Class Cargar_pago
     Friend WithEvents Column8 As DataGridViewTextBoxColumn
     Friend WithEvents Column9 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewImageColumn
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents LABLE As Label
-    Friend WithEvents LabelCupoNeto As Label
-    Friend WithEvents LabelValorTotal As Label
-    Friend WithEvents LabelCupoRestante As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label6 As Label
 End Class

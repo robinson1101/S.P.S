@@ -1,29 +1,68 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class Principal
-    Private Sub ButtonSolicitarEQ_Click(sender As Object, e As EventArgs)
 
-    End Sub
 
     Private Sub ButtonCargarP_Click(sender As Object, e As EventArgs) Handles ButtonCargarP.Click
-        Cargar_pago.ShowDialog()
+        Try
+            Dim conexionPrueba As New conexion
+            Dim cmdPrueba As New MySqlCommand("select * from bancos ", conexionPrueba.conexion)
+            conexionPrueba.AbrirConexion()
+            cmdPrueba.ExecuteNonQuery()
+            conexionPrueba.CerrarConexion()
+            Cargar_pago.ShowDialog()
+        Catch ex As Exception
+
+            MsgBox("ERROR DE CONEXION", MsgBoxStyle.Critical, "AVISO")
+
+        End Try
+
+
 
     End Sub
 
     Private Sub ButtonConsultarEstP_Click(sender As Object, e As EventArgs) Handles ButtonConsultarEstP.Click
-        ConsultarEP.ShowDialog()
+        Try
+            Dim conexionPrueba As New conexion
+            Dim cmdPrueba As New MySqlCommand("select * from bancos ", conexionPrueba.conexion)
+            conexionPrueba.AbrirConexion()
+            cmdPrueba.ExecuteNonQuery()
+            conexionPrueba.CerrarConexion()
+            ConsultarEP.ShowDialog()
+        Catch ex As Exception
+
+            MsgBox("ERROR DE CONEXION", MsgBoxStyle.Critical, "AVISO")
+
+        End Try
+
 
     End Sub
 
     Private Sub ButtonGestionarConsig_Click(sender As Object, e As EventArgs) Handles ButtonGestionarConsig.Click
-        'llamando al loading
+        Try
+            Dim conexionPrueba As New conexion
+            Dim cmdPrueba As New MySqlCommand("select * from bancos ", conexionPrueba.conexion)
+            conexionPrueba.AbrirConexion()
+            cmdPrueba.ExecuteNonQuery()
+            conexionPrueba.CerrarConexion()
 
-        Loading.Show()
-        Loading.TimerLoading.Start()
+            'llamando al loading
+
+            Loading.Show()
+            Loading.TimerLoading.Start()
+        Catch ex As Exception
+
+            MsgBox("ERROR DE CONEXION", MsgBoxStyle.Critical, "AVISO")
+
+        End Try
+
+
+
 
     End Sub
 
     Private Sub Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         If LabelTipoU.Text <> "ADMINISTRADOR" Then
             LinkLabelUsuarios.Visible = False
 
@@ -33,6 +72,22 @@ Public Class Principal
     End Sub
 
     Private Sub LinkLabelUsuarios_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabelUsuarios.LinkClicked
-        Usuarios.ShowDialog()
+
+        Try
+            Dim conexionPrueba As New conexion
+            Dim cmdPrueba As New MySqlCommand("select * from bancos ", conexionPrueba.conexion)
+            conexionPrueba.AbrirConexion()
+            cmdPrueba.ExecuteNonQuery()
+            conexionPrueba.CerrarConexion()
+
+            Usuarios.ShowDialog()
+
+        Catch ex As Exception
+
+            MsgBox("ERROR DE CONEXION", MsgBoxStyle.Critical, "AVISO")
+
+        End Try
+
+
     End Sub
 End Class

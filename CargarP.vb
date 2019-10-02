@@ -16,138 +16,196 @@ Public Class Cargar_pago
             End If
             conexion7.CerrarConexion()
 
+            Dim valorCorte As Integer = 1
+            Try
+
+
+
+                Dim fechaBD As Date
+                Dim fechaNow As Date
+
+                Dim conexion12 As New conexion
+                Dim cmd12 As New MySqlCommand("CALL CargarFechaRDoc();", conexion12.conexion)
+                conexion12.AbrirConexion()
+                Dim leer12 As MySqlDataReader = cmd12.ExecuteReader()
+                If leer12.Read Then
+                    fechaBD = leer12(0)
+                End If
+
+                conexion12.CerrarConexion()
+
+
+
+                Dim conexion13 As New conexion
+                Dim cmd13 As New MySqlCommand("CALL CargarFechaNDoc();", conexion13.conexion)
+                conexion13.AbrirConexion()
+                Dim leer13 As MySqlDataReader = cmd13.ExecuteReader()
+                If leer13.Read Then
+                    fechaNow = leer13(0)
+                End If
+
+                conexion13.CerrarConexion()
+
+
+
+                Dim conexion14 As New conexion
+                Dim cmd14 As New MySqlCommand("CALL CargarNoDoc();", conexion14.conexion)
+                conexion14.AbrirConexion()
+                Dim leer14 As MySqlDataReader = cmd14.ExecuteReader()
+                If leer14.Read Then
+                    If fechaBD < fechaNow Then
+                        valorCorte = leer14(0) + 1
+                    Else
+                        valorCorte = leer14(0)
+                    End If
+                End If
+
+                conexion14.CerrarConexion()
+
+            Catch ex As Exception
+
+            End Try
+
 
             saldoPConsignar = Consignaciones.Deuda() - Consignaciones.Consignaciones()
 
 
-            'codigo para validar que el datagrid no guarde campos vacios
-            Dim numLineas As Integer = DataGridViewPagos.RowCount - 1
+                'codigo para validar que el datagrid no guarde campos vacios
+                Dim numLineas As Integer = DataGridViewPagos.RowCount - 1
 
-            Dim contador As Integer = 0
-            Dim validador As String = "verdadero"
-            Dim numeroOletra As Integer = 1
+                Dim contador As Integer = 0
+                Dim validador As String = "verdadero"
+                Dim numeroOletra As Integer = 1
 
-            For variable1 = 0 To numLineas Step 1
+                For variable1 = 0 To numLineas Step 1
 
-                For variable2 = 1 To 9 Step 1
-                    If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(5).Value)).Equals("") Then
-                        validador = "falso"
-                    End If
-                    Try
-                        If (IsNumeric(((DataGridViewPagos.Rows(contador).Cells(5).Value)) = False)) Then
+                    For variable2 = 1 To 9 Step 1
+                        If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(5).Value)).Equals("") Then
+                            validador = "falso"
+                        End If
+                        Try
+                            If (IsNumeric(((DataGridViewPagos.Rows(contador).Cells(5).Value)) = False)) Then
+
+                            End If
+                        Catch ex As Exception
+                            numeroOletra = 0
+                        End Try
+
+
+                        If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(6).Value)).Equals("") Then
+                            validador = "falso"
+                        End If
+                        Try
+                            If (IsNumeric(((DataGridViewPagos.Rows(contador).Cells(6).Value)) = False)) Then
+
+                            End If
+                        Catch ex As Exception
+                            numeroOletra = 0
+                        End Try
+
+
+                        If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(7).Value)).Equals("") Then
+                            validador = "falso"
 
                         End If
-                    Catch ex As Exception
-                        numeroOletra = 0
-                    End Try
 
-
-                    If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(6).Value)).Equals("") Then
-                        validador = "falso"
-                    End If
-                    Try
-                        If (IsNumeric(((DataGridViewPagos.Rows(contador).Cells(6).Value)) = False)) Then
+                        If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(8).Value)).Equals("") Then
+                            validador = "falso"
 
                         End If
-                    Catch ex As Exception
-                        numeroOletra = 0
-                    End Try
+                        Try
+                            If (IsNumeric(((DataGridViewPagos.Rows(contador).Cells(8).Value)) = False)) Then
 
-
-                    If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(7).Value)).Equals("") Then
-                        validador = "falso"
-
-                    End If
-
-                    If (Convert.ToString(DataGridViewPagos.Rows(contador).Cells(8).Value)).Equals("") Then
-                        validador = "falso"
-
-                    End If
-                    Try
-                        If (IsNumeric(((DataGridViewPagos.Rows(contador).Cells(8).Value)) = False)) Then
-
-                        End If
-                    Catch ex As Exception
-                        numeroOletra = 0
-                    End Try
+                            End If
+                        Catch ex As Exception
+                            numeroOletra = 0
+                        End Try
 
 
 
-                Next
-                contador = contador + 1
-            Next
-
-
-
-
-            Dim conexion1 As New conexion
-            If validador = "verdadero" And numeroOletra = 1 And (DataGridViewPagos.Rows.Count > 0) Then
-                Dim fila As New DataGridViewRow()
-
-                Dim CONT As Integer = 0
-                For Each row As DataGridViewRow In Me.DataGridViewPagos.Rows
-                    saldoPConsignar += Val(row.Cells(8).Value)
+                    Next
+                    contador = contador + 1
                 Next
 
 
-                If saldoPConsignar <= cupo Or cupo = 0 Then
-                    Dim Result As DialogResult = MessageBox.Show("¿DESEA SUBIR LOS DATOS INGRESADOS EN LA TABLA?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                    If Result = DialogResult.Yes Then
-
-                        Dim cmd1 As New MySqlCommand("CALL IngresarPago(?IdR,?NoDoc,?FechaR,?Vendedor,?NoMin,?Referencia,?Tipo,?Valor,?EstadoActual)", conexion1.conexion)
-                        conexion1.AbrirConexion()
 
 
-                        For Each fila In DataGridViewPagos.Rows
+                Dim conexion1 As New conexion
+                If validador = "verdadero" And numeroOletra = 1 And (DataGridViewPagos.Rows.Count > 0) Then
+                    Dim fila As New DataGridViewRow()
+
+                    Dim CONT As Integer = 0
+                    For Each row As DataGridViewRow In Me.DataGridViewPagos.Rows
+                        saldoPConsignar += Val(row.Cells(8).Value)
+                    Next
 
 
-                            cmd1.Parameters.Clear()
-                            cmd1.Parameters.Add("?IdR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column1").Value)
-                            cmd1.Parameters.Add("?NoDoc", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column2").Value)
-                            cmd1.Parameters.Add("?FechaR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column3").Value)
-                            cmd1.Parameters.Add("?Vendedor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column4").Value)
-                            cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
-                            cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
-                            cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
-                            cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToInt32(fila.Cells("Column8").Value)
-                            cmd1.Parameters.Add("?EstadoActual", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column9").Value)
+                    If saldoPConsignar <= cupo Or cupo = 0 Then
+                        Dim Result As DialogResult = MessageBox.Show("¿DESEA SUBIR LOS DATOS INGRESADOS EN LA TABLA?", "ADVERTENCIA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                        If Result = DialogResult.Yes Then
 
-                            cmd1.ExecuteNonQuery()
+                            Dim cmd1 As New MySqlCommand("CALL IngresarPago(?IdR,?NoDoc,?FechaR,?Vendedor,?NoMin,?Referencia,?Tipo,?Valor,?EstadoActual)", conexion1.conexion)
+                            conexion1.AbrirConexion()
 
 
-                        Next
+                            For Each fila In DataGridViewPagos.Rows
 
+
+                                cmd1.Parameters.Clear()
+                                cmd1.Parameters.Add("?IdR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column1").Value)
+                                cmd1.Parameters.Add("?NoDoc", MySqlDbType.VarChar).Value = valorCorte
+                                cmd1.Parameters.Add("?FechaR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column3").Value)
+                                cmd1.Parameters.Add("?Vendedor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column4").Value)
+                                cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
+                                cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
+                                cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
+                                cmd1.Parameters.Add("?Valor", MySqlDbType.VarChar).Value = Convert.ToInt32(fila.Cells("Column8").Value)
+                                cmd1.Parameters.Add("?EstadoActual", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column9").Value)
+
+                                cmd1.ExecuteNonQuery()
+
+
+                            Next
+
+                            DataGridViewPagos.Rows.Clear()
+                            MsgBox("DATOS CARGADOS CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+
+
+                            a = Consignaciones.Cupo() - (Consignaciones.Deuda() - Consignaciones.Consignaciones())
+                            LabelCupoNeto.Text = a
+                            LabelCupoRestante.Text = a
+                            LabelValorTotal.Text = "0"
+                            Label6.Visible = False
+
+
+                        End If
+
+                    Else
                         DataGridViewPagos.Rows.Clear()
-                        MsgBox("DATOS CARGADOS CORRECTAMENTE", MsgBoxStyle.Information, "INFORMACION")
+
+                        a = Consignaciones.Cupo() - (Consignaciones.Deuda() - Consignaciones.Consignaciones())
+                        LabelCupoNeto.Text = a
+                        LabelCupoRestante.Text = a
+                        LabelValorTotal.Text = "0"
+                        Label6.Visible = False
+                        FormGif.ShowDialog()
+
 
                     End If
 
-                Else
-                    DataGridViewPagos.Rows.Clear()
 
-                    a = Consignaciones.Cupo() - (Consignaciones.Deuda() - Consignaciones.Consignaciones())
-                    LabelCupoNeto.Text = a
-                    LabelCupoRestante.Text = a
-                    LabelValorTotal.Text = "0"
-                    Label6.Visible = False
-                    FormGif.ShowDialog()
+                ElseIf validador = "falso" Then
+                    MsgBox("POR FAVOR DILIGENCIE TODOS LOS CAMPOS", MsgBoxStyle.Exclamation, "AVISO")
 
-
+                ElseIf numeroOletra = 0 Then
+                    MsgBox("LOS CAMPOS NO.MIN , REFERENCIA Y VALOR DEBEN SER DATOS NUMERICOS", MsgBoxStyle.Exclamation, "AVISO")
+                ElseIf DataGridViewPagos.Rows.Count = 0 Then
+                    MsgBox("NO HAY REGISTROS EN LA TABLA", MsgBoxStyle.Exclamation, "AVISO")
                 End If
 
-
-            ElseIf validador = "falso" Then
-                MsgBox("POR FAVOR DILIGENCIE TODOS LOS CAMPOS", MsgBoxStyle.Exclamation, "AVISO")
-
-            ElseIf numeroOletra = 0 Then
-                MsgBox("LOS CAMPOS NO.MIN , REFERENCIA Y VALOR DEBEN SER DATOS NUMERICOS", MsgBoxStyle.Exclamation, "AVISO")
-            ElseIf DataGridViewPagos.Rows.Count = 0 Then
-                MsgBox("NO HAY REGISTROS EN LA TABLA", MsgBoxStyle.Exclamation, "AVISO")
-            End If
-
-            conexion1.CerrarConexion()
-        Catch ex As Exception
-            MsgBox("ERROR DE CONEXION." & vbCrLf & ex.Message)
+                conexion1.CerrarConexion()
+            Catch ex As Exception
+                MsgBox("ERROR DE CONEXION." & vbCrLf & ex.Message)
         End Try
 
     End Sub
