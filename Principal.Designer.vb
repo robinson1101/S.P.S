@@ -40,7 +40,7 @@ Partial Class Principal
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(121, 4)
+        Me.Label1.Location = New System.Drawing.Point(121, 1)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(181, 31)
         Me.Label1.TabIndex = 0
@@ -50,7 +50,7 @@ Partial Class Principal
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 47)
+        Me.Label2.Location = New System.Drawing.Point(12, 35)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(65, 25)
         Me.Label2.TabIndex = 1
@@ -60,7 +60,7 @@ Partial Class Principal
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(13, 101)
+        Me.Label3.Location = New System.Drawing.Point(13, 103)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(99, 20)
         Me.Label3.TabIndex = 2
@@ -70,7 +70,7 @@ Partial Class Principal
         '
         Me.LabelNombre.AutoSize = True
         Me.LabelNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelNombre.Location = New System.Drawing.Point(112, 52)
+        Me.LabelNombre.Location = New System.Drawing.Point(112, 40)
         Me.LabelNombre.Name = "LabelNombre"
         Me.LabelNombre.Size = New System.Drawing.Size(63, 20)
         Me.LabelNombre.TabIndex = 3
@@ -80,7 +80,7 @@ Partial Class Principal
         '
         Me.LabelTipoU.AutoSize = True
         Me.LabelTipoU.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelTipoU.Location = New System.Drawing.Point(112, 101)
+        Me.LabelTipoU.Location = New System.Drawing.Point(112, 103)
         Me.LabelTipoU.Name = "LabelTipoU"
         Me.LabelTipoU.Size = New System.Drawing.Size(61, 20)
         Me.LabelTipoU.TabIndex = 4
@@ -129,7 +129,7 @@ Partial Class Principal
         '
         Me.LabelUsuarioU.AutoSize = True
         Me.LabelUsuarioU.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelUsuarioU.Location = New System.Drawing.Point(112, 77)
+        Me.LabelUsuarioU.Location = New System.Drawing.Point(112, 80)
         Me.LabelUsuarioU.Name = "LabelUsuarioU"
         Me.LabelUsuarioU.Size = New System.Drawing.Size(70, 20)
         Me.LabelUsuarioU.TabIndex = 9
@@ -139,7 +139,7 @@ Partial Class Principal
         '
         Me.Usuar.AutoSize = True
         Me.Usuar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Usuar.Location = New System.Drawing.Point(13, 77)
+        Me.Usuar.Location = New System.Drawing.Point(13, 80)
         Me.Usuar.Name = "Usuar"
         Me.Usuar.Size = New System.Drawing.Size(68, 20)
         Me.Usuar.TabIndex = 8

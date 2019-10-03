@@ -98,7 +98,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aBcnq7jZs/33+wLKvtn3WSVxyFBXYWVzvR7vC7/jkBs=</dsig:DigestValue>
+        <dsig:DigestValue>1+soCO8/BUAo1/r50gRN/1+9Tffdz0VgHWHAJayMvoM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -111,13 +111,13 @@
       <dsig:DigestValue>IqKwWiLNZnqT1fTnLHNYqSs0z8RX26ide/AifPdtjGY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="S.P.S.exe.config" size="233">
+  <file name="S.P.S.exe.config" size="230">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HRO/vtn7Ry2q7weIBplwA2SXoe1SyS/3w/OfLeuifvA=</dsig:DigestValue>
+      <dsig:DigestValue>l470+w4BqeZUzXifyW057ze1g8NqZ2WEeap9/FN5spM=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

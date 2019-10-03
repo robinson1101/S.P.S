@@ -21,7 +21,7 @@ Public Class Login
                 Principal.LabelNombre.Text = leer0(4)
                 Principal.LabelTipoU.Text = leer0(1)
                 Principal.LabelUsuarioU.Text = leer0(2)
-                Principal.LabelNombre.Text += " " & leer0(5)
+                Principal.LabelNombre.Text += " " & vbCrLf & leer0(5)
                 Cargar_pago.LabelIdSub.Text = leer0(2)
                 Cargar_pago.LabelNombreP.Text = leer0(4) & " "
                 Cargar_pago.LabelNombreP.Text += leer0(5)

@@ -153,9 +153,10 @@ Public Class Cargar_pago
 
                                 cmd1.Parameters.Clear()
                                 cmd1.Parameters.Add("?IdR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column1").Value)
-                                cmd1.Parameters.Add("?NoDoc", MySqlDbType.VarChar).Value = valorCorte
-                                cmd1.Parameters.Add("?FechaR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column3").Value)
-                                cmd1.Parameters.Add("?Vendedor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column4").Value)
+                            cmd1.Parameters.Add("?NoDoc", MySqlDbType.VarChar).Value = valorCorte
+                            MsgBox(Convert.ToDateTime(fila.Cells("Column3").Value))
+                            cmd1.Parameters.Add("?FechaR", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column3").Value)
+                            cmd1.Parameters.Add("?Vendedor", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column4").Value)
                                 cmd1.Parameters.Add("?NoMin", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column5").Value)
                                 cmd1.Parameters.Add("?Referencia", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column6").Value)
                                 cmd1.Parameters.Add("?Tipo", MySqlDbType.VarChar).Value = Convert.ToString(fila.Cells("Column7").Value)
@@ -224,7 +225,7 @@ Public Class Cargar_pago
         End If
 
         conexion2.CerrarConexion()
-        DataGridViewPagos.Rows.Add(ID, LabelIdSub.Text, "", Format$(Now(), "yyyy-MM-dd hh:mm:ss"), LabelNombreP.Text & " - " & LabelCedulaP.Text, "", "", "SERVICIO", "", "EN PROCESO")
+        DataGridViewPagos.Rows.Add(ID, LabelIdSub.Text, "", Format$(Now(), "yyyy-MM-dd HH:mm:ss"), LabelNombreP.Text & " - " & LabelCedulaP.Text, "", "", "SERVICIO", "", "EN PROCESO")
 
     End Sub
 
